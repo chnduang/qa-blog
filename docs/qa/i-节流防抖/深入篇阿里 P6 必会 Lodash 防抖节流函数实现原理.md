@@ -2,13 +2,13 @@
 
 > [https://muyiy.cn/blog/7/7.4.html](https://muyiy.cn/blog/7/7.4.html)
 
-## [#](https://muyiy.cn/blog/7/7.4.html#引言)引言
+## 引言
 
 前面几节我们学习了节流函数 throttle，防抖函数 debounce，以及各自如何在 React 项目中进行应用，今天这篇文章主要聊聊 Lodash 中防抖和节流函数是如何实现的，并对源码浅析一二。下篇文章会举几个小例子为切入点，换种方式继续解读源码，敬请期待。
 
 有什么想法或者意见都可以在评论区留言，欢迎大家拍砖。
 
-## [#](https://muyiy.cn/blog/7/7.4.html#防抖函数-debounce)防抖函数 debounce
+## 防抖函数 debounce
 
 Lodash 中节流函数比较简单，直接调用防抖函数，传入一些配置就摇身一变成了节流函数，所以我们先来看看其中防抖函数是如何实现的，弄懂了防抖，那节流自然就容易理解了。
 
@@ -16,7 +16,7 @@ Lodash 中节流函数比较简单，直接调用防抖函数，传入一些配�
 
 进入正文，我们看下 debounce 源码，源码不多，总共 100 多行，为了方便理解就先列出代码结构，然后再从入口函数着手一个一个的介绍。
 
-### [#](https://muyiy.cn/blog/7/7.4.html#代码结构)代码结构
+### 代码结构
 
 ```js
 function debounce(func, wait, options) {

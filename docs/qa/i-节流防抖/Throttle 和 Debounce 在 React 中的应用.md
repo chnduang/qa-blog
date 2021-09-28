@@ -18,9 +18,9 @@
 
 在这篇文章中，我们将研究如何在不使用 React 提供的功能下来改进 React 应用程序性能，我们将使用一种不仅仅适用于 React 的技术：节流（**Throttle**）和防抖（**Debounce**）。
 
-## [#](https://muyiy.cn/blog/7/7.3.html#从一个例子开始)从一个例子开始
+## 从一个例子开始
 
-### [#](https://muyiy.cn/blog/7/7.3.html#例子-1)例子 1
+### 例子 1
 
 下面这个例子可以很好的解释节流和防抖带给我们的好处，假设我们有一个 `autocomp` 组件
 
@@ -220,7 +220,7 @@ class autocomp extends React.Component {
 
 现在，假设我们以每 200ms 1 个字母的正常速度输入 fidudusola，输入完成需要10 * 200ms =（2000ms）2s，这时 `handleInput` 方法将只调用 2（2000ms / 1000ms = 2）次而不是最初的 10 次。
 
-### [#](https://muyiy.cn/blog/7/7.3.html#使用-lodash)使用 lodash
+### 使用 lodash
 
 `lodash` 也提供了一个 `throttle` 函数，我们可以在 JS 程序中使用它。
 
@@ -266,7 +266,7 @@ class autocomp extends React.Component {
 
 和 `underscore` 一样的效果，没有其他区别。
 
-### [#](https://muyiy.cn/blog/7/7.3.html#使用-rxjs)使用 RxJS
+### 使用 RxJS
 
 JS 中的 `Reactive Extensions` 提供了一个节流运算符，我们可以使用它来实现功能。
 
@@ -322,7 +322,7 @@ class autocomp extends React.Component {
 
 如果我们以 200ms 1 个字母的速度输入 `fidudusola` ，该组件将重新渲染 2000ms / 1000ms = 2次。
 
-### [#](https://muyiy.cn/blog/7/7.3.html#使用自定义实现)使用自定义实现
+### 使用自定义实现
 
 我们实现自己的节流函数，方便更好的理解节流如何工作。
 
@@ -406,7 +406,7 @@ class autocomp extends React.Component {
 }
 ```
 
-## [#](https://muyiy.cn/blog/7/7.3.html#防抖-debounce)防抖 Debounce
+## 防抖 Debounce
 
 > 防抖会强制自上次调用后经过一定时间才会再次调用函数，例如只有在没有被调用的情况下经过一段时间之后（例如100毫秒）才执行该函数。
 
@@ -414,7 +414,7 @@ class autocomp extends React.Component {
 
 下面将介绍在项目中使用 debounce 的例子。
 
-### [#](https://muyiy.cn/blog/7/7.3.html#使用-underscore-2)使用 underscore
+### 使用 underscore
 
 ```js
 // ...
@@ -448,7 +448,7 @@ class autocomp extends React.Component {
 }
 ```
 
-### [#](https://muyiy.cn/blog/7/7.3.html#使用-lodash-2)使用 lodash
+### 使用 lodash
 
 ```js
 // ...
@@ -482,7 +482,7 @@ class autocomp extends React.Component {
 }
 ```
 
-### [#](https://muyiy.cn/blog/7/7.3.html#使用-rxjs-2)使用 RxJS
+### 使用 RxJS
 
 ```js
 // ...
@@ -522,10 +522,10 @@ class autocomp extends React.Component {
 }
 ```
 
-## [#](https://muyiy.cn/blog/7/7.3.html#重要领域：游戏)重要领域：游戏
+## 重要领域：游戏
 
 有很多情况需要使用节流和防抖，其中最需要的领域是游戏。游戏中最常用的动作是在电脑键盘或者游戏手柄中按键，玩家可能经常按同一个键多次（每 20 秒 40 次，即每秒 2 次）例如射击、加速这样的动作，但无论玩家按下射击键的次数有多少，它只会发射一次（比如说每秒）。 所以使用节流控制为 1 秒，这样第二次按下按钮将被忽略。
 
-## [#](https://muyiy.cn/blog/7/7.3.html#结论)结论
+## 结论
 
 我们看到了节流和防抖如何提高 React 应用程序的性能，以及重复调用会影响性能，因为组件及其子树将不必要地重新渲染，所以应该避免在 React 应用中重复调用方法。在小型程序中不会引起注意，但在大型程序中效果会很明显。

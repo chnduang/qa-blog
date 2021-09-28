@@ -16,86 +16,53 @@
 
 看错误版，(容易过的，看**「面试官水平了」**)👇
 
-- 
-- 
-- 
-- 
-- 
-- 
-
-```
-ul.addEventListener('click', function (e) {            console.log(e,e.target)            if (e.target.tagName.toLowerCase() === 'li') {                console.log('打印')  // 模拟fn            }})
+```js
+ul.addEventListener('click', function (e) {
+            console.log(e,e.target)
+            if (e.target.tagName.toLowerCase() === 'li') {
+                console.log('打印')  // 模拟fn
+            }
+})
 ```
 
 **「有个小bug，如果用户点击的是 li 里面的 span，就没法触发 fn，这显然不对」**👇
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-
-```
-<ul id="xxx">下面的内容是子元素1        <li>li内容>>> <span> 这是span内容123</span></li>        下面的内容是子元素2        <li>li内容>>> <span> 这是span内容123</span></li>        下面的内容是子元素3        <li>li内容>>> <span> 这是span内容123</span></li></ul>
+```html
+<ul id="xxx">下面的内容是子元素1
+        <li>li内容>>> <span> 这是span内容123</span></li>
+        下面的内容是子元素2
+        <li>li内容>>> <span> 这是span内容123</span></li>
+        下面的内容是子元素3
+        <li>li内容>>> <span> 这是span内容123</span></li>
+</ul>
 ```
 
 这样子的场景就是不对的，那我们看看高级版本👇
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-
-```
-		function delegate(element, eventType, selector, fn) {            element.addEventListener(eventType, e => {                let el = e.target                while (!el.matches(selector)) {                    if (element === el) {                        el = null                        break                    }                    el = el.parentNode                }                el && fn.call(el, e, el)            },true)            return element        }
+```js
+		function delegate(element, eventType, selector, fn) {
+      element.addEventListener(eventType, e => {
+        let el = e.target
+        while (!el.matches(selector)) {
+          if (element === el) {
+            el = null
+            break
+          }
+          el = el.parentNode
+        }
+        el && fn.call(el, e, el)
+      },true)
+      return element
+    }
 ```
 
 ### 实现一个可以拖拽的DIV
 
 这个题目看起来简单，你可以试一试30分钟能不能完成，直接贴出代码吧👇
 
-- 
-
 ```
 <div id="xxx"></div>
 ```
-
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
 
 ```
 var dragging = falsevar position = null
@@ -112,22 +79,6 @@ document.addEventListener('mousemove', function(e){  if(dragging === false) retu
 - input输入框，每个特定时间发送请求或是展开下拉列表，（防抖也可以）
 
 节流重在加锁**「flag = false」**
-
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
 
 ```
 function throttle(fn, delay) {    let flag = true,        timer = null    return function(...args) {        let context = this        if(!flag) return                flag = false        clearTimeout(timer)        timer = setTimeout(function() {            fn.apply(context,args)            flag = true        },delay)    }}

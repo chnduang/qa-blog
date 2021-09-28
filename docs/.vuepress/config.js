@@ -102,6 +102,10 @@ const nav = [
     link: "/design-mode/",
   },
   {
+    text: "JS算法",
+    link: "/algorithm/",
+  },
+  {
     text: "性能优化",
     link: "/performance/",
   },
