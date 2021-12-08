@@ -83,26 +83,11 @@ const baiduSpa = getBaiduSpa();
 const base = "/";
 
 const nav = [
-  { text: "QA", link: "/qa/" },
+  { text: "JS方面", link: "/js/" },
+  { text: "汇总", link: "/summary/" },
   { text: "八股文", link: "/eight-essay/" },
   {
-    text: "JS执行",
-    link: "/principle/",
-  },
-  {
-    text: "JS进阶",
-    link: "/advanced/",
-  },
-  {
-    text: "高阶函数",
-    link: "/advanced-function/",
-  },
-  {
-    text: "JS设计模式",
-    link: "/design-mode/",
-  },
-  {
-    text: "JS算法",
+    text: "常见算法",
     link: "/algorithm/",
   },
   {
@@ -110,31 +95,21 @@ const nav = [
     link: "/performance/",
   },
   {
-    text: "手写实现",
-    link: "/tools/",
+    text: "Webpack",
+    link: "/webpack/",
   },
-  { text: "React", link: "https://react.qdzhou.cn" },
   {
-    text: "个人链接",
-    ariaLabel: "个人链接",
-    items: [
-      { text: "笔记", link: "https://note.qdzhou.cn", target: "_blank" },
-      { text: "随笔", link: "https://essay.qdzhou.cn", target: "_blank" },
-      { text: "博客", link: "http://qdzhou.cn/", target: "_blank" },
-      { text: "语雀", link: "https://www.yuque.com/xdxmvy" },
-      {
-        text: "Github",
-        link: "https://github.com/ZQD1224/qa-blog",
-        target: "_blank",
-      },
-    ],
+    text: "CSS",
+    link: "/css/",
   },
+  { text: "Home", link: "https://link.qdzhou.cn" },
 ];
 
 module.exports = {
   title: "duangdong的blog",
   description: "前端相关知识归纳总结",
   base,
+  host: "localhost",
   port: 9202,
   head: [
     ["link", { rel: "icon", href: "/logo.png" }],
@@ -161,9 +136,22 @@ module.exports = {
         updatePopup: true,
       },
     ],
+    [
+      "vuepress-plugin-right-anchor",
+      {
+        showDepth: 3,
+        ignore: ["/", "/api/"],
+        expand: {
+          trigger: "click",
+          clickModeDefaultOpen: true,
+        },
+        customClass: "your-customClass",
+        disableGlobalUI: false,
+      },
+    ],
   ],
   themeConfig: {
-    sidebarDepth: 2,
+    sidebarDepth: 0,
     searchMaxSuggestions: 10,
     lastUpdated: "上次更新",
     editLinks: true,

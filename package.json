@@ -6,7 +6,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "vuepress dev docs",
+    "dev": "vuepress dev docs --open",
     "build": "vuepress build docs",
     "deploy": "bash deploy.sh"
   },
@@ -14,7 +14,8 @@
     "@vuepress/plugin-back-to-top": "^1.8.2",
     "@vuepress/plugin-medium-zoom": "^1.8.2",
     "vuepress": "^1.8.2",
-    "vuepress-plugin-code-copy": "^1.0.6"
+    "vuepress-plugin-code-copy": "^1.0.6",
+    "vuepress-plugin-right-anchor": "^0.5.5"
   },
   "repository": {
     "type": "git",
