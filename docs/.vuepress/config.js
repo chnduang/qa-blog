@@ -85,6 +85,7 @@ const base = "/";
 const nav = [
   { text: "JS方面", link: "/js/" },
   { text: "汇总", link: "/summary/" },
+  { text: "React", link: "/react/" },
   { text: "八股文", link: "/eight-essay/" },
   {
     text: "常见算法",
