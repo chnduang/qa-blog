@@ -84,8 +84,12 @@ const base = "/";
 
 const nav = [
   { text: "JS方面", link: "/js/" },
-  { text: "汇总", link: "/summary/" },
+  {
+    text: "Webpack",
+    link: "/webpack/",
+  },
   { text: "React", link: "/react/" },
+  { text: "汇总", link: "/summary/" },
   { text: "八股文", link: "/eight-essay/" },
   {
     text: "常见算法",
@@ -94,10 +98,6 @@ const nav = [
   {
     text: "性能优化",
     link: "/performance/",
-  },
-  {
-    text: "Webpack",
-    link: "/webpack/",
   },
   {
     text: "CSS",

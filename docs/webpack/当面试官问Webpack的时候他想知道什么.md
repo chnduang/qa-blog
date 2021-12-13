@@ -1,4 +1,4 @@
-## 当面试官问Webpack的时候他想知道什么
+## Webpack能够做些什么
 
 > [https://mp.weixin.qq.com/s/lSe0sKvLSsNd9u2-mXmvQw](https://mp.weixin.qq.com/s/lSe0sKvLSsNd9u2-mXmvQw)
 
@@ -10,7 +10,7 @@
 
 当面试官问你是否了解`webpack`的时候，或许你可以说出一串耳熟能详的`webpack loader`和`plugin`的名字，甚至还能说出插件和一系列配置做按需加载和打包优化，那你是否了解他的运行机制以及实现原理呢，那我们今天就一起探索`webpack`的能力边界，尝试了解`webpack`的一些实现流程和原理，拒做`API`工程师。
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/5Xv0xlEBe99yZmFqQtSu5RmXwbXuzsibOHW3t5t2oky5L0mibxfiahm2Zia0de8uaCfjPdbibeXQmDbLdA9JNlMI4Yw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)CgqCHl6pSFmAC5UzAAEwx63IBwE024.png
+![图片](https://gitee.com/qdzhou/img-upload/raw/master/images/202112131057038)
 
 ### 你知道webpack的作用是什么吗？
 
@@ -40,7 +40,7 @@
 
 最终`Webpack`打包出来的`bundle`文件是一个`IIFE`的执行函数。
 
-```
+```js
 // webpack 5 打包的bundle文件内容
 
 (() => { // webpackBootstrap
@@ -92,7 +92,7 @@
 
 既然是一种源码的映射，那必然就需要有一份映射的文件，来标记混淆代码里对应的源码的位置，通常这份映射文件以`.map`结尾，里边的数据结构大概长这样：
 
-```
+```js
 {
   "version" : 3,                          // Source Map版本
   "file": "out.js",                       // 输出文件（可选）
@@ -112,7 +112,7 @@
 
 有了这份映射文件，我们只需要在我们的压缩代码的最末端加上这句注释，即可让sourceMap生效：
 
-```
+```js
 //# sourceURL=/path/to/file.js.map
 ```
 
@@ -132,7 +132,7 @@ Source Maps under the hood – VLQ, Base64 and Yoda
 
 `Loader`的配置使用我们应该已经非常的熟悉：
 
-```
+```js
 // webpack.config.js
 module.exports = {
   // ...other config
@@ -158,7 +158,7 @@ module.exports = {
 
 `loader`函数中的`this`上下文由`webpack`提供，可以通过`this`对象提供的相关属性，获取当前`loader`需要的各种信息数据，事实上，这个`this`指向了一个叫`loaderContext`的`loader-runner`特有对象。有兴趣的小伙伴可以自行阅读源码。
 
-```
+```js
 module.exports = function(source) {
     const content = doSomeThing2JsString(source);
     
@@ -192,7 +192,7 @@ module.exports = function(source) {
 
 `Webpack`的事件机制基于`webpack`自己实现的一套`Tapable`事件流方案（github）
 
-```
+```js
 // Tapable的简单使用
 const { SyncHook } = require("tapable");
 
@@ -223,7 +223,7 @@ myCar.hooks.brake.tap("WarningLampPlugin", () => warningLamp.on());
 
 了解了以上这些内容，想要开发一个 `Webpack Plugin`，其实也并不困难。
 
-```
+```js
 class MyPlugin {
   apply (compiler) {
     // 找到合适的事件钩子，实现自己的插件功能
