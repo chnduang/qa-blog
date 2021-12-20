@@ -103,6 +103,10 @@ const nav = [
     text: "CSS",
     link: "/css/",
   },
+  {
+    text: "网络协议",
+    link: "/http/",
+  },
   { text: "Home", link: "https://link.qdzhou.cn" },
 ];
 
