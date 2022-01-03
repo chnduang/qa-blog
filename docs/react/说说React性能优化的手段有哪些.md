@@ -39,7 +39,7 @@
 
 如果我们使用内联函数，则每次调用`render`函数时都会创建一个新的函数实例，如下：
 
-```
+```jsx
 import React from "react";
 
 export default class InlineFunctionComponent extends React.Component {
@@ -56,7 +56,7 @@ export default class InlineFunctionComponent extends React.Component {
 
 我们应该在组件内部创建一个函数，并将事件绑定到该函数本身。这样每次调用 `render` 时就不会创建单独的函数实例，如下：
 
-```
+```jsx
 import React from "react";
 
 export default class InlineFunctionComponent extends React.Component {
@@ -86,7 +86,7 @@ export default class InlineFunctionComponent extends React.Component {
 
 其不会向组件引入任何额外标记，但它可以作为父级标签的作用，如下所示：
 
-```
+```jsx
 export default class NestedRoutingComponent extends React.Component {
     render() {
         return (
@@ -121,7 +121,7 @@ export default class NestedRoutingComponent extends React.Component {
 
 而在`react`中使用到了`Suspense`和 `lazy`组件实现代码拆分功能，基本使用如下：
 
-```
+```jsx
 const johanComponent = React.lazy(() => import(/* webpackChunkName: "johanComponent" */ './myAwesome.component'));
  
 export const johanAsyncComponent = props => (
@@ -139,7 +139,7 @@ export const johanAsyncComponent = props => (
 
 例如：
 
-```
+```jsx
 import { renderToString } from "react-dom/server";
 import MyPage from "./MyPage";
 app.get("/", (req, res) => {
@@ -153,7 +153,7 @@ app.get("/", (req, res) => {
 
 客户端使用render方法来生成HTML
 
-```
+```jsx
 import ReactDOM from 'react-dom';
 import MyPage from "./MyPage";
 ReactDOM.render(<MyPage />, document.getElementById('app'));

@@ -111,8 +111,8 @@ const nav = [
 ];
 
 module.exports = {
-  title: "duangdong的blog",
-  description: "前端相关知识归纳总结",
+  title: "duangdong的qa",
+  description: "前端面试集锦",
   base,
   host: "localhost",
   port: 9202,

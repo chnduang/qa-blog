@@ -62,11 +62,11 @@
 
 - 新版生命周期整体流程如下图所示：
 
-  ![图片](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
+  ![图片](https://gitee.com/qdzhou/img-upload/raw/master/images/202112281554925.png)
 
   旧的生命周期流程图如下：
 
-  ![图片](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
+  ![图片](https://gitee.com/qdzhou/img-upload/raw/master/images/202112281554964.png)
 
 ### state 和 props有什么区别？
 
@@ -189,7 +189,7 @@
 
 工作流程图如下所示：
 
-![图片](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
+![图片](https://gitee.com/qdzhou/img-upload/raw/master/images/202112281555712.png)
 
 ### redux中间件有哪些？
 

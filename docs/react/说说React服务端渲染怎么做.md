@@ -26,7 +26,7 @@
 
 首先通过`express`启动一个`app.js`文件，用于监听3000端口的请求，当请求根目录时，返回`HTML`，如下：
 
-```
+```jsx
 const express = require('express')
 const app = express()
 app.get('/', (req,res) => res.send(`
@@ -45,7 +45,7 @@ app.listen(3000, () => console.log('Exampleapp listening on port 3000!'))
 
 然后再服务器中编写`react`代码，在`app.js`中进行应引用
 
-```
+```jsx
 import React from 'react'
 
 const Home = () =>{
@@ -59,7 +59,7 @@ export default Home
 
 为了让服务器能够识别`JSX`，这里需要使用`webpakc`对项目进行打包转换，创建一个配置文件`webpack.server.js`并进行相关配置，如下：
 
-```
+```jsx
 const path = require('path')    //node的path模块
 const nodeExternals = require('webpack-node-externals')
 
@@ -92,7 +92,7 @@ module.exports = {
 
 接着借助`react-dom`提供了服务端渲染的 `renderToString`方法，负责把`React`组件解析成`html`
 
-```
+```jsx
 import express from 'express'
 import React from 'react'//引入React以支持JSX的语法
 import { renderToString } from 'react-dom/server'//引入renderToString方法
@@ -127,7 +127,7 @@ app.listen(3001, () => console.log('Exampleapp listening on port 3001!'))
 
 通过`script`标签为页面引入客户端执行的`react`代码，并通过`express`的`static`中间件为`js`文件配置路由，修改如下：
 
-```
+```jsx
 import express from 'express'
 import React from 'react'//引入React以支持JSX的语法
 import { renderToString } from'react-dom/server'//引入renderToString方法
@@ -155,7 +155,7 @@ app.get('/',(req,res)=>res.send(`
 
 然后再客户端执行以下`react`代码，新建`webpack.client.js`作为客户端React代码的`webpack`配置文件如下：
 
-```
+```jsx
 const path = require('path')                    //node的path模块
 
 module.exports = {
@@ -189,7 +189,7 @@ module.exports = {
 
 在做完初始渲染的时候，一个应用会存在路由的情况，配置信息如下：
 
-```
+```jsx
 import React from 'react'                   //引入React以支持JSX
 import { Route } from 'react-router-dom'    //引入路由
 import Home from './containers/Home'        //引入Home组件
@@ -203,7 +203,7 @@ export default (
 
 然后可以通过`index.js`引用路由信息，如下：
 
-```
+```jsx
 import React from 'react'
 import ReactDom from 'react-dom'
 import { BrowserRouter } from'react-router-dom'
@@ -277,104 +277,3 @@ app.listen(3001, () => console.log('Exampleapp listening on port 3001!'))
 - https://zhuanlan.zhihu.com/p/52693113
 - https://segmentfault.com/a/1190000020417285
 - https://juejin.cn/post/6844904000387563533#heading-14
-
-
-
---The End--
-
-系列正在更新：32/33
-
-点击下方卡片解锁更多
-
-![JS每日一题](http://mmbiz.qpic.cn/mmbiz_png/gH31uF9VIibR1zyictLmupbzrdsFTbiamzNlMsjqhtT5GCIu6WmqOUaHFdSDWvTpU5pRpe56YKqELdiaZxmSt3fEUA/0?wx_fmt=png)
-
-**JS每日一题** 
-
-每天一道经典前端面试题， 采用60秒语音答题模式（禁文字答题），群管理输出标准答案次日推送至群内供大家复盘参考，坚持做到事事有回音，题题有答案
-
-249篇原创内容
-
-
-
-公众号
-
-![图片](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
-
-创作不易，星标、点赞、在看 三连支持
-
-
-
-收录于话题 #面试官：React系列
-
-30个
-
-上一篇面试官：说说你在使用React 过程中遇到的常见问题？解决方案?下一篇面试官：说说你在React项目是如何捕获错误的？
-
-阅读 647
-
-赞9在看4
-
-分享此内容的人还喜欢 
-
-面试官问：前后端分离项目，有什么优缺点？我说：没 
-
-面试官问：前后端分离项目，有什么优缺点？我说：没 
-
-... 
-
-阅读 1358 
-
-前端复习课 
-
-不喜欢
-
-不看的原因
-
-确定
-
-- 内容质量低
--  
-
-- 不看此公众号
-
-面试官六连问拆箱装箱Integer那些事，给我整懵圈了！ 
-
-面试官六连问拆箱装箱Integer那些事，给我整懵圈了！ 
-
-... 
-
-赞 11 
-
-小夕学算法 
-
-不喜欢
-
-不看的原因
-
-确定
-
-- 内容质量低
--  
-
-- 不看此公众号
-
-面试常问的 25+ 个 Linux 命令 
-
-面试常问的 25+ 个 Linux 命令 
-
-... 
-
-阅读 168 
-
-极客运维之家 
-
-不喜欢
-
-不看的原因
-
-确定
-
-- 内容质量低
--  
-
-- 不看此公众号
