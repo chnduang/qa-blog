@@ -37,7 +37,7 @@ const nav = [
   },
   { text: "React", link: "/react/" },
   { text: "汇总", link: "/summary/" },
-  { text: "八股文", link: "/eight-essay/" },
+  // { text: "八股文", link: "/eight-essay/" },
   {
     text: "常见算法",
     link: "/algorithm/",
