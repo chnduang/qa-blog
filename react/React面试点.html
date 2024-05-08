@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>你要的 React 面试知识点，都在这了 | duangdong的qa</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?0088ce24040b03f2947322ab31d23414";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+    <script>
+  var _hmt = _hmt || [];
+  _hmt.push(['_requirePlugin', 'UrlChangeTracker', {
+    shouldTrackUrlChange: function (newPath, oldPath) {
+      newPath = newPath.split('#')[0];
+      oldPath = oldPath.split('#')[0];
+      return newPath != oldPath;
+    }}
+  ]);
+  </script>
+    <meta name="description" content="前端QA集锦">
+    <meta name="keywords" content="qd-blog,js,vuepress,leetcode,react,react进阶,css,js进阶,react性能优化,js设计模式">
+    
+    <link rel="preload" href="/assets/css/0.styles.b4a844ec.css" as="style"><link rel="preload" href="/assets/js/app.07981acf.js" as="script"><link rel="preload" href="/assets/js/2.57da4f88.js" as="script"><link rel="preload" href="/assets/js/1.a76cc220.js" as="script"><link rel="preload" href="/assets/js/99.88c20858.js" as="script"><link rel="prefetch" href="/assets/js/10.50f73657.js"><link rel="prefetch" href="/assets/js/100.ed998eb0.js"><link rel="prefetch" href="/assets/js/101.c8472505.js"><link rel="prefetch" href="/assets/js/102.d600a66c.js"><link rel="prefetch" href="/assets/js/103.c2d41a43.js"><link rel="prefetch" href="/assets/js/104.dc119219.js"><link rel="prefetch" href="/assets/js/105.8707757e.js"><link rel="prefetch" href="/assets/js/106.33c299b9.js"><link rel="prefetch" href="/assets/js/107.8eafcc06.js"><link rel="prefetch" href="/assets/js/108.eeb8c861.js"><link rel="prefetch" href="/assets/js/109.d7579372.js"><link rel="prefetch" href="/assets/js/11.0390ceee.js"><link rel="prefetch" href="/assets/js/110.4cdb688a.js"><link rel="prefetch" href="/assets/js/111.95d0f748.js"><link rel="prefetch" href="/assets/js/112.fae5a13a.js"><link rel="prefetch" href="/assets/js/113.7cefcf49.js"><link rel="prefetch" href="/assets/js/114.49f03fa7.js"><link rel="prefetch" href="/assets/js/115.73eebb69.js"><link rel="prefetch" href="/assets/js/116.3b9205f3.js"><link rel="prefetch" href="/assets/js/117.dc4fcb53.js"><link rel="prefetch" href="/assets/js/118.1191553b.js"><link rel="prefetch" href="/assets/js/119.705d33d0.js"><link rel="prefetch" href="/assets/js/12.f88bec36.js"><link rel="prefetch" href="/assets/js/120.d3227497.js"><link rel="prefetch" href="/assets/js/121.32bcc7c2.js"><link rel="prefetch" href="/assets/js/122.55a7d973.js"><link rel="prefetch" href="/assets/js/123.07b3f53a.js"><link rel="prefetch" href="/assets/js/124.851c0100.js"><link rel="prefetch" href="/assets/js/125.c1de1f95.js"><link rel="prefetch" href="/assets/js/126.ea96a075.js"><link rel="prefetch" href="/assets/js/127.bcf311b8.js"><link rel="prefetch" href="/assets/js/128.e1c4d95e.js"><link rel="prefetch" href="/assets/js/129.09afee9c.js"><link rel="prefetch" href="/assets/js/13.963ad03b.js"><link rel="prefetch" href="/assets/js/130.22372a24.js"><link rel="prefetch" href="/assets/js/131.4db39cda.js"><link rel="prefetch" href="/assets/js/132.afcfdf65.js"><link rel="prefetch" href="/assets/js/133.35b0df52.js"><link rel="prefetch" href="/assets/js/134.9ad9188e.js"><link rel="prefetch" href="/assets/js/135.d7ca4b93.js"><link rel="prefetch" href="/assets/js/136.403dc2de.js"><link rel="prefetch" href="/assets/js/137.f972aed9.js"><link rel="prefetch" href="/assets/js/138.7536ef7d.js"><link rel="prefetch" href="/assets/js/139.05186195.js"><link rel="prefetch" href="/assets/js/14.512f15b9.js"><link rel="prefetch" href="/assets/js/140.f7b5e550.js"><link rel="prefetch" href="/assets/js/141.16938126.js"><link rel="prefetch" href="/assets/js/142.0d18982a.js"><link rel="prefetch" href="/assets/js/143.f82390e5.js"><link rel="prefetch" href="/assets/js/144.bac62f6d.js"><link rel="prefetch" href="/assets/js/145.255f2397.js"><link rel="prefetch" href="/assets/js/146.226da4b5.js"><link rel="prefetch" href="/assets/js/147.236f8a9f.js"><link rel="prefetch" href="/assets/js/148.8d472c06.js"><link rel="prefetch" href="/assets/js/149.4170f8c0.js"><link rel="prefetch" href="/assets/js/15.a674496c.js"><link rel="prefetch" href="/assets/js/150.ff7b0269.js"><link rel="prefetch" href="/assets/js/151.0a1c7058.js"><link rel="prefetch" href="/assets/js/152.584c412a.js"><link rel="prefetch" href="/assets/js/153.220d027b.js"><link rel="prefetch" href="/assets/js/154.09a9219e.js"><link rel="prefetch" href="/assets/js/155.6c8dbf71.js"><link rel="prefetch" href="/assets/js/156.a9d81dce.js"><link rel="prefetch" href="/assets/js/157.e53c1adb.js"><link rel="prefetch" href="/assets/js/158.11f55456.js"><link rel="prefetch" href="/assets/js/159.2c05d7f2.js"><link rel="prefetch" href="/assets/js/16.ed7e507f.js"><link rel="prefetch" href="/assets/js/160.27616923.js"><link rel="prefetch" href="/assets/js/17.de667ca5.js"><link rel="prefetch" href="/assets/js/18.b44e84af.js"><link rel="prefetch" href="/assets/js/19.5b5ad6a1.js"><link rel="prefetch" href="/assets/js/20.6800493a.js"><link rel="prefetch" href="/assets/js/21.6589052c.js"><link rel="prefetch" href="/assets/js/22.f648d829.js"><link rel="prefetch" href="/assets/js/23.21fe11d7.js"><link rel="prefetch" href="/assets/js/24.7a3e65b2.js"><link rel="prefetch" href="/assets/js/25.9e2d6c46.js"><link rel="prefetch" href="/assets/js/26.0dcf1d19.js"><link rel="prefetch" href="/assets/js/27.bd79a51b.js"><link rel="prefetch" href="/assets/js/28.ad9cdafd.js"><link rel="prefetch" href="/assets/js/29.738a8c4a.js"><link rel="prefetch" href="/assets/js/3.13e892f5.js"><link rel="prefetch" href="/assets/js/30.5d2ae7ae.js"><link rel="prefetch" href="/assets/js/31.2a59449c.js"><link rel="prefetch" href="/assets/js/32.322ed58f.js"><link rel="prefetch" href="/assets/js/33.e18917c7.js"><link rel="prefetch" href="/assets/js/34.edfe8355.js"><link rel="prefetch" href="/assets/js/35.2c0b1e3e.js"><link rel="prefetch" href="/assets/js/36.b1fdf51f.js"><link rel="prefetch" href="/assets/js/37.11ee0b0c.js"><link rel="prefetch" href="/assets/js/38.0b050ca5.js"><link rel="prefetch" href="/assets/js/39.2bd20762.js"><link rel="prefetch" href="/assets/js/4.5bdb9365.js"><link rel="prefetch" href="/assets/js/40.eb0c66c8.js"><link rel="prefetch" href="/assets/js/41.933044bc.js"><link rel="prefetch" href="/assets/js/42.eac4ba39.js"><link rel="prefetch" href="/assets/js/43.8c61e37d.js"><link rel="prefetch" href="/assets/js/44.30f132bb.js"><link rel="prefetch" href="/assets/js/45.2477f9bb.js"><link rel="prefetch" href="/assets/js/46.e97df854.js"><link rel="prefetch" href="/assets/js/47.60f16a00.js"><link rel="prefetch" href="/assets/js/48.d01b463f.js"><link rel="prefetch" href="/assets/js/49.e3a15fc7.js"><link rel="prefetch" href="/assets/js/5.7c68fdb5.js"><link rel="prefetch" href="/assets/js/50.31265493.js"><link rel="prefetch" href="/assets/js/51.ed2cc5dc.js"><link rel="prefetch" href="/assets/js/52.3ae02665.js"><link rel="prefetch" href="/assets/js/53.69d15c58.js"><link rel="prefetch" href="/assets/js/54.bbab20a0.js"><link rel="prefetch" href="/assets/js/55.9617cf7e.js"><link rel="prefetch" href="/assets/js/56.13f9aef2.js"><link rel="prefetch" href="/assets/js/57.ba08cc35.js"><link rel="prefetch" href="/assets/js/58.63028d02.js"><link rel="prefetch" href="/assets/js/59.566c0b50.js"><link rel="prefetch" href="/assets/js/6.c8da7ca7.js"><link rel="prefetch" href="/assets/js/60.0801f3b3.js"><link rel="prefetch" href="/assets/js/61.ceae0570.js"><link rel="prefetch" href="/assets/js/62.9f28e1a4.js"><link rel="prefetch" href="/assets/js/63.15282044.js"><link rel="prefetch" href="/assets/js/64.7c666983.js"><link rel="prefetch" href="/assets/js/65.320c4670.js"><link rel="prefetch" href="/assets/js/66.253bab14.js"><link rel="prefetch" href="/assets/js/67.49c1e967.js"><link rel="prefetch" href="/assets/js/68.ae82def1.js"><link rel="prefetch" href="/assets/js/69.0877ad54.js"><link rel="prefetch" href="/assets/js/7.e4c88d0e.js"><link rel="prefetch" href="/assets/js/70.5e8208ea.js"><link rel="prefetch" href="/assets/js/71.52cb4845.js"><link rel="prefetch" href="/assets/js/72.8c575d51.js"><link rel="prefetch" href="/assets/js/73.b9ba874e.js"><link rel="prefetch" href="/assets/js/74.6b4693bb.js"><link rel="prefetch" href="/assets/js/75.e9378ce1.js"><link rel="prefetch" href="/assets/js/76.a80b13fc.js"><link rel="prefetch" href="/assets/js/77.d134968d.js"><link rel="prefetch" href="/assets/js/78.40d99cd8.js"><link rel="prefetch" href="/assets/js/79.2b663044.js"><link rel="prefetch" href="/assets/js/80.0b63f3ac.js"><link rel="prefetch" href="/assets/js/81.bc4031db.js"><link rel="prefetch" href="/assets/js/82.3152c02c.js"><link rel="prefetch" href="/assets/js/83.3fa2dc4b.js"><link rel="prefetch" href="/assets/js/84.e778c959.js"><link rel="prefetch" href="/assets/js/85.060ddc49.js"><link rel="prefetch" href="/assets/js/86.bb8138bb.js"><link rel="prefetch" href="/assets/js/87.72c01e68.js"><link rel="prefetch" href="/assets/js/88.e3e56223.js"><link rel="prefetch" href="/assets/js/89.198ff8d1.js"><link rel="prefetch" href="/assets/js/90.6437abb2.js"><link rel="prefetch" href="/assets/js/91.dbe1df52.js"><link rel="prefetch" href="/assets/js/92.6e732f3a.js"><link rel="prefetch" href="/assets/js/93.e98beea7.js"><link rel="prefetch" href="/assets/js/94.c62e88cb.js"><link rel="prefetch" href="/assets/js/95.f6aad986.js"><link rel="prefetch" href="/assets/js/96.e0630547.js"><link rel="prefetch" href="/assets/js/97.3cd76aa5.js"><link rel="prefetch" href="/assets/js/98.3bc2adce.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.5143d2e0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b4a844ec.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">duangdong的qa</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/js/" class="nav-link">
+  JS方面
+</a></div><div class="nav-item"><a href="/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/react/" class="nav-link router-link-active">
+  React
+</a></div><div class="nav-item"><a href="/summary/" class="nav-link">
+  汇总
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  常见算法
+</a></div><div class="nav-item"><a href="/performance/" class="nav-link">
+  性能优化
+</a></div><div class="nav-item"><a href="/http/" class="nav-link">
+  网络协议
+</a></div><div class="nav-item"><a href="/css/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/face-sutra/" class="nav-link">
+  QA
+</a></div><div class="nav-item"><a href="https://link.aduang.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Home
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/js/" class="nav-link">
+  JS方面
+</a></div><div class="nav-item"><a href="/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/react/" class="nav-link router-link-active">
+  React
+</a></div><div class="nav-item"><a href="/summary/" class="nav-link">
+  汇总
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  常见算法
+</a></div><div class="nav-item"><a href="/performance/" class="nav-link">
+  性能优化
+</a></div><div class="nav-item"><a href="/http/" class="nav-link">
+  网络协议
+</a></div><div class="nav-item"><a href="/css/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/face-sutra/" class="nav-link">
+  QA
+</a></div><div class="nav-item"><a href="https://link.aduang.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Home
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/react/" aria-current="page" class="sidebar-link">QA</a></li><li><a href="/react/React 系统复习如何做最高效.html" class="sidebar-link">React 系统复习如何做最高效（8.24直播总结 + 百道高频面试题整理）</a></li><li><a href="/react/React事件绑定的方式有哪些.html" class="sidebar-link">React事件绑定的方式有哪些？区别？</a></li><li><a href="/react/React构建组件的方式有哪些.html" class="sidebar-link">React构建组件的方式有哪些？区别？</a></li><li><a href="/react/React系统复习如何做最高效.html" class="sidebar-link">React系统复习如何做最高效</a></li><li><a href="/react/React面试点.html" class="active sidebar-link">你要的 React 面试知识点，都在这了</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>face</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/react/react-ref应用场景.html" class="sidebar-link">React refs 的理解？应用场景？</a></li><li><a href="/react/super和super-props有什么区别.html" class="sidebar-link">super()和super(props)有什么区别？</a></li><li><a href="/react/你在React项目中是如何使用Redux的.html" class="sidebar-link">你在React项目中是如何使用Redux的? 项目结构是如何划分的？</a></li><li><a href="/react/在React中组件间过渡动画如何实现.html" class="sidebar-link">在React中组件间过渡动画如何实现？</a></li><li><a href="/react/对比.html" class="sidebar-link">react 与 vue 的技术栈对比，说下区别</a></li><li><a href="/react/说说React-Router有几种模式.html" class="sidebar-link">说说React Router有几种模式？实现原理？</a></li><li><a href="/react/说说React-render方法的原理.html" class="sidebar-link">说说React render方法的原理？在什么时候会被触发？</a></li><li><a href="/react/说说React性能优化的手段有哪些.html" class="sidebar-link">说说 React 性能优化的手段有哪些？</a></li><li><a href="/react/说说React服务端渲染怎么做.html" class="sidebar-link">说说React服务端渲染怎么做？原理是什么？</a></li><li><a href="/react/说说你在React项目是如何捕获错误的.html" class="sidebar-link">说说你在React项目是如何捕获错误的？</a></li><li><a href="/react/说说你在使用React过程中遇到的常见问题.html" class="sidebar-link">说说你在使用React 过程中遇到的常见问题？解决方案?</a></li><li><a href="/react/说说你对Immutable-Data的理解.html" class="sidebar-link">说说你对 Immutable Data的理解？如何应用在React项目中？</a></li><li><a href="/react/说说你对React-Router的理解.html" class="sidebar-link">说说你对React Router的理解？常用的Router组件有哪些？</a></li><li><a href="/react/说说你对Redux的理解.html" class="sidebar-link">说说你对Redux的理解？其工作原理？</a></li><li><a href="/react/说说对React中受控组件和非受控组件的理解.html" class="sidebar-link">说说对React中受控组件和非受控组件的理解？应用场景？</a></li><li><a href="/react/说说对React中类组件和函数组件的理解.html" class="sidebar-link">说说对React中类组件和函数组件的理解？有什么区别？</a></li><li><a href="/react/说说对Redux中间件的理解.html" class="sidebar-link">说说对Redux中间件的理解？常用的中间件有哪些？实现原理？</a></li><li><a href="/react/说说对State和Props的理解.html" class="sidebar-link">说说对 State 和 Props的理解，有什么区别？</a></li><li><a href="/react/题聊聊setState的用法.html" class="sidebar-link">聊聊setState的用法</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="你要的-react-面试知识点-都在这了"><a href="#你要的-react-面试知识点-都在这了" class="header-anchor">#</a> 你要的 React 面试知识点，都在这了</h2> <blockquote><p><a href="https://mp.weixin.qq.com/s/Z1dAH38DWySKneqL-2zARg" target="_blank" rel="noopener noreferrer">https://mp.weixin.qq.com/s/Z1dAH38DWySKneqL-2zARg<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <p>React是流行的javascript框架之一，在2019年及以后将会更加流行。React于2013年首次发布，多年来广受欢迎。它是一个声明性的、基于组件的、用于构建用户界面的高效javascript库。</p> <p>以下是面试前必须了解的话题。</p> <ul><li>什么是声明式编程</li> <li>声明式编程 vs 命令式编程</li> <li>什么是函数式编程</li> <li>什么是组件设计模式</li> <li>React 是什么</li> <li>React 和 Angular 有什么不同</li> <li>什么是虚拟DOM及其工作原理</li> <li>什么是JSX</li> <li>组件和不同类型</li> <li>Props 和 State</li> <li>什么是 PropTypes</li> <li>如何更新状态和不更新状态</li> <li>组件生命周期方法</li> <li>超越继承的组合</li> <li>如何在React中应用样式</li> <li>什么是Redux及其工作原理</li> <li>什么是React路由器及其工作原理</li> <li>什么是错误边界</li> <li>什么是 Fragments</li> <li>什么是传送门(Portals)</li> <li>什么是 Context</li> <li>什么是 Hooks</li> <li>如何提高性能</li> <li>如何在重新加载页面时保留数据</li> <li>如何从React中调用API</li> <li>总结</li></ul> <h3 id="什么是声明式编程"><a href="#什么是声明式编程" class="header-anchor">#</a> 什么是声明式编程</h3> <p>声明式编程是一种编程范式，它关注的是你<strong>要做什么</strong>，而不是<strong>如何做</strong>。它表达逻辑而不显式地定义步骤。这意味着我们需要根据逻辑的计算来声明要显示的组件。它没有描述控制流步骤。声明式编程的例子有HTML、SQL等</p> <p><strong>HTML file</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// HTML
+&lt;div&gt;
+  &lt;p&gt;Declarative Programming&lt;/p&gt;
+&lt;/div&gt;
+</code></pre></div><p><strong>SQL file</strong></p> <div class="language- extra-class"><pre class="language-text"><code>select * from studens where firstName = 'declarative';
+</code></pre></div><h3 id="声明式编程-vs-命令式编程"><a href="#声明式编程-vs-命令式编程" class="header-anchor">#</a> 声明式编程 vs 命令式编程</h3> <p>声明式编程的编写方式描述了应该做什么，而命令式编程描述了如何做。在声明式编程中，让编译器决定如何做事情。声明性程序很容易推理，因为代码本身描述了它在做什么。</p> <p>下面是一个例子，数组中的每个元素都乘以 <code>2</code>，我们使用声明式<code>map</code>函数，让编译器来完成其余的工作，而使用命令式，需要编写所有的流程步骤。</p> <div class="language- extra-class"><pre class="language-text"><code>const numbers = [1,2,3,4,5];
+
+// 声明式
+const doubleWithDec = numbers.map(number =&gt; number * 2);
+
+console.log(doubleWithDec)
+
+// 命令式
+const doubleWithImp = [];
+for(let i=0; i&lt;numbers.length; i++) {
+    const numberdouble = numbers[i] * 2;
+    doubleWithImp.push(numberdouble)
+}
+
+console.log(doubleWithImp)
+</code></pre></div><h3 id="什么是函数式编程"><a href="#什么是函数式编程" class="header-anchor">#</a> 什么是函数式编程</h3> <p>函数式编程是声明式编程的一部分。javascript中的函数是第一类公民，这意味着函数是数据，你可以像保存变量一样在应用程序中保存、检索和传递这些函数。</p> <p>函数式编程有些核心的概念，如下：</p> <ul><li>不可变性(Immutability)</li> <li>纯函数(Pure Functions)</li> <li>数据转换(Data Transformations)</li> <li>高阶函数 (Higher-Order Functions)</li> <li>递归</li> <li>组合</li></ul> <h4 id="不可变性-immutability"><a href="#不可变性-immutability" class="header-anchor">#</a> 不可变性(Immutability)</h4> <p>不可变性意味着不可改变。 在函数式编程中，你无法更改数据，也不能更改。 如果要改变或更改数据，则必须复制数据副本来更改。</p> <p>例如，这是一个<strong>student</strong>对象和<code>changeName</code>函数，如果要更改学生的名称，则需要先复制 student 对象，然后返回新对象。</p> <p>在javascript中，函数参数是对实际数据的引用，你不应该使用 <strong>student.firstName =“testing11”</strong>，这会改变实际的<code>student</code> 对象，应该使用<strong>Object.assign</strong>复制对象并返回新对象。</p> <div class="language- extra-class"><pre class="language-text"><code>let student = {
+    firstName: &quot;testing&quot;,
+    lastName: &quot;testing&quot;,
+    marks: 500
+}
+
+function changeName(student) {
+    // student.firstName = &quot;testing11&quot; //should not do it
+    let copiedStudent = Object.assign({}, student);
+    copiedStudent.firstName = &quot;testing11&quot;;
+    return copiedStudent;
+}
+
+console.log(changeName(student));
+
+console.log(student);
+</code></pre></div><h4 id="纯函数"><a href="#纯函数" class="header-anchor">#</a> 纯函数</h4> <p>纯函数是始终接受一个或多个参数并计算参数并返回数据或函数的函数。 它没有副作用，例如设置全局状态，更改应用程序状态，它总是将参数视为不可变数据。</p> <p>我想使用 <strong>appendAddress</strong> 的函数向<code>student</code>对象添加一个地址。 如果使用非纯函数，它没有参数，直接更改 <code>student</code> 对象来更改全局状态。</p> <p>使用纯函数，它接受参数，基于参数计算，返回一个新对象而不修改参数。</p> <div class="language- extra-class"><pre class="language-text"><code>let student = {
+    firstName: &quot;testing&quot;,
+    lastName: &quot;testing&quot;,
+    marks: 500
+}
+
+// 非纯函数
+function appendAddress() {
+    student.address = {streetNumber:&quot;0000&quot;, streetName: &quot;first&quot;, city:&quot;somecity&quot;};
+}
+
+console.log(appendAddress());
+
+// 纯函数
+function appendAddress(student) {
+    let copystudent = Object.assign({}, student);
+    copystudent.address = {streetNumber:&quot;0000&quot;, streetName: &quot;first&quot;, city:&quot;somecity&quot;};
+    return copystudent;
+}
+
+console.log(appendAddress(student));
+
+console.log(student);
+</code></pre></div><h4 id="数据转换"><a href="#数据转换" class="header-anchor">#</a> 数据转换</h4> <p>我们讲了很多关于不可变性的内容，如果数据是不可变的，我们如何改变数据。如上所述，我们总是生成原始数据的转换副本，而不是直接更改原始数据。</p> <p>再介绍一些 javascript内置函数，当然还有很多其他的函数，这里有一些例子。所有这些函数都不改变现有的数据，而是返回新的数组或对象。</p> <div class="language- extra-class"><pre class="language-text"><code>let cities = [&quot;irving&quot;, &quot;lowell&quot;, &quot;houston&quot;];
+
+// we can get the comma separated list
+console.log(cities.join(','))
+// irving,lowell,houston
+
+// if we want to get cities start with i
+const citiesI = cities.filter(city =&gt; city[0] === &quot;i&quot;);
+console.log(citiesI)
+// [ 'irving' ]
+
+// if we want to capitalize all the cities
+const citiesC = cities.map(city =&gt; city.toUpperCase());
+console.log(citiesC)
+// [ 'IRVING', 'LOWELL', 'HOUSTON' ]
+</code></pre></div><h4 id="高阶函数"><a href="#高阶函数" class="header-anchor">#</a> 高阶函数</h4> <p>高阶函数是将函数作为参数或返回函数的函数，或者有时它们都有。 这些高阶函数可以操纵其他函数。</p> <p><code>Array.map，Array.filter和Array.reduce</code>是高阶函数，因为它们将函数作为参数。</p> <div class="language- extra-class"><pre class="language-text"><code>const numbers = [10,20,40,50,60,70,80]
+
+const out1 = numbers.map(num =&gt; num * 100);
+console.log(out1);
+// [ 1000, 2000, 4000, 5000, 6000, 7000, 8000 ]
+
+const out2 = numbers.filter(num =&gt; num &gt; 50);
+console.log(out2);
+// [ 60, 70, 80 ]
+
+const out3 = numbers.reduce((out,num) =&gt; out + num);
+console.log(out3);
+// 330
+</code></pre></div><p>下面是另一个名为<code>isPersonOld</code>的高阶函数示例，该函数接受另外两个函数，分别是 <code>message</code>和<code>isYoung</code> 。</p> <div class="language- extra-class"><pre class="language-text"><code>const isYoung = age =&gt; age &lt; 25;
+
+const message = msg =&gt; &quot;He is &quot;+ msg;
+
+function isPersonOld(age, isYoung, message) {
+    const returnMessage = isYoung(age)?message(&quot;young&quot;):message(&quot;old&quot;);
+    return returnMessage;
+}
+
+// passing functions as an arguments
+console.log(isPersonOld(13,isYoung,message))
+// He is young
+</code></pre></div><h4 id="递归"><a href="#递归" class="header-anchor">#</a> 递归</h4> <p>递归是一种函数在满足一定条件之前调用自身的技术。只要可能，最好使用递归而不是循环。你必须注意这一点，浏览器不能处理太多递归和抛出错误。</p> <p>下面是一个演示递归的例子，在这个递归中，打印一个类似于楼梯的名称。我们也可以使用<code>for</code>循环，但只要可能，我们更喜欢递归。</p> <div class="language- extra-class"><pre class="language-text"><code>function printMyName(name, count) {
+    if(count &lt;= name.length) {
+        console.log(name.substring(0,count));
+        printMyName(name, ++count);
+    }
+}
+
+console.log(printMyName(&quot;Bhargav&quot;, 1));
+
+/*
+B
+Bh
+Bha
+Bhar
+Bharg
+Bharga
+Bhargav
+*/
+
+// withotu recursion
+var name = &quot;Bhargav&quot;
+var output = &quot;&quot;;
+for(let i=0; i&lt;name.length; i++) {
+    output = output + name[i];
+    console.log(output);
+}
+</code></pre></div><h4 id="组合"><a href="#组合" class="header-anchor">#</a> 组合</h4> <p>在React中，我们将功能划分为小型可重用的纯函数，我们必须将所有这些可重用的函数放在一起，最终使其成为产品。 将所有较小的函数组合成更大的函数，最终，得到一个应用程序，这称为<strong>组合</strong>。</p> <p>实现组合有许多不同方法。 我们从Javascript中了解到的一种常见方法是链接。 链接是一种使用<strong>点</strong>表示法调用前一个函数的返回值的函数的方法。</p> <p>这是一个例子。 我们有一个<code>name</code>，如果<code>firstName</code>和<code>lastName</code>大于5个单词的大写字母，刚返回，并且打印名称的名称和长度。</p> <div class="language- extra-class"><pre class="language-text"><code>const name = &quot;Bhargav Bachina&quot;;
+
+const output = name.split(&quot; &quot;)
+    .filter(name =&gt; name.length &gt; 5)
+    .map(val =&gt; {
+    val = val.toUpperCase();
+    console.log(&quot;Name:::::&quot;+val);
+    console.log(&quot;Count::::&quot;+val.length);
+    return val;
+});
+
+console.log(output)
+/*
+Name:::::BHARGAV
+Count::::7
+Name:::::BACHINA
+Count::::7
+[ 'BHARGAV', 'BACHINA' ]
+*/
+</code></pre></div><p>在React中，我们使用了不同于链接的方法，因为如果有30个这样的函数，就很难进行链接。这里的目的是将所有更简单的函数组合起来生成一个更高阶的函数。</p> <div class="language- extra-class"><pre class="language-text"><code>const name = compose(
+    splitmyName,
+    countEachName,
+    comvertUpperCase,
+    returnName
+)
+
+console.log(name);
+</code></pre></div><h3 id="什么是-react"><a href="#什么是-react" class="header-anchor">#</a> 什么是 React</h3> <p>React是一个简单的javascript UI库，用于构建高效、快速的用户界面。它是一个轻量级库，因此很受欢迎。它遵循组件设计模式、声明式编程范式和函数式编程概念，以使前端应用程序更高效。它使用虚拟DOM来有效地操作DOM。它遵循从高阶组件到低阶组件的单向数据流。</p> <h3 id="react-与-angular-有何不同"><a href="#react-与-angular-有何不同" class="header-anchor">#</a> React 与 Angular 有何不同？</h3> <p>Angular是一个成熟的MVC框架，带有很多特定的特性，比如服务、指令、模板、模块、解析器等等。React是一个非常轻量级的库，它只关注MVC的视图部分。</p> <p>Angular遵循两个方向的数据流，而React遵循从上到下的单向数据流。React在开发特性时给了开发人员很大的自由，例如，调用API的方式、路由等等。我们不需要包括路由器库，除非我们需要它在我们的项目。</p> <h3 id="什么是virtual-dom及其工作原理"><a href="#什么是virtual-dom及其工作原理" class="header-anchor">#</a> 什么是Virtual DOM及其工作原理</h3> <p>React 使用 Virtual DOM 来更新真正的 DOM，从而提高效率和速度。 我们来详细讨论这些。</p> <h4 id="什么是virtual-dom"><a href="#什么是virtual-dom" class="header-anchor">#</a> 什么是Virtual DOM</h4> <p>浏览器遵循HTML指令来构造文档对象模型(DOM)。当浏览器加载HTML并呈现用户界面时，HTML文档中的所有元素都变成DOM元素。</p> <p>DOM是从根元素开始的元素层次结构。例如，看看下面的HTML。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;div&gt;
+    &lt;div&gt;
+        &lt;h1&gt;This is heading&lt;/h1&gt;
+        &lt;p&gt;this is paragraph&lt;/p&gt;
+        &lt;div&gt;
+            &lt;p&gt;This is just a paragraon&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;h1&gt;This is heading&lt;/h1&gt;
+        &lt;p&gt;this is paragraph&lt;/p&gt;
+        &lt;div&gt;
+            &lt;p&gt;This is just a paragraon&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;h1&gt;This is heading&lt;/h1&gt;
+        &lt;p&gt;this is paragraph&lt;/p&gt;
+        &lt;div&gt;
+            &lt;p&gt;This is just a paragraon&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div><p>当在浏览器中加载这个HTML时，所有这些HTML元素都被转换成DOM元素，如下所示</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <p>当涉及到SPA应用程序时，首次加载<strong>index.html</strong>，并在<strong>index.html</strong>本身中加载更新后的数据或另一个html。当用户浏览站点时，我们使用新内容更新相同的index.html。每当DOM发生更改时，浏览器都需要重新计算CSS、进行布局并重新绘制web页面。</p> <p>React 使用 Virtual DOM 有效地重建 DOM。 对于我们来说，这使得DOM操作的一项非常复杂和耗时的任务变得更加容易。 React从开发人员那里抽象出所有这些，以便在Virtual DOM的帮助下构建高效的UI。</p> <h4 id="虚拟dom是如何工作的"><a href="#虚拟dom是如何工作的" class="header-anchor">#</a> 虚拟DOM是如何工作的</h4> <p>虚拟DOM只不过是真实 DOM 的 javascript对象表示。 与更新真实 DOM 相比，更新 javascript 对象更容易，更快捷。 考虑到这一点，让我们看看它是如何工作的。</p> <p>React将整个DOM副本保存为虚拟DOM</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <p>每当有更新时，它都会维护两个虚拟DOM，以比较之前的状态和当前状态，并确定哪些对象已被更改。 例如，段落文本更改为更改。</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <p>现在，它通过比较两个虚拟DOM 差异，并将这些变化更新到实际DOM</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <p>一旦真正的DOM更新，它也会更新UI</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <h3 id="什么是-jsx"><a href="#什么是-jsx" class="header-anchor">#</a> 什么是 JSX</h3> <p>JSX是javascript的语法扩展。它就像一个拥有javascript全部功能的模板语言。它生成React元素，这些元素将在DOM中呈现。React建议在组件使用JSX。在JSX中，我们结合了javascript和HTML，并生成了可以在DOM中呈现的react元素。</p> <p>下面是JSX的一个例子。我们可以看到如何将javascript和HTML结合起来。如果HTML中包含任何动态变量，我们应该使用表达式<code>{}</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>import React from 'react';
+
+export const Header = () =&gt; {
+
+    const heading = 'TODO App'
+
+    return(
+        &lt;div style={{backgroundColor:'orange'}}&gt;
+            &lt;h1&gt;{heading}&lt;/h1&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre></div><p><strong>代码部署后可能存在的BUG没法实时知道，事后为了解决这些BUG，花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 Fundebug。</strong></p> <h3 id="组件和不同类型"><a href="#组件和不同类型" class="header-anchor">#</a> 组件和不同类型</h3> <p>React 中一切都是组件。 我们通常将应用程序的整个逻辑分解为小的单个部分。 我们将每个单独的部分称为组件。 通常，组件是一个javascript函数，它接受输入，处理它并返回在UI中呈现的React元素。</p> <p>在React中有不同类型的组件。让我们详细看看。</p> <h4 id="函数-无状态-展示组件"><a href="#函数-无状态-展示组件" class="header-anchor">#</a> 函数/无状态/展示组件</h4> <p>函数或无状态组件是一个纯函数，它可接受接受参数，并返回react元素。这些都是没有任何副作用的纯函数。这些组件没有状态或生命周期方法，这里有一个例子。</p> <div class="language- extra-class"><pre class="language-text"><code>import React from 'react';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+
+export const Header = () =&gt; {
+    return(
+        &lt;Jumbotron style={{backgroundColor:'orange'}}&gt;
+            &lt;h1&gt;TODO App&lt;/h1&gt;
+        &lt;/Jumbotron&gt;
+    )
+}
+</code></pre></div><h4 id="类-有状态组件"><a href="#类-有状态组件" class="header-anchor">#</a> 类/有状态组件</h4> <p>类或有状态组件具有状态和生命周期方可能通过<code>setState()</code>方法更改组件的状态。类组件是通过扩展React创建的。它在构造函数中初始化，也可能有子组件,这里有一个例子。</p> <div class="language- extra-class"><pre class="language-text"><code>import React from 'react';
+import '../App.css';
+import { ToDoForm } from './todoform';
+import { ToDolist } from './todolist';
+
+export class Dashboard extends React.Component {
+
+  constructor(props){
+    super(props);
+
+    this.state = {
+
+    }
+  }
+
+  render() {
+    return (
+      &lt;div className=&quot;dashboard&quot;&gt; 
+          &lt;ToDoForm /&gt;
+          &lt;ToDolist /&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre></div><h4 id="受控组件"><a href="#受控组件" class="header-anchor">#</a> 受控组件</h4> <p>受控组件是在 React 中处理输入表单的一种技术。表单元素通常维护它们自己的状态，而react则在组件的状态属性中维护状态。我们可以将两者结合起来控制输入表单。这称为受控组件。因此，在受控组件表单中，数据由React组件处理。</p> <p>这里有一个例子。当用户在 todo 项中输入名称时，调用一个javascript函数<code>handleChange</code>捕捉每个输入的数据并将其放入状态，这样就在 <code>handleSubmit</code>中的使用数据。</p> <div class="language- extra-class"><pre class="language-text"><code>import React from 'react';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+export class ToDoForm extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {value: ''};
+
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event) {
+      this.setState({value: event.target.value});
+    }
+
+    handleSubmit(event) {
+      alert('A name was submitted: ' + this.state.value);
+      event.preventDefault();
+    }
+
+    render() {
+      return (
+          &lt;div className=&quot;todoform&quot;&gt;
+            &lt;Form&gt;
+                &lt;Form.Group as={Row} controlId=&quot;formHorizontalEmail&quot;&gt;
+                    &lt;Form.Label column sm={2}&gt;
+                    &lt;span className=&quot;item&quot;&gt;Item&lt;/span&gt;
+                    &lt;/Form.Label&gt;
+                    &lt;Col sm={5}&gt;
+                        &lt;Form.Control type=&quot;text&quot; placeholder=&quot;Todo Item&quot; /&gt;
+                    &lt;/Col&gt;
+                    &lt;Col sm={5}&gt;
+                        &lt;Button variant=&quot;primary&quot; type=&quot;submit&quot;&gt;Add&lt;/Button&gt;
+                    &lt;/Col&gt;
+                &lt;/Form.Group&gt;
+            &lt;/Form&gt;
+         &lt;/div&gt;
+      );
+    }
+  }
+</code></pre></div><h4 id="非受控组件"><a href="#非受控组件" class="header-anchor">#</a> 非受控组件</h4> <p>大多数情况下，建议使用受控组件。有一种称为非受控组件的方法可以通过使用<code>Ref</code>来处理表单数据。在非受控组件中，<code>Ref</code>用于直接从<code>DOM</code>访问表单值，而不是事件处理程序。</p> <p>我们使用<code>Ref</code>构建了相同的表单，而不是使用React状态。 我们使用<code>React.createRef()</code> 定义<code>Ref</code>并传递该输入表单并直接从<code>handleSubmit</code>方法中的<code>DOM</code>访问表单值。</p> <div class="language- extra-class"><pre class="language-text"><code>import React from 'react';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+export class ToDoForm extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {value: ''};
+      this.input = React.createRef();
+
+      this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit(event) {
+      alert('A name was submitted: ' + this.input.current.value);
+      event.preventDefault();
+    }
+
+    render() {
+      return (
+          &lt;div className=&quot;todoform&quot;&gt;
+            &lt;Form&gt;
+                &lt;Form.Group as={Row} controlId=&quot;formHorizontalEmail&quot;&gt;
+                    &lt;Form.Label column sm={2}&gt;
+                    &lt;span className=&quot;item&quot;&gt;Item&lt;/span&gt;
+                    &lt;/Form.Label&gt;
+                    &lt;Col sm={5}&gt;
+                        &lt;Form.Control type=&quot;text&quot; placeholder=&quot;Todo Item&quot; ref={this.input}/&gt;
+                    &lt;/Col&gt;
+                    &lt;Col sm={5}&gt;
+                        &lt;Button variant=&quot;primary&quot; onClick={this.handleSubmit} type=&quot;submit&quot;&gt;Add&lt;/Button&gt;
+                    &lt;/Col&gt;
+                &lt;/Form.Group&gt;
+            &lt;/Form&gt;
+         &lt;/div&gt;
+      );
+    }
+  }
+</code></pre></div><h4 id="容器组件"><a href="#容器组件" class="header-anchor">#</a> 容器组件</h4> <p>容器组件是处理获取数据、订阅 redux 存储等的组件。它们包含展示组件和其他容器组件，但是里面从来没有html。</p> <h4 id="高阶组件"><a href="#高阶组件" class="header-anchor">#</a> 高阶组件</h4> <p>高阶组件是将组件作为参数并生成另一个组件的组件。 Redux <code>connect</code>是高阶组件的示例。 这是一种用于生成可重用组件的强大技术。</p> <h3 id="props-和-state"><a href="#props-和-state" class="header-anchor">#</a> Props 和 State</h3> <p><strong>Props</strong> 是只读属性，传递给组件以呈现UI和状态，我们可以随时间更改组件的输出。</p> <p>下面是一个类组件的示例，它在构造函数中定义了<code>props</code>和<code>state</code>，每当使用<code>this.setState()</code> 修改状态时，将再次调用 <code>render( )</code> 函数来更改UI中组件的输出。</p> <div class="language- extra-class"><pre class="language-text"><code>import React from 'react';
+import '../App.css';
+
+export class Dashboard extends React.Component {
+
+  constructor(props){
+    super(props);
+
+    this.state = {
+        name: &quot;some name&quot;
+    }
+  }
+
+  render() {
+
+    // reading state
+    const name = this.state.name;
+
+    //reading props
+    const address = this.props.address;
+
+    return (
+      &lt;div className=&quot;dashboard&quot;&gt; 
+          {name}
+          {address}
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre></div><h3 id="什么是proptypes"><a href="#什么是proptypes" class="header-anchor">#</a> 什么是PropTypes</h3> <p>随着时间的推移，应用程序会变得越来越大，因此类型检查非常重要。<code>PropTypes</code>为组件提供类型检查，并为其他开发人员提供很好的文档。如果react项目不使用 Typescript，建议为组件添加 <code>PropTypes</code>。</p> <p>如果组件没有收到任何 props，我们还可以为每个组件定义要显示的默认 props。这里有一个例子。<code>UserDisplay</code>有三个 prop:<code>name</code>、<code>address</code>和<code>age</code>，我们正在为它们定义默认的props 和 prop类型。</p> <div class="language- extra-class"><pre class="language-text"><code>import React from 'react';
+import PropTypes from 'prop-types';
+
+export const UserDisplay = ({name, address, age}) =&gt; {
+
+    UserDisplay.defaultProps = {
+        name: 'myname',
+        age: 100,
+        address: &quot;0000 onestreet&quot;
+    };
+
+    return (
+        &lt;&gt;
+            &lt;div&gt;
+                &lt;div class=&quot;label&quot;&gt;Name:&lt;/div&gt;
+                &lt;div&gt;{name}&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;div class=&quot;label&quot;&gt;Address:&lt;/div&gt;
+                &lt;div&gt;{address}&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;div class=&quot;label&quot;&gt;Age:&lt;/div&gt;
+                &lt;div&gt;{age}&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/&gt;
+    )
+}
+
+UserDisplay.propTypes = {
+    name: PropTypes.string.isRequired,
+    address: PropTypes.objectOf(PropTypes.string),
+    age: PropTypes.number.isRequired
+}
+复制代码
+</code></pre></div><h3 id="如何更新状态以及如何不更新"><a href="#如何更新状态以及如何不更新" class="header-anchor">#</a> 如何更新状态以及如何不更新</h3> <p>你不应该直接修改状态。可以在构造函数中定义状态值。直接使用状态不会触发重新渲染。React 使用<code>this.setState()</code>时合并状态。</p> <div class="language- extra-class"><pre class="language-text"><code>//  错误方式
+this.state.name = &quot;some name&quot;
+//  正确方式
+this.setState({name:&quot;some name&quot;})
+</code></pre></div><p>使用<code>this.setState()</code>的第二种形式总是更安全的，因为更新的props和状态是异步的。这里，我们根据这些 props 更新状态。</p> <div class="language- extra-class"><pre class="language-text"><code>// 错误方式
+this.setState({
+    timesVisited: this.state.timesVisited + this.props.count
+})
+// 正确方式
+this.setState((state, props) =&gt; {
+    timesVisited: state.timesVisited + props.count
+});
+</code></pre></div><h3 id="组件生命周期方法"><a href="#组件生命周期方法" class="header-anchor">#</a> 组件生命周期方法</h3> <p>组件在进入和离开DOM时要经历一系列生命周期方法，下面是这些生命周期方法。</p> <h4 id="componentwillmount"><a href="#componentwillmount" class="header-anchor">#</a> componentWillMount()</h4> <p>在渲染前调用,在客户端也在服务端，它只发生一次。</p> <h4 id="componentdidmount"><a href="#componentdidmount" class="header-anchor">#</a> componentDidMount()</h4> <p>在第一次渲染后调用，只在客户端。之后组件已经生成了对应的DOM结构，可以通过<code>this.getDOMNode()</code>来进行访问。 如果你想和其他JavaScript框架一起使用，可以在这个方法中调用<code>setTimeout</code>, <code>setInterval</code>或者发送AJAX请求等操作(防止异部操作阻塞UI)。</p> <h4 id="componentwillreceiveprops"><a href="#componentwillreceiveprops" class="header-anchor">#</a> componentWillReceiveProps()</h4> <p>在组件接收到一个新的 prop (更新后)时被调用。这个方法在初始化render时不会被调用。</p> <h4 id="shouldcomponentupdate"><a href="#shouldcomponentupdate" class="header-anchor">#</a> shouldComponentUpdate()</h4> <p>返回一个布尔值。在组件接收到新的<code>props</code>或者<code>state</code>时被调用。在初始化时或者使用<code>forceUpdate</code>时不被调用。 可以在你确认不需要更新组件时使用。</p> <h4 id="componentwillupdate"><a href="#componentwillupdate" class="header-anchor">#</a> componentWillUpdate()</h4> <p>在组件接收到新的<code>props</code>或者<code>state</code>但还没有<code>render</code>时被调用。在初始化时不会被调用。</p> <h4 id="componentdidupdate"><a href="#componentdidupdate" class="header-anchor">#</a> componentDidUpdate()</h4> <p>在组件完成更新后立即调用。在初始化时不会被调用。</p> <h4 id="componentwillunmount"><a href="#componentwillunmount" class="header-anchor">#</a> componentWillUnMount()</h4> <p>组件从 DOM 中移除的时候立刻被调用。</p> <h4 id="getderivedstatefromerror"><a href="#getderivedstatefromerror" class="header-anchor">#</a> getDerivedStateFromError()</h4> <p>这个生命周期方法在<strong>ErrorBoundary</strong>类中使用。实际上，如果使用这个生命周期方法，任何类都会变成<code>ErrorBoundary</code>。这用于在组件树中出现错误时呈现回退UI，而不是在屏幕上显示一些奇怪的错误。</p> <h4 id="componentdidcatch"><a href="#componentdidcatch" class="header-anchor">#</a> componentDidCatch()</h4> <p>这个生命周期方法在ErrorBoundary类中使用。实际上，如果使用这个生命周期方法，任何类都会变成ErrorBoundary。这用于在组件树中出现错误时记录错误。</p> <h3 id="超越继承的组合"><a href="#超越继承的组合" class="header-anchor">#</a> 超越继承的组合</h3> <p>在React中，我们总是使用组合而不是继承。我们已经在函数式编程部分讨论了什么是组合。这是一种结合简单的可重用函数来生成高阶组件的技术。下面是一个组合的例子，我们在 dashboard 组件中使用两个小组件<code>todoForm</code>和<code>todoList</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>import React from 'react';
+import '../App.css';
+import { ToDoForm } from './todoform';
+import { ToDolist } from './todolist';
+
+export class Dashboard extends React.Component {
+
+  render() {
+    return (
+      &lt;div className=&quot;dashboard&quot;&gt; 
+          &lt;ToDoForm /&gt;
+          &lt;ToDolist /&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre></div><h3 id="如何在react中应用样式"><a href="#如何在react中应用样式" class="header-anchor">#</a> 如何在React中应用样式</h3> <p>将样式应用于React组件有三种方法。</p> <h4 id="外部样式表"><a href="#外部样式表" class="header-anchor">#</a> 外部样式表</h4> <p>在此方法中，你可以将外部样式表导入到组件使用类中。 但是你应该使用<code>className</code>而不是<code>class</code>来为React元素应用样式, 这里有一个例子。</p> <div class="language- extra-class"><pre class="language-text"><code>import React from 'react';
+import './App.css';
+import { Header } from './header/header';
+import { Footer } from './footer/footer';
+import { Dashboard } from './dashboard/dashboard';
+import { UserDisplay } from './userdisplay';
+
+function App() {
+  return (
+    &lt;div className=&quot;App&quot;&gt;
+      &lt;Header /&gt;
+      &lt;Dashboard /&gt;
+      &lt;UserDisplay /&gt;
+      &lt;Footer /&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre></div><h4 id="内联样式"><a href="#内联样式" class="header-anchor">#</a> 内联样式</h4> <p>在这个方法中，我们可以直接将 <code>props</code> 传递给HTML元素，属性为<code>style</code>。这里有一个例子。这里需要注意的重要一点是，我们将javascript对象传递给style，这就是为什么我们使用 <code>backgroundColor</code> 而不是CSS方法<code>backbackground -color</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>import React from 'react';
+
+export const Header = () =&gt; {
+
+    const heading = 'TODO App'
+
+    return(
+        &lt;div style={{backgroundColor:'orange'}}&gt;
+            &lt;h1&gt;{heading}&lt;/h1&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre></div><h4 id="定义样式对象并使用它"><a href="#定义样式对象并使用它" class="header-anchor">#</a> 定义样式对象并使用它</h4> <p>因为我们将javascript对象传递给<code>style</code>属性，所以我们可以在组件中定义一个<code>style</code>对象并使用它。下面是一个示例，你也可以将此对象作为 <code>props</code> 传递到组件树中。</p> <div class="language- extra-class"><pre class="language-text"><code>import React from 'react';
+
+const footerStyle = {
+    width: '100%',
+    backgroundColor: 'green',
+    padding: '50px',
+    font: '30px',
+    color: 'white',
+    fontWeight: 'bold'
+}
+
+export const Footer = () =&gt; {
+    return(
+        &lt;div style={footerStyle}&gt;
+            All Rights Reserved 2019
+        &lt;/div&gt;
+    )
+}
+</code></pre></div><h3 id="什么是redux及其工作原理"><a href="#什么是redux及其工作原理" class="header-anchor">#</a> 什么是Redux及其工作原理</h3> <p>Redux 是 React的一个状态管理库，它基于flux。 Redux简化了React中的单向数据流。 Redux将状态管理完全从React中抽象出来。</p> <h4 id="它是如何工作的"><a href="#它是如何工作的" class="header-anchor">#</a> 它是如何工作的</h4> <p>在React中，组件连接到 redux ，如果要访问 redux，需要派出一个包含 <code>id</code>和负载(payload) 的 <code>action</code>。action 中的 <code>payload</code> 是可选的，action 将其转发给 Reducer。</p> <p>当<code>reducer</code>收到<code>action</code>时，通过 <code>swithc...case</code> 语法比较 <code>action</code> 中<code>type</code>。 匹配时，更新对应的内容返回新的 <code>state</code>。</p> <p>当<code>Redux</code>状态更改时，连接到<code>Redux</code>的组件将接收新的状态作为<code>props</code>。当组件接收到这些<code>props</code>时，它将进入更新阶段并重新渲染 UI。</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <h4 id="redux-循环细节"><a href="#redux-循环细节" class="header-anchor">#</a> Redux 循环细节</h4> <p>让我们详细看看整个redux 循环细节。</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <p><strong>Action</strong>: Action 只是一个简单的json对象，<strong>type</strong> 和有<strong>payload</strong>作为键。<strong>type</strong> 是必须要有的，<strong>payload</strong>是可选的。下面是一个 action 的例子。</p> <div class="language- extra-class"><pre class="language-text"><code>// action
+
+{ 
+  type:&quot;SEND_EMAIL&quot;, 
+  payload: data
+};
+</code></pre></div><p><strong>Action Creators</strong>：这些是创建<code>Actions</code>的函数，因此我们在派发<code>action</code>时不必在组件中手动编写每个 <code>action</code>。 以下是 action creator 的示例。</p> <div class="language- extra-class"><pre class="language-text"><code>// action creator
+
+export function sendEamil(data) {
+    return { type:&quot;SEND_EMAIL&quot;, payload: data};
+}
+</code></pre></div><p><strong>Reducers</strong>：Reducers 是纯函数，它将 <code>action</code>和当前 <code>state</code> 作为参数,计算必要的逻辑并返回一个新的<code>state</code>。 这些 Reducers 没有任何副作用。 它不会改变 <code>state</code> 而是总是返回 <code>state</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>export default function emailReducer(state = [], action){
+
+  switch(action.type) {
+      case &quot;SEND_EMAIL&quot;:  return Object.assign({}, state, {
+       email: action.payload
+      });
+      default: return state;
+  }
+}
+</code></pre></div><h4 id="组件如何与-redux-进行连接"><a href="#组件如何与-redux-进行连接" class="header-anchor">#</a> 组件如何与 <code>redux</code> 进行连接</h4> <p><strong>mapStateToProps</strong>：此函数将<code>state</code>映射到 <code>props</code> 上，因此只要<code>state</code>发生变化，新 state 会重新映射到 <code>props</code>。 这是订阅<code>store</code>的方式。</p> <p><strong>mapDispatchToProps</strong>：此函数用于将 <code>action creators</code> 绑定到你的<code>props</code> 。以便我们可以在第<code>12</code>行中使用This . <code>props.actions.sendemail()</code>来派发一个动作。</p> <p><code>connect</code>和<code>bindActionCreators</code>来自 redux。 前者用于连接 store ，如第22行，后者用于将 action creators 绑定到你的 <code>props</code> ，如第20行。</p> <div class="language- extra-class"><pre class="language-text"><code>// import connect
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+
+// import action creators
+import * as userActions from '../../../actions/userActions';
+
+export class User extends React.Component {
+
+    handleSubmit() {
+        // dispatch an action
+        this.props.actions.sendEmail(this.state.email);
+    }
+
+}
+
+// you are mapping you state props
+const mapStateToProps = (state, ownProps) =&gt; ({user: state.user})
+// you are binding your action creators to your props
+const mapDispatchToProps = (dispatch) =&gt; ({actions: bindActionCreators(userActions, dispatch)})
+
+export default connect(mapStateToProps, mapDispatchToProps)(User);
+</code></pre></div><h3 id="什么是-react-router-dom-及其工作原理"><a href="#什么是-react-router-dom-及其工作原理" class="header-anchor">#</a> 什么是 React Router Dom 及其工作原理</h3> <p><code>react-router-dom</code>是应用程序中路由的库。 React库中没有路由功能，需要单独安装<code>react-router-dom</code>。</p> <p>react-router-dom 提供两个路由器<code>BrowserRouter</code>和<code>HashRoauter</code>。前者基于url的pathname段，后者基于hash段。</p> <div class="language- extra-class"><pre class="language-text"><code> 前者：http://127.0.0.1:3000/article/num1
+
+ 后者：http://127.0.0.1:3000/#/article/num1（不一定是这样，但#是少不了的）
+</code></pre></div><h4 id="react-router-dom-组件"><a href="#react-router-dom-组件" class="header-anchor">#</a> react-router-dom 组件</h4> <ul><li><code>BrowserRouter</code> 和 <code>HashRouter</code> 是路由器。</li> <li><code>Route</code> 用于路由匹配。</li> <li><code>Link</code> 组件用于在应用程序中创建链接。 它将在HTML中渲染为锚标记。</li> <li><code>NavLink</code>是突出显示当前活动链接的特殊链接。</li> <li><code>Switch</code> 不是必需的，但在组合路由时很有用。</li> <li><code>Redirect</code> 用于强制路由重定向</li></ul> <p>下面是组件中的<code>Link</code>、<code>NavLink</code>和<code>Redirect</code> 的例子</p> <div class="language- extra-class"><pre class="language-text"><code>// normal link
+&lt;Link to=&quot;/gotoA&quot;&gt;Home&lt;/Link&gt;
+
+// link which highlights currentlu active route with the given class name
+&lt;NavLink to=&quot;/gotoB&quot; activeClassName=&quot;active&quot;&gt;
+  React
+&lt;/NavLink&gt;
+
+// you can redirect to this url
+&lt;Redirect to=&quot;/gotoC&quot; /&gt;
+</code></pre></div><p>以下是 react router 组件的示例。 如果你查看下面的示例，我们将匹配路径并使用<code>Switch</code>和<code>Route</code>呈现相应的组件。</p> <div class="language- extra-class"><pre class="language-text"><code>import React from 'react'
+// import react router DOM elements
+import { Switch, Route, Redirect } from 'react-router-dom'
+import ComponentA from '../common/compa'
+import ComponentB from '../common/compb'
+import ComponentC from '../common/compc'
+import ComponentD from '../common/compd'
+import ComponentE from '../common/compe'
+
+
+const Layout = ({ match }) =&gt; {
+    return(
+        &lt;div className=&quot;&quot;&gt;
+            &lt;Switch&gt;
+                &lt;Route exact path={`${match.path}/gotoA`} component={ComponentA} /&gt;
+                &lt;Route path={`${match.path}/gotoB`} component={ComponentB} /&gt;
+                &lt;Route path={`${match.path}/gotoC`} component={ComponentC} /&gt;
+                &lt;Route path={`${match.path}/gotoD`} component={ComponentD} /&gt;
+                &lt;Route path={`${match.path}/gotoE`} component={ComponentE} /&gt;
+            &lt;/Switch&gt;
+        &lt;/div&gt;
+    )}
+
+export default Layout
+</code></pre></div><h3 id="什么是错误边界"><a href="#什么是错误边界" class="header-anchor">#</a> 什么是错误边界</h3> <p>在 React 中，我们通常有一个组件树。如果任何一个组件发生错误，它将破坏整个组件树。没有办法捕捉这些错误，我们可以用错误边界优雅地处理这些错误。</p> <p>错误边界有两个作用</p> <ul><li>如果发生错误，显示回退UI</li> <li>记录错误</li></ul> <p>下面是<code>ErrorBoundary</code>类的一个例子。如果类实现了 <code>getDerivedStateFromError</code>或<code>componentDidCatch</code> 这两个生命周期方法的任何一下，，那么这个类就会成为<strong>ErrorBoundary</strong>。前者返回<code>{hasError: true}</code>来呈现回退UI，后者用于记录错误。</p> <div class="language- extra-class"><pre class="language-text"><code>import React from 'react'
+
+export class ErrorBoundary extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = { hasError: false };
+    }
+
+    static getDerivedStateFromError(error) {
+      // Update state so the next render will show the fallback UI.
+      return { hasError: true };
+    }
+
+    componentDidCatch(error, info) {
+      // You can also log the error to an error reporting service
+      console.log('Error::::', error);
+    }
+
+    render() {
+      if (this.state.hasError) {
+        // You can render any custom fallback UI
+        return &lt;h1&gt;OOPS!. WE ARE LOOKING INTO IT.&lt;/h1&gt;;
+      }
+
+      return this.props.children; 
+    }
+  }
+</code></pre></div><p>以下是我们如何在其中一个组件中使用ErrorBoundary。使用ErrorBoundary类包裹 <code>ToDoForm</code>和<code>ToDoList</code>。 如果这些组件中发生任何错误，我们会记录错误并显示回退UI。</p> <div class="language- extra-class"><pre class="language-text"><code>import React from 'react';
+import '../App.css';
+import { ToDoForm } from './todoform';
+import { ToDolist } from './todolist';
+import { ErrorBoundary } from '../errorboundary';
+
+export class Dashboard extends React.Component {
+
+  render() {
+    return (
+      &lt;div className=&quot;dashboard&quot;&gt; 
+        &lt;ErrorBoundary&gt;
+          &lt;ToDoForm /&gt;
+          &lt;ToDolist /&gt;
+        &lt;/ErrorBoundary&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre></div><h3 id="什么是-fragments"><a href="#什么是-fragments" class="header-anchor">#</a> 什么是 Fragments</h3> <p>在React中，我们需要有一个父元素，同时从组件返回React元素。有时在DOM中添加额外的节点会很烦人。使用 <strong>Fragments</strong>，我们不需要在DOM中添加额外的节点。我们只需要用 <code>React.Fragment</code> 或才简写 <code>&lt;&gt;</code> 来包裹内容就行了。如下 所示：</p> <div class="language- extra-class"><pre class="language-text"><code> // Without Fragments   
+return (
+    &lt;div&gt;
+       &lt;CompoentA /&gt;
+       &lt;CompoentB /&gt;
+       &lt;CompoentC /&gt;
+    &lt;/div&gt;
+)
+
+// With Fragments   
+  return (
+    &lt;React.Fragment&gt;
+       &lt;CompoentA /&gt;
+       &lt;CompoentB /&gt;
+       &lt;CompoentC /&gt;
+    &lt;/React.Fragment&gt;
+  )
+
+  // shorthand notation Fragments   
+  return (
+    &lt;&gt;
+       &lt;CompoentA /&gt;
+       &lt;CompoentB /&gt;
+       &lt;CompoentC /&gt;
+    &lt;/&gt;
+  )
+复制代码
+</code></pre></div><h3 id="什么是传送门-portals"><a href="#什么是传送门-portals" class="header-anchor">#</a> 什么是传送门(Portals)</h3> <p>默认情况下，所有子组件都在UI上呈现，具体取决于组件层次结构。Portal 提供了一种将子节点渲染到存在于父组件以外的 DOM 节点的优秀的方案。</p> <p>这里有一个例子。默认情况下，父组件在DOM层次结构中有子组件。</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <p>我们可以将 <code>children</code> 组件移出<code>parent</code> 组件并将其附加 <strong>id</strong> 为 <code>someid</code> 的 Dom 节点下。</p> <p>首先，获取 id 为 someid，我们在constructor中创建一个元素div，将child附加到componentDidMount中的someRoot。 最后，我们在ReactDOM.createPortal（this.props.childen），domnode的帮助下将子节点传递给该特定DOM节点。</p> <p>首先，先获取 id 为<code>someid</code> DOM元素，接着在构造函数中创建一个元素div，在 <code>componentDidMount</code>方法中将 <code>someRoot</code> 放到 div 中 。 最后，通过<code>ReactDOM.createPortal(this.props.childen), domnode)</code>将 <code>children</code> 传递到对应的节点下。</p> <div class="language- extra-class"><pre class="language-text"><code>const someRoot = document.getElementById('someid');
+
+class Modal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.el = document.createElement('div');
+  }
+
+  componentDidMount() {
+    someRoot.appendChild(this.el);
+  }
+
+  componentWillUnmount() {
+    someRoot.removeChild(this.el);
+  }
+
+  render() {
+    return ReactDOM.createPortal(
+      this.props.children,
+      this.el,
+    );
+  }
+}
+</code></pre></div><p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <h3 id="什么是上下文"><a href="#什么是上下文" class="header-anchor">#</a> 什么是上下文</h3> <p>有时我们必须将<code>props</code> 传递给组件树，即使所有中间组件都不需要这些<code>props</code> 。上下文是一种传递<code>props</code> 的方法，而不用在每一层传递组件树。</p> <h3 id="什么是-hooks"><a href="#什么是-hooks" class="header-anchor">#</a> 什么是 Hooks</h3> <p>Hooks 是React版本16.8中的新功能。 请记住，我们不能在函数组件中使用<code>state</code> ，因为它们不是类组件。<strong>Hooks 让我们在函数组件中可以使用state 和其他功能。</strong></p> <p>目前没有重大变化，我们不必放弃类组件。</p> <p>Hook 不会影响你对 React 概念的理解。 恰恰相反，Hook 为已知的 React 概念提供了更直接的 API：props， state，context，refs 以及生命周期。稍后我们将看到，Hook 还提供了一种更强大的方式来组合他们。</p> <p>我们可以使用一些钩子，例如useState，useEffect，useContext，useReducer等。</p> <p>下面是 Hooks 的基本规则</p> <ul><li>Hooks 应该在外层使用，不应该在循环，条件或嵌套函数中使用</li> <li>Hooks 应该只在函数组件中使用。</li></ul> <p>让我们看一个例子来理解 hooks。 这是一个函数组件，它采用<code>props</code>并在UI上显示这些<code>props</code>。 在<code>useState</code>钩子的帮助下，我们将这个函数组件转换为有状态组件。 首先，我们在第5行定义状态，这相当于</p> <div class="language- extra-class"><pre class="language-text"><code>constructor(props) {
+ super(props);
+ this.state = {
+     name:'myname', age:10, address:'0000 one street'
+ }
+}
+</code></pre></div><p><code>useState</code>返回两个项，一个是<code>user</code>，另一个是<code>setUser</code>函数。 <code>user</code> 是一个可以在没有 <code>this</code>关键字的情况下直接使用的对象，<code>setUser</code>是一个可以用来设置用户点击第<code>21</code>行按钮的状态的函数，该函数等效于以下内容。</p> <div class="language- extra-class"><pre class="language-text"><code>this.setState({name:'name changed'})
+import React, { useState } from &quot;react&quot;;
+
+export const UserDisplay = ({ name, address, age }) =&gt; {
+    const [user, setUser] = useState({
+        name: &quot;myname&quot;,
+        age: 10,
+        address: &quot;0000 onestreet&quot;
+    });
+
+    return (
+        &lt;&gt;
+            &lt;div&gt;
+                &lt;div class=&quot;label&quot;&gt;Name:&lt;/div&gt;
+                &lt;div&gt;{user.name}&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;div class=&quot;label&quot;&gt;Address:&lt;/div&gt;
+                &lt;div&gt;{user.address}&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;div class=&quot;label&quot;&gt;Age:&lt;/div&gt;
+                &lt;div&gt;{user.age}&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;button onClick={() =&gt; setUser({ name: &quot;name changed&quot; })}&gt;
+                Click me
+            &lt;/button&gt;
+        &lt;/&gt;
+    );
+};
+复制代码
+</code></pre></div><h3 id="如何提高性能"><a href="#如何提高性能" class="header-anchor">#</a> 如何提高性能</h3> <p>我们可以通过多种方式提高应用性能，以下这些比较重要：</p> <ul><li>适当地使用<code>shouldComponentUpdate</code>生命周期方法。 它避免了子组件的不必要的渲染。 如果树中有100个组件，则不重新渲染整个组件树来提高应用程序性能。</li> <li>使用<code>create-react-app</code>来构建项目，这会创建整个项目结构，并进行大量优化。</li> <li>不可变性是提高性能的关键。不要对数据进行修改，而是始终在现有集合的基础上创建新的集合，以保持尽可能少的复制，从而提高性能。</li> <li>在显示列表或表格时始终使用 <code>Keys</code>，这会让 React 的更新速度更快</li> <li>代码分离是将代码插入到单独的文件中，只加载模块或部分所需的文件的技术。</li></ul> <h3 id="如何在重新加载页面时保留数据"><a href="#如何在重新加载页面时保留数据" class="header-anchor">#</a> 如何在重新加载页面时保留数据</h3> <p>单页应用程序首先在DOM中加载<code>index.html</code>，然后在用户浏览页面时加载内容，或者从同一<code>index.html</code>中的后端API获取任何数据。</p> <p>如果通过点击浏览器中的重新加载按钮重新加载页面<code>index.html</code>，整个React应用程序将重新加载，我们将丢失应用程序的状态。 如何保留应用状态？</p> <p>每当重新加载应用程序时，我们使用浏览器<code>localstorage</code>来保存应用程序的状态。我们将整个存储数据保存在<code>localstorage</code>中，每当有页面刷新或重新加载时，我们从<code>localstorage</code>加载状态。</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <h3 id="如何在react进行api调用"><a href="#如何在react进行api调用" class="header-anchor">#</a> 如何在React进行API调用</h3> <p>我们使用<code>redux-thunk</code>在React中调用API。因为<code>reduce</code>是纯函数，所以没有副作用，比如调用API。</p> <p>因此，我们必须使用<code>redux-thunk</code>从 action creators 那里进行 API 调用。Action creator 派发一个action，将来自API的数据放入action 的 <code>payload</code> 中。Reducers 接收我们在上面的<code>redux</code>循环中讨论的数据，其余的过程也是相同的。</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <p>redux-thunk是一个中间件。一旦它被引入到项目中，每次派发一个<code>action</code>时，都会通过<code>thunk</code>传递。如果它是一个函数，它只是等待函数处理并返回响应。如果它不是一个函数，它只是正常处理。</p> <p>这里有一个例子。<code>sendEmailAPI</code>是从组件中调用的函数，它接受一个数据并返回一个函数，其中<code>dispatch</code>作为参数。我们使用<code>redux-thunk</code>调用API <code>apiservice</code>，并等待收到响应。一旦接收到响应，我们就使用<code>payload</code> 派发一个<code>action</code> 。</p> <div class="language- extra-class"><pre class="language-text"><code>import apiservice from '../services/apiservice';
+
+export function sendEmail(data) {
+    return { type:&quot;SEND_EMAIL&quot;, payload: data };
+}
+
+export function sendEmailAPI(email) {
+    return function(dispatch) {
+        return apiservice.callAPI(email).then(data =&gt; {
+            dispatch(sendEmail(data));
+        });
+    }
+}
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">5/8/2024, 3:01:19 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/react/React系统复习如何做最高效.html" class="prev">
+        React系统复习如何做最高效
+      </a></span> <span class="next"><a href="/react/face/http.html">
+        http
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.07981acf.js" defer></script><script src="/assets/js/2.57da4f88.js" defer></script><script src="/assets/js/1.a76cc220.js" defer></script><script src="/assets/js/99.88c20858.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>React 系统复习如何做最高效（8.24直播总结 + 百道高频面试题整理） | duangdong的qa</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?0088ce24040b03f2947322ab31d23414";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+    <script>
+  var _hmt = _hmt || [];
+  _hmt.push(['_requirePlugin', 'UrlChangeTracker', {
+    shouldTrackUrlChange: function (newPath, oldPath) {
+      newPath = newPath.split('#')[0];
+      oldPath = oldPath.split('#')[0];
+      return newPath != oldPath;
+    }}
+  ]);
+  </script>
+    <meta name="description" content="前端QA集锦">
+    <meta name="keywords" content="qd-blog,js,vuepress,leetcode,react,react进阶,css,js进阶,react性能优化,js设计模式">
+    
+    <link rel="preload" href="/assets/css/0.styles.b4a844ec.css" as="style"><link rel="preload" href="/assets/js/app.07981acf.js" as="script"><link rel="preload" href="/assets/js/2.57da4f88.js" as="script"><link rel="preload" href="/assets/js/1.a76cc220.js" as="script"><link rel="preload" href="/assets/js/95.f6aad986.js" as="script"><link rel="prefetch" href="/assets/js/10.50f73657.js"><link rel="prefetch" href="/assets/js/100.ed998eb0.js"><link rel="prefetch" href="/assets/js/101.c8472505.js"><link rel="prefetch" href="/assets/js/102.d600a66c.js"><link rel="prefetch" href="/assets/js/103.c2d41a43.js"><link rel="prefetch" href="/assets/js/104.dc119219.js"><link rel="prefetch" href="/assets/js/105.8707757e.js"><link rel="prefetch" href="/assets/js/106.33c299b9.js"><link rel="prefetch" href="/assets/js/107.8eafcc06.js"><link rel="prefetch" href="/assets/js/108.eeb8c861.js"><link rel="prefetch" href="/assets/js/109.d7579372.js"><link rel="prefetch" href="/assets/js/11.0390ceee.js"><link rel="prefetch" href="/assets/js/110.4cdb688a.js"><link rel="prefetch" href="/assets/js/111.95d0f748.js"><link rel="prefetch" href="/assets/js/112.fae5a13a.js"><link rel="prefetch" href="/assets/js/113.7cefcf49.js"><link rel="prefetch" href="/assets/js/114.49f03fa7.js"><link rel="prefetch" href="/assets/js/115.73eebb69.js"><link rel="prefetch" href="/assets/js/116.3b9205f3.js"><link rel="prefetch" href="/assets/js/117.dc4fcb53.js"><link rel="prefetch" href="/assets/js/118.1191553b.js"><link rel="prefetch" href="/assets/js/119.705d33d0.js"><link rel="prefetch" href="/assets/js/12.f88bec36.js"><link rel="prefetch" href="/assets/js/120.d3227497.js"><link rel="prefetch" href="/assets/js/121.32bcc7c2.js"><link rel="prefetch" href="/assets/js/122.55a7d973.js"><link rel="prefetch" href="/assets/js/123.07b3f53a.js"><link rel="prefetch" href="/assets/js/124.851c0100.js"><link rel="prefetch" href="/assets/js/125.c1de1f95.js"><link rel="prefetch" href="/assets/js/126.ea96a075.js"><link rel="prefetch" href="/assets/js/127.bcf311b8.js"><link rel="prefetch" href="/assets/js/128.e1c4d95e.js"><link rel="prefetch" href="/assets/js/129.09afee9c.js"><link rel="prefetch" href="/assets/js/13.963ad03b.js"><link rel="prefetch" href="/assets/js/130.22372a24.js"><link rel="prefetch" href="/assets/js/131.4db39cda.js"><link rel="prefetch" href="/assets/js/132.afcfdf65.js"><link rel="prefetch" href="/assets/js/133.35b0df52.js"><link rel="prefetch" href="/assets/js/134.9ad9188e.js"><link rel="prefetch" href="/assets/js/135.d7ca4b93.js"><link rel="prefetch" href="/assets/js/136.403dc2de.js"><link rel="prefetch" href="/assets/js/137.f972aed9.js"><link rel="prefetch" href="/assets/js/138.7536ef7d.js"><link rel="prefetch" href="/assets/js/139.05186195.js"><link rel="prefetch" href="/assets/js/14.512f15b9.js"><link rel="prefetch" href="/assets/js/140.f7b5e550.js"><link rel="prefetch" href="/assets/js/141.16938126.js"><link rel="prefetch" href="/assets/js/142.0d18982a.js"><link rel="prefetch" href="/assets/js/143.f82390e5.js"><link rel="prefetch" href="/assets/js/144.bac62f6d.js"><link rel="prefetch" href="/assets/js/145.255f2397.js"><link rel="prefetch" href="/assets/js/146.226da4b5.js"><link rel="prefetch" href="/assets/js/147.236f8a9f.js"><link rel="prefetch" href="/assets/js/148.8d472c06.js"><link rel="prefetch" href="/assets/js/149.4170f8c0.js"><link rel="prefetch" href="/assets/js/15.a674496c.js"><link rel="prefetch" href="/assets/js/150.ff7b0269.js"><link rel="prefetch" href="/assets/js/151.0a1c7058.js"><link rel="prefetch" href="/assets/js/152.584c412a.js"><link rel="prefetch" href="/assets/js/153.220d027b.js"><link rel="prefetch" href="/assets/js/154.09a9219e.js"><link rel="prefetch" href="/assets/js/155.6c8dbf71.js"><link rel="prefetch" href="/assets/js/156.a9d81dce.js"><link rel="prefetch" href="/assets/js/157.e53c1adb.js"><link rel="prefetch" href="/assets/js/158.11f55456.js"><link rel="prefetch" href="/assets/js/159.2c05d7f2.js"><link rel="prefetch" href="/assets/js/16.ed7e507f.js"><link rel="prefetch" href="/assets/js/160.27616923.js"><link rel="prefetch" href="/assets/js/17.de667ca5.js"><link rel="prefetch" href="/assets/js/18.b44e84af.js"><link rel="prefetch" href="/assets/js/19.5b5ad6a1.js"><link rel="prefetch" href="/assets/js/20.6800493a.js"><link rel="prefetch" href="/assets/js/21.6589052c.js"><link rel="prefetch" href="/assets/js/22.f648d829.js"><link rel="prefetch" href="/assets/js/23.21fe11d7.js"><link rel="prefetch" href="/assets/js/24.7a3e65b2.js"><link rel="prefetch" href="/assets/js/25.9e2d6c46.js"><link rel="prefetch" href="/assets/js/26.0dcf1d19.js"><link rel="prefetch" href="/assets/js/27.bd79a51b.js"><link rel="prefetch" href="/assets/js/28.ad9cdafd.js"><link rel="prefetch" href="/assets/js/29.738a8c4a.js"><link rel="prefetch" href="/assets/js/3.13e892f5.js"><link rel="prefetch" href="/assets/js/30.5d2ae7ae.js"><link rel="prefetch" href="/assets/js/31.2a59449c.js"><link rel="prefetch" href="/assets/js/32.322ed58f.js"><link rel="prefetch" href="/assets/js/33.e18917c7.js"><link rel="prefetch" href="/assets/js/34.edfe8355.js"><link rel="prefetch" href="/assets/js/35.2c0b1e3e.js"><link rel="prefetch" href="/assets/js/36.b1fdf51f.js"><link rel="prefetch" href="/assets/js/37.11ee0b0c.js"><link rel="prefetch" href="/assets/js/38.0b050ca5.js"><link rel="prefetch" href="/assets/js/39.2bd20762.js"><link rel="prefetch" href="/assets/js/4.5bdb9365.js"><link rel="prefetch" href="/assets/js/40.eb0c66c8.js"><link rel="prefetch" href="/assets/js/41.933044bc.js"><link rel="prefetch" href="/assets/js/42.eac4ba39.js"><link rel="prefetch" href="/assets/js/43.8c61e37d.js"><link rel="prefetch" href="/assets/js/44.30f132bb.js"><link rel="prefetch" href="/assets/js/45.2477f9bb.js"><link rel="prefetch" href="/assets/js/46.e97df854.js"><link rel="prefetch" href="/assets/js/47.60f16a00.js"><link rel="prefetch" href="/assets/js/48.d01b463f.js"><link rel="prefetch" href="/assets/js/49.e3a15fc7.js"><link rel="prefetch" href="/assets/js/5.7c68fdb5.js"><link rel="prefetch" href="/assets/js/50.31265493.js"><link rel="prefetch" href="/assets/js/51.ed2cc5dc.js"><link rel="prefetch" href="/assets/js/52.3ae02665.js"><link rel="prefetch" href="/assets/js/53.69d15c58.js"><link rel="prefetch" href="/assets/js/54.bbab20a0.js"><link rel="prefetch" href="/assets/js/55.9617cf7e.js"><link rel="prefetch" href="/assets/js/56.13f9aef2.js"><link rel="prefetch" href="/assets/js/57.ba08cc35.js"><link rel="prefetch" href="/assets/js/58.63028d02.js"><link rel="prefetch" href="/assets/js/59.566c0b50.js"><link rel="prefetch" href="/assets/js/6.c8da7ca7.js"><link rel="prefetch" href="/assets/js/60.0801f3b3.js"><link rel="prefetch" href="/assets/js/61.ceae0570.js"><link rel="prefetch" href="/assets/js/62.9f28e1a4.js"><link rel="prefetch" href="/assets/js/63.15282044.js"><link rel="prefetch" href="/assets/js/64.7c666983.js"><link rel="prefetch" href="/assets/js/65.320c4670.js"><link rel="prefetch" href="/assets/js/66.253bab14.js"><link rel="prefetch" href="/assets/js/67.49c1e967.js"><link rel="prefetch" href="/assets/js/68.ae82def1.js"><link rel="prefetch" href="/assets/js/69.0877ad54.js"><link rel="prefetch" href="/assets/js/7.e4c88d0e.js"><link rel="prefetch" href="/assets/js/70.5e8208ea.js"><link rel="prefetch" href="/assets/js/71.52cb4845.js"><link rel="prefetch" href="/assets/js/72.8c575d51.js"><link rel="prefetch" href="/assets/js/73.b9ba874e.js"><link rel="prefetch" href="/assets/js/74.6b4693bb.js"><link rel="prefetch" href="/assets/js/75.e9378ce1.js"><link rel="prefetch" href="/assets/js/76.a80b13fc.js"><link rel="prefetch" href="/assets/js/77.d134968d.js"><link rel="prefetch" href="/assets/js/78.40d99cd8.js"><link rel="prefetch" href="/assets/js/79.2b663044.js"><link rel="prefetch" href="/assets/js/80.0b63f3ac.js"><link rel="prefetch" href="/assets/js/81.bc4031db.js"><link rel="prefetch" href="/assets/js/82.3152c02c.js"><link rel="prefetch" href="/assets/js/83.3fa2dc4b.js"><link rel="prefetch" href="/assets/js/84.e778c959.js"><link rel="prefetch" href="/assets/js/85.060ddc49.js"><link rel="prefetch" href="/assets/js/86.bb8138bb.js"><link rel="prefetch" href="/assets/js/87.72c01e68.js"><link rel="prefetch" href="/assets/js/88.e3e56223.js"><link rel="prefetch" href="/assets/js/89.198ff8d1.js"><link rel="prefetch" href="/assets/js/90.6437abb2.js"><link rel="prefetch" href="/assets/js/91.dbe1df52.js"><link rel="prefetch" href="/assets/js/92.6e732f3a.js"><link rel="prefetch" href="/assets/js/93.e98beea7.js"><link rel="prefetch" href="/assets/js/94.c62e88cb.js"><link rel="prefetch" href="/assets/js/96.e0630547.js"><link rel="prefetch" href="/assets/js/97.3cd76aa5.js"><link rel="prefetch" href="/assets/js/98.3bc2adce.js"><link rel="prefetch" href="/assets/js/99.88c20858.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.5143d2e0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b4a844ec.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">duangdong的qa</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/js/" class="nav-link">
+  JS方面
+</a></div><div class="nav-item"><a href="/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/react/" class="nav-link router-link-active">
+  React
+</a></div><div class="nav-item"><a href="/summary/" class="nav-link">
+  汇总
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  常见算法
+</a></div><div class="nav-item"><a href="/performance/" class="nav-link">
+  性能优化
+</a></div><div class="nav-item"><a href="/http/" class="nav-link">
+  网络协议
+</a></div><div class="nav-item"><a href="/css/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/face-sutra/" class="nav-link">
+  QA
+</a></div><div class="nav-item"><a href="https://link.aduang.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Home
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/js/" class="nav-link">
+  JS方面
+</a></div><div class="nav-item"><a href="/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/react/" class="nav-link router-link-active">
+  React
+</a></div><div class="nav-item"><a href="/summary/" class="nav-link">
+  汇总
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  常见算法
+</a></div><div class="nav-item"><a href="/performance/" class="nav-link">
+  性能优化
+</a></div><div class="nav-item"><a href="/http/" class="nav-link">
+  网络协议
+</a></div><div class="nav-item"><a href="/css/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/face-sutra/" class="nav-link">
+  QA
+</a></div><div class="nav-item"><a href="https://link.aduang.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Home
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/react/" aria-current="page" class="sidebar-link">QA</a></li><li><a href="/react/React 系统复习如何做最高效.html" class="active sidebar-link">React 系统复习如何做最高效（8.24直播总结 + 百道高频面试题整理）</a></li><li><a href="/react/React事件绑定的方式有哪些.html" class="sidebar-link">React事件绑定的方式有哪些？区别？</a></li><li><a href="/react/React构建组件的方式有哪些.html" class="sidebar-link">React构建组件的方式有哪些？区别？</a></li><li><a href="/react/React系统复习如何做最高效.html" class="sidebar-link">React系统复习如何做最高效</a></li><li><a href="/react/React面试点.html" class="sidebar-link">你要的 React 面试知识点，都在这了</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>face</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/react/react-ref应用场景.html" class="sidebar-link">React refs 的理解？应用场景？</a></li><li><a href="/react/super和super-props有什么区别.html" class="sidebar-link">super()和super(props)有什么区别？</a></li><li><a href="/react/你在React项目中是如何使用Redux的.html" class="sidebar-link">你在React项目中是如何使用Redux的? 项目结构是如何划分的？</a></li><li><a href="/react/在React中组件间过渡动画如何实现.html" class="sidebar-link">在React中组件间过渡动画如何实现？</a></li><li><a href="/react/对比.html" class="sidebar-link">react 与 vue 的技术栈对比，说下区别</a></li><li><a href="/react/说说React-Router有几种模式.html" class="sidebar-link">说说React Router有几种模式？实现原理？</a></li><li><a href="/react/说说React-render方法的原理.html" class="sidebar-link">说说React render方法的原理？在什么时候会被触发？</a></li><li><a href="/react/说说React性能优化的手段有哪些.html" class="sidebar-link">说说 React 性能优化的手段有哪些？</a></li><li><a href="/react/说说React服务端渲染怎么做.html" class="sidebar-link">说说React服务端渲染怎么做？原理是什么？</a></li><li><a href="/react/说说你在React项目是如何捕获错误的.html" class="sidebar-link">说说你在React项目是如何捕获错误的？</a></li><li><a href="/react/说说你在使用React过程中遇到的常见问题.html" class="sidebar-link">说说你在使用React 过程中遇到的常见问题？解决方案?</a></li><li><a href="/react/说说你对Immutable-Data的理解.html" class="sidebar-link">说说你对 Immutable Data的理解？如何应用在React项目中？</a></li><li><a href="/react/说说你对React-Router的理解.html" class="sidebar-link">说说你对React Router的理解？常用的Router组件有哪些？</a></li><li><a href="/react/说说你对Redux的理解.html" class="sidebar-link">说说你对Redux的理解？其工作原理？</a></li><li><a href="/react/说说对React中受控组件和非受控组件的理解.html" class="sidebar-link">说说对React中受控组件和非受控组件的理解？应用场景？</a></li><li><a href="/react/说说对React中类组件和函数组件的理解.html" class="sidebar-link">说说对React中类组件和函数组件的理解？有什么区别？</a></li><li><a href="/react/说说对Redux中间件的理解.html" class="sidebar-link">说说对Redux中间件的理解？常用的中间件有哪些？实现原理？</a></li><li><a href="/react/说说对State和Props的理解.html" class="sidebar-link">说说对 State 和 Props的理解，有什么区别？</a></li><li><a href="/react/题聊聊setState的用法.html" class="sidebar-link">聊聊setState的用法</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="react-系统复习如何做最高效-8-24直播总结-百道高频面试题整理"><a href="#react-系统复习如何做最高效-8-24直播总结-百道高频面试题整理" class="header-anchor">#</a> React 系统复习如何做最高效（8.24直播总结 + 百道高频面试题整理）</h1> <blockquote><p><a href="https://mp.weixin.qq.com/s/iGBZp1ckNHyDS1zJeiYn0Q" target="_blank" rel="noopener noreferrer">https://mp.weixin.qq.com/s/iGBZp1ckNHyDS1zJeiYn0Q<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <h2 id="一-前言"><a href="#一-前言" class="header-anchor">#</a> 一 前言</h2> <p>哈喽，大家好，我是 alien ，8月24号，我作为分享嘉宾，线上参与了一场 《React 系统复习如何做最高效》 的技术分享，接下来我把直播的内容汇总分享给大家。在分享的过程中，也枚举了一些思考题和一些比较热门的面试题目，一同奉上。</p> <p>这里非常感谢掘金平台提供一次分享技术的机会，也非常感谢掘友们的热心捧场，整体下来还算是成功的，可能刚开始比较紧张，因为毕竟是第一次直播，人生的第一次直播献给了掘金😂，后来渐渐地找回了状态。这里保存了直播过程中的一些截图，整体下来掘友们还是蛮给力的，也参与互动，提了很多问题。</p> <p>直播场景：</p> <p>掘友互动场景</p> <p>如果想看直播回放的童鞋，请点击这里： <strong>https://live.juejin.cn/4354/3168473</strong></p> <p>好的，废话不说，进入正题，本次直播分享主要按照以下模块进行的，这些模块是我工作几年来总结的一些经验，同学们可以按照对应的模块进行查缺补漏，</p> <ul><li>React 基础模块。</li> <li>React 优化手段。</li> <li>React 生态掌握。</li> <li>React 设计模式。</li> <li>React 核心原理。</li> <li>React 项目实战。</li></ul> <h2 id="二-知识点梳理"><a href="#二-知识点梳理" class="header-anchor">#</a> 二 知识点梳理</h2> <p>上述的模块进行细化，总结的内容如下：</p> <p><strong>React基础模块：</strong></p> <ul><li>操作 <code>jsx</code> 。</li> <li>掌握 class 和 function Component。</li> <li>state 更新机制， <code>setState</code> 和 <code>useState</code> 的用法和区别。</li> <li>理解 <code>props</code> ，React 中的 props 可以是什么？</li> <li>类组件生命周期，函数组件生命周期替代方案， <code>useEffect</code> 和 <code>useLayoutEffect</code>。</li> <li><code>Ref</code> 是什么，能做些什么？</li> <li><code>css in React</code>。</li></ul> <p><strong>React优化手段</strong></p> <ul><li>渲染控制。</li> <li>渲染调优。</li> <li>处理海量数据。</li> <li>细节处理。</li></ul> <p><strong>React生态</strong></p> <ul><li>React-Router。</li> <li>React-Redux。</li> <li>React-Mobx。</li> <li>项目工程 umi | dva等。</li></ul> <p><strong>React设计模式</strong></p> <ul><li>组合模式。</li> <li>render props 模式。</li> <li>HOC | 装饰器模式。</li> <li>提供者模式。</li> <li>自定义 hooks 模式。</li></ul> <p><strong>React核心原理</strong></p> <ul><li>事件原理。</li> <li>调和原理。</li> <li>调度原理。</li> <li>hooks 原理。</li> <li>diff 流程等等。</li></ul> <p><strong>React实战</strong></p> <ul><li>实现表单系统。</li> <li>实现状态管理工具。</li> <li>实现路由功能。</li> <li>自定义 hooks 实践。</li></ul> <p>以上就是本次直播的提及的 React 应该学习的知识点。用一幅图来概括。</p> <p>接下来对每一个功能进行拆解。</p> <h2 id="三-功能拆解"><a href="#三-功能拆解" class="header-anchor">#</a> 三 功能拆解</h2> <p>分享的内容细化成每一个我们需要掌握的功能点，以问题的形式切入，我们可以尝试一下？</p> <h3 id="_1-react基础模块"><a href="#_1-react基础模块" class="header-anchor">#</a> 1 React基础模块</h3> <h4 id="基础模块-jsx"><a href="#基础模块-jsx" class="header-anchor">#</a> 基础模块 jsx</h4> <p>jsx 中总结的知识点：</p> <ul><li>① 我们写的 jsx 语法最后变成了什么？React JSX -&gt; React element -&gt; React fiber 流程。</li> <li>② 如何理解 React element?</li> <li>③ 老版本 React 为什么要引入 React，如下：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>import React from 'react'
+function Index(){
+    return &lt;div&gt;let us learn React!&lt;/div&gt;
+}
+</code></pre></div><ul><li>④ 如何操作 React Element ，使其变成可控的？react createElement 和 react cloneElement。</li> <li>⑤ <code>createElement</code> 和 <code>cloneElement</code> 区别。</li> <li>⑥ React children 操作方法和应用场景？map ，forEach ，count ，toArray ，only。</li> <li>⑦ jsx 拓展尝鲜例子：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>function Test(num){
+   console.log(num)
+   useEffect(()=&gt;{
+       console.log('1111')
+   },[])
+   return &lt;div&gt;《React 进阶实践指南》&lt;/div&gt;
+}
+
+export default function Index(){
+    const [ isShow , setIsShow  ]= useState(false)
+    return &lt;div&gt;
+           &lt;button onClick={() =&gt; setIsShow(!isShow)} &gt;点击&lt;/button&gt;
+           {isShow ? &lt;Test num={1} /&gt; : &lt;Test num={2} /&gt;}
+         &lt;/div&gt;
+}
+</code></pre></div><p>如上点击按钮 <code>button</code>，<code>useEffect</code> 中的 <code>console.log('1111')</code> 是否打印。</p> <p><strong>错误分析：</strong> 点击按钮，切换 <code>isShow</code>，控制两个 Test 组件的挂载 ｜ 卸载，因为组件重复挂载，那么 <code>useEffect</code> 执行，打印 <code>console.log('1111')</code>，但是实际结果是这样吗？</p> <p><strong>效果：没有打印</strong></p> <p><strong>流程分析：</strong> 为什么 useEffect 中的 console.log 没有打印呢 ？</p> <ul><li>首先如果我们明白 jsx -&gt; element -&gt; fiber 流程之后，就不难解释这个现象了，写的两个 Test 组件，本质上被 babel 处理成两个 element 对象，<code>element</code> 对象中的 type 属性都指向了 Test 组件函数，两个 element 对象唯一区别是 props 不同。</li> <li>那么在 React 调和阶段 React ，判断 type 指向相同，就会判断它们是一个组件，所以一次更新的只是被判定 props 变化，走的更新逻辑。</li> <li>然后在 Test 函数中，更新组件不会让依赖项为 <code>[]</code> 的 <code>useEffect</code>再次执行，所以 <code>console.log('1111')</code> 不会被打印。</li></ul> <p><strong>解决问题：</strong></p> <p>如果想要组件挂载 ｜ 卸载效果，那么很简单，给其中的 Test 加入一个 key，就可以解决问题，<code>key</code> 可以作为组件身份的标示，在下一次更新中，就会根据 key 找到复用的 fiber 节点，如果没有找到，那就会走正常的组件挂载 ｜ 卸载流程了。</p> <div class="language- extra-class"><pre class="language-text"><code> {isShow ? &lt;Test num={1} key={1}  /&gt; : &lt;Test num={2} /&gt;}
+</code></pre></div><h4 id="基础模块-state"><a href="#基础模块-state" class="header-anchor">#</a> 基础模块 state</h4> <p>state 中总结的知识点：</p> <ul><li>① state 更新机制? state 改变到视图更新的流程。</li> <li>② state 批量更新的规则，为什么会被打破？</li> <li>③ setState 是同步还是异步的？</li> <li>④ 类组件的 <code>setState</code> 和函数组件的 <code>useState</code> 有什么共性和区别？</li> <li>⑤ 函数组件的状态管理方法 useState + useRef ?  useState 负责更新，useRef 负责保存状态。</li> <li>⑥ state 打印问题：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>handleClick=()=&gt;{
+    setTimeout(()=&gt;{
+        this.setState({ number: 1  })
+    })
+    this.setState({ number: 2  })
+    ReactDOM.flushSync(()=&gt;{
+        this.setState({ number: 3  })
+    })
+    this.setState({ number: 4  })
+}
+render(){
+   console.log(this.state.number)
+   return &lt;button onClick={ this.handleClick } &gt; 点击 &lt;/button&gt;
+}
+</code></pre></div><p>点击按钮，打印顺序 ？</p> <p>打印 3 4 1 ，相信不难理解为什么这么打印了。</p> <p>首先 <code>flushSync</code> <code>this.setState({ number: 3 })</code> 设定了一个高优先级的更新，所以 2 和 3 被批量更新到 3 ，所以 3 先被打印。更新为 4。最后更新 setTimeout 中的 number = 1。</p> <h4 id="基础模块-component"><a href="#基础模块-component" class="header-anchor">#</a> 基础模块 component</h4> <p>component 模块包含的知识点：</p> <ul><li>① 类组件特点，函数组件特点，两者有什么区别？</li> <li>② 组件的通信方式？</li> <li>③ 组件的强化方式？</li> <li>④ React 对组件的处理和处理时机？</li> <li>⑤ 公共组件的设计规范？</li></ul> <h4 id="基础模块生命周期"><a href="#基础模块生命周期" class="header-anchor">#</a> 基础模块生命周期</h4> <p>生命周期知识点：</p> <ul><li>① 生命周期的介绍，和用法？</li> <li>② 生命周期的执行时机？父与子生命周期的执行顺序？</li> <li>③ 函数组件生命周期的代替方案？</li> <li>④ useEffect 和 useLayoutEffect 有什么区别，应用场景？</li> <li>⑤ 废弃的生命周期，为什么要废弃？</li></ul> <p>一幅图表示 <strong>函数组件</strong> 和 <strong>类组件</strong> 所有生命周期的执行时机（包括已经废弃的生命周期）：</p> <h4 id="基础模块-ref"><a href="#基础模块-ref" class="header-anchor">#</a> 基础模块 Ref</h4> <p>ref 知识点总结：</p> <ul><li>① Ref 对象，以及两种 ref 对象创建方法。useRef 和 createRef</li> <li>② Ref 有什么作用？1 获取组件实例，DOM元素 ；2 组件通信 ；3 保存状态；</li> <li>③ Ref 原理 ？<code>commitAttachRef</code> 和 <code>commitDetachRef</code>。</li> <li>④ Ref 获取的三种方式？function ；Ref 对象 ；String ；</li> <li>⑤ 如何跨层级传递 ref ?</li> <li>⑥ 父组件如何获取函数子组件内部状态？</li></ul> <h4 id="基础模块-css-in-react"><a href="#基础模块-css-in-react" class="header-anchor">#</a> 基础模块 Css in React</h4> <p>css 模块总结：</p> <ul><li>① React css 模块化方案。</li> <li>② css module 掌握。</li> <li>③ css in js 掌握。</li></ul> <h3 id="_2-react-优化手段"><a href="#_2-react-优化手段" class="header-anchor">#</a> 2 React 优化手段</h3> <p>React 优化手段总结：</p> <ul><li>① React 渲染控制的方法？。缓存 react element ，pureComponent ，Memo ，shouldComponentUpdate</li> <li>② shallowEqual 浅比较原理。</li> <li>③ React 中节流防抖运用。</li> <li>④ 合理运用状态管理。</li> <li>⑤ 按需引入。减少项目体积。</li> <li>⑥ 代码分割 lazy ，异步组件 Suspense 及其原理。</li> <li>⑦ diff 算法，合理应用 key 。</li> <li>⑧ 渲染错误边界，<code>componentDidCatch</code>。</li> <li>⑨ 状态管理工具和 immutable.js 使用。</li> <li>⑩ useMemo 缓存逻辑。</li> <li>⑪ memo 的缓存策略。</li></ul> <h3 id="_3-react-生态"><a href="#_3-react-生态" class="header-anchor">#</a> 3 React 生态</h3> <p>React 生态总结：react-router，react-redux ，react-mobx umi dva 等。</p> <ul><li>① 两种路由模式 ｜ spa 单页面路由原理。</li> <li>② React router 使用，实现动态路由，自定义路由。</li> <li>③ Route. Router Switch 分工。</li> <li>④ 权限路由封装。</li> <li>⑤ Mobx-react 使用。</li> <li>⑥ Mobx 和 React Redux 区别？</li> <li>⑦ Mobx 原理，收集依赖，触发更新。</li> <li>⑧ React Redux 和 Redux 使用。</li> <li>⑨ Redux 设计模式 ｜ 中间件原理。</li> <li>⑩ React Redux  原理？</li> <li>⑪ react redux 衍生：dva React-saga 等</li> <li>⑫ React Redux 中 connect 原理 （这里推荐大家看一下源码，学习一下 hooks使用）。</li></ul> <h3 id="_4-react-设计模式"><a href="#_4-react-设计模式" class="header-anchor">#</a> 4 React 设计模式</h3> <p>React 设计模式总结：</p> <ul><li>① React 几种设计模式总结。组合模式，render props模式，提供者模式， hoc 模式，自定义hooks 模式。</li> <li>② 新老版本 context 用法特点。</li> <li>③ React context 特点。逐层传递，发布订阅。</li> <li>④ 新版本 context 消费者几种方式。contextType ，useContext ，consumer</li> <li>⑤ hoc 两种方式，优缺点？属性代理，反向继承。</li> <li>⑥ hoc 如何解决静态属性继承问题。</li> <li>⑦ hoc 如何解决 ref 获取问题。</li> <li>⑧ hoc 注意事项。</li> <li>⑨ 自定义 hooks 设计。</li> <li>⑩ 自定义 hooks 实践。</li></ul> <p>以下是一些经典设计模式的代码片段（供大家参考）：</p> <p><strong>组合模式</strong></p> <div class="language- extra-class"><pre class="language-text"><code>&lt;Form ref={ form } &gt;
+    &lt;FormItem name=&quot;name&quot; label=&quot;我是&quot;  &gt;
+        &lt;Input   /&gt;
+    &lt;/FormItem&gt;
+    &lt;FormItem name=&quot;mes&quot; label=&quot;我想对大家说&quot;  &gt;
+        &lt;Input   /&gt;
+    &lt;/FormItem&gt;
+    &lt;input  placeholder=&quot;不需要的input&quot; /&gt;
+    &lt;Input/&gt;
+&lt;/Form&gt;
+</code></pre></div><p><strong>提供者模式</strong></p> <div class="language- extra-class"><pre class="language-text"><code>function ConsumerDemo(){
+     const { color,background } = React.useContext(ThemeContext)
+    return &lt;div style={{ color,background } } &gt;消费者&lt;/div&gt; 
+}
+const Son = React.memo(()=&gt; &lt;ConsumerDemo /&gt;) // 子组件
+
+const ThemeProvider = ThemeContext.Provider //提供者
+export default function ProviderDemo(){
+    const [ contextValue , setContextValue ] = React.useState({  color:'#ccc', background:'pink' })
+    return &lt;div&gt;
+        &lt;ThemeProvider value={ contextValue } &gt;
+            &lt;Son /&gt;
+        &lt;/ThemeProvider&gt;
+        &lt;button onClick={ ()=&gt; setContextValue({ color:'#fff' , background:'blue' })  } &gt;切换主题&lt;/button&gt;
+    &lt;/div&gt;
+}
+</code></pre></div><p><strong>render props模式</strong></p> <div class="language- extra-class"><pre class="language-text"><code>const Index = ()=&gt;{
+    return &lt;Container&gt;
+        &lt;Children /&gt;
+        { (ContainerProps)=&gt; &lt;Children {...ContainerProps} name={'haha'}  /&gt;  }
+    &lt;/Container&gt;
+}
+</code></pre></div><p><strong>hoc模式</strong></p> <div class="language- extra-class"><pre class="language-text"><code>@HOC1(styles)
+@HOC2
+@HOC3
+class Index extends React.Componen{
+    /* ... */
+}
+</code></pre></div><p><strong>自定义hooks模式</strong></p> <div class="language- extra-class"><pre class="language-text"><code>function useXXX(){
+    const value = React.useContext(defaultContext)
+    /* .....用上下文中 value 一段初始化逻辑  */
+    const newValue = initValueFunction(value) /* 初始化 value 得到新的 newValue  */
+    /* ...... */
+    return newValue
+}
+</code></pre></div><h3 id="_5-react-核心原理"><a href="#_5-react-核心原理" class="header-anchor">#</a> 5 React 核心原理</h3> <p>React 核心原理总结：</p> <p><strong>fiber原理</strong></p> <ul><li>① 什么是fiber ? Fiber 架构解决了什么问题？</li> <li>② Fiber root 和 root fiber 有什么区别？</li> <li>③ 不同fiber 之间如何建立起关联的？</li> <li>④ React 调和流程？</li> <li>⑤ 两大阶段 commit 和 render 都做了哪些事情？</li> <li>⑥ 什么是双缓冲树？有什么作用？</li> <li>⑦ Fiber 深度遍历流程？</li> <li>⑧ Fiber的调和能中断吗？如何中断？</li></ul> <p><strong>调度原理</strong></p> <ul><li>① 异步调度原理？</li> <li>② React 为什么不用 settimeout ？</li> <li>③ 说一说React 的时间分片？</li> <li>④ React 如何模拟 requestIdleCallback？</li> <li>⑤ 简述一下调度流程？</li></ul> <p><strong>hooks原理</strong></p> <ul><li>① React Hooks 为什么必须在函数组件内部执行？React 如何能够监听 React Hooks 在外部执行并抛出异常。</li> <li>② React Hooks 如何把状态保存起来？保存的信息存在了哪里？</li> <li>③ React Hooks 为什么不能写在条件语句中？</li> <li>④ useMemo 内部引用 useRef 为什么不需要添加依赖项，而 useState 就要添加依赖项。</li> <li>⑤ useEffect 添加依赖项 props.a ，为什么 props.a 改变，useEffect 回调函数 create 重新执行。</li> <li>⑥ React 内部如何区别 useEffect 和 useLayoutEffect ，执行时机有什么不同？</li></ul> <p><strong>事件原理</strong></p> <ul><li>① React 为什么有自己的事件系统？</li> <li>② 什么是事件合成 ？</li> <li>③ 如何实现的批量更新？</li> <li>④ 事件系统如何模拟冒泡和捕获阶段？</li> <li>⑤ 如何通过 dom 元素找到与之匹配的fiber？</li> <li>⑥ 为什么不能用 return false 来阻止事件的默认行为？</li> <li>⑦ 事件是绑定在真实的dom上吗？如何不是绑定在哪里？</li> <li>⑧ V17 对事件系统有哪些改变</li></ul> <h3 id="_6-react-实践"><a href="#_6-react-实践" class="header-anchor">#</a> 6 React 实践</h3> <p>实践是检验真理的唯一标准，如果想要进阶 React ，在理论知识基础上，也需要去尝试敲代码。</p> <ul><li>如过没有做过React 项目，尝试写一个 demo 。</li> <li>尝试写一个公共组件。</li> <li>尝试写一个高阶组件。</li> <li>尝试写一个自定义 hooks。</li> <li>尝试在项目中使用多种设计模式。</li></ul> <h3 id="_7-react-学习的几个重要阶段"><a href="#_7-react-学习的几个重要阶段" class="header-anchor">#</a> 7 React 学习的几个重要阶段</h3> <p>进阶 React 可以按照以下阶段去进阶。</p> <ul><li>第一阶段：明白基础 api ,尝试写项目，多尝试一些复杂的逻辑场景。会用一些React生态。</li> <li>第二阶段：尝试封装一些基础组件，hoc，尝试使用一些设计模式。</li> <li>第三阶段：学习一些原理，可以尝试看一下核心源码。</li> <li>第四阶段：可以自己根据业务需求写一些库，考虑开源。</li></ul> <h2 id="四-总结"><a href="#四-总结" class="header-anchor">#</a> 四 总结</h2> <p>以上就是本次直播分享 React 系统学习部分的内容，大家可以根据自己对 React 的掌握程度，进行查缺补漏，最后祝愿大家早日进阶 React 技术栈。</p> <h2 id="《react进阶实践指南小册》"><a href="#《react进阶实践指南小册》" class="header-anchor">#</a> 《React进阶实践指南小册》</h2> <p>本次分享的知识点，在这本小册中都能找到答案。目前小册已经完结，是终点亦是起点,  小册内容将持续更新，随着 React 版本升级持续维护，并有持续更新章节～ 提前透露，小册接下来会补充：<code>React context</code> 原理部分，内容补充到第八章。奉上几个小册 7 折 优惠码</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">5/8/2024, 3:01:19 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/react/" class="prev router-link-active">
+        QA
+      </a></span> <span class="next"><a href="/react/React事件绑定的方式有哪些.html">
+        React事件绑定的方式有哪些？区别？
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.07981acf.js" defer></script><script src="/assets/js/2.57da4f88.js" defer></script><script src="/assets/js/1.a76cc220.js" defer></script><script src="/assets/js/95.f6aad986.js" defer></script>
+  </body>
+</html>

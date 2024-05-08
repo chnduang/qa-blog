@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Lodash是如何实现深拷贝的 | duangdong的qa</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?0088ce24040b03f2947322ab31d23414";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+    <script>
+  var _hmt = _hmt || [];
+  _hmt.push(['_requirePlugin', 'UrlChangeTracker', {
+    shouldTrackUrlChange: function (newPath, oldPath) {
+      newPath = newPath.split('#')[0];
+      oldPath = oldPath.split('#')[0];
+      return newPath != oldPath;
+    }}
+  ]);
+  </script>
+    <meta name="description" content="前端QA集锦">
+    <meta name="keywords" content="qd-blog,js,vuepress,leetcode,react,react进阶,css,js进阶,react性能优化,js设计模式">
+    
+    <link rel="preload" href="/assets/css/0.styles.b4a844ec.css" as="style"><link rel="preload" href="/assets/js/app.07981acf.js" as="script"><link rel="preload" href="/assets/js/2.57da4f88.js" as="script"><link rel="preload" href="/assets/js/1.a76cc220.js" as="script"><link rel="preload" href="/assets/js/62.9f28e1a4.js" as="script"><link rel="prefetch" href="/assets/js/10.50f73657.js"><link rel="prefetch" href="/assets/js/100.ed998eb0.js"><link rel="prefetch" href="/assets/js/101.c8472505.js"><link rel="prefetch" href="/assets/js/102.d600a66c.js"><link rel="prefetch" href="/assets/js/103.c2d41a43.js"><link rel="prefetch" href="/assets/js/104.dc119219.js"><link rel="prefetch" href="/assets/js/105.8707757e.js"><link rel="prefetch" href="/assets/js/106.33c299b9.js"><link rel="prefetch" href="/assets/js/107.8eafcc06.js"><link rel="prefetch" href="/assets/js/108.eeb8c861.js"><link rel="prefetch" href="/assets/js/109.d7579372.js"><link rel="prefetch" href="/assets/js/11.0390ceee.js"><link rel="prefetch" href="/assets/js/110.4cdb688a.js"><link rel="prefetch" href="/assets/js/111.95d0f748.js"><link rel="prefetch" href="/assets/js/112.fae5a13a.js"><link rel="prefetch" href="/assets/js/113.7cefcf49.js"><link rel="prefetch" href="/assets/js/114.49f03fa7.js"><link rel="prefetch" href="/assets/js/115.73eebb69.js"><link rel="prefetch" href="/assets/js/116.3b9205f3.js"><link rel="prefetch" href="/assets/js/117.dc4fcb53.js"><link rel="prefetch" href="/assets/js/118.1191553b.js"><link rel="prefetch" href="/assets/js/119.705d33d0.js"><link rel="prefetch" href="/assets/js/12.f88bec36.js"><link rel="prefetch" href="/assets/js/120.d3227497.js"><link rel="prefetch" href="/assets/js/121.32bcc7c2.js"><link rel="prefetch" href="/assets/js/122.55a7d973.js"><link rel="prefetch" href="/assets/js/123.07b3f53a.js"><link rel="prefetch" href="/assets/js/124.851c0100.js"><link rel="prefetch" href="/assets/js/125.c1de1f95.js"><link rel="prefetch" href="/assets/js/126.ea96a075.js"><link rel="prefetch" href="/assets/js/127.bcf311b8.js"><link rel="prefetch" href="/assets/js/128.e1c4d95e.js"><link rel="prefetch" href="/assets/js/129.09afee9c.js"><link rel="prefetch" href="/assets/js/13.963ad03b.js"><link rel="prefetch" href="/assets/js/130.22372a24.js"><link rel="prefetch" href="/assets/js/131.4db39cda.js"><link rel="prefetch" href="/assets/js/132.afcfdf65.js"><link rel="prefetch" href="/assets/js/133.35b0df52.js"><link rel="prefetch" href="/assets/js/134.9ad9188e.js"><link rel="prefetch" href="/assets/js/135.d7ca4b93.js"><link rel="prefetch" href="/assets/js/136.403dc2de.js"><link rel="prefetch" href="/assets/js/137.f972aed9.js"><link rel="prefetch" href="/assets/js/138.7536ef7d.js"><link rel="prefetch" href="/assets/js/139.05186195.js"><link rel="prefetch" href="/assets/js/14.512f15b9.js"><link rel="prefetch" href="/assets/js/140.f7b5e550.js"><link rel="prefetch" href="/assets/js/141.16938126.js"><link rel="prefetch" href="/assets/js/142.0d18982a.js"><link rel="prefetch" href="/assets/js/143.f82390e5.js"><link rel="prefetch" href="/assets/js/144.bac62f6d.js"><link rel="prefetch" href="/assets/js/145.255f2397.js"><link rel="prefetch" href="/assets/js/146.226da4b5.js"><link rel="prefetch" href="/assets/js/147.236f8a9f.js"><link rel="prefetch" href="/assets/js/148.8d472c06.js"><link rel="prefetch" href="/assets/js/149.4170f8c0.js"><link rel="prefetch" href="/assets/js/15.a674496c.js"><link rel="prefetch" href="/assets/js/150.ff7b0269.js"><link rel="prefetch" href="/assets/js/151.0a1c7058.js"><link rel="prefetch" href="/assets/js/152.584c412a.js"><link rel="prefetch" href="/assets/js/153.220d027b.js"><link rel="prefetch" href="/assets/js/154.09a9219e.js"><link rel="prefetch" href="/assets/js/155.6c8dbf71.js"><link rel="prefetch" href="/assets/js/156.a9d81dce.js"><link rel="prefetch" href="/assets/js/157.e53c1adb.js"><link rel="prefetch" href="/assets/js/158.11f55456.js"><link rel="prefetch" href="/assets/js/159.2c05d7f2.js"><link rel="prefetch" href="/assets/js/16.ed7e507f.js"><link rel="prefetch" href="/assets/js/160.27616923.js"><link rel="prefetch" href="/assets/js/17.de667ca5.js"><link rel="prefetch" href="/assets/js/18.b44e84af.js"><link rel="prefetch" href="/assets/js/19.5b5ad6a1.js"><link rel="prefetch" href="/assets/js/20.6800493a.js"><link rel="prefetch" href="/assets/js/21.6589052c.js"><link rel="prefetch" href="/assets/js/22.f648d829.js"><link rel="prefetch" href="/assets/js/23.21fe11d7.js"><link rel="prefetch" href="/assets/js/24.7a3e65b2.js"><link rel="prefetch" href="/assets/js/25.9e2d6c46.js"><link rel="prefetch" href="/assets/js/26.0dcf1d19.js"><link rel="prefetch" href="/assets/js/27.bd79a51b.js"><link rel="prefetch" href="/assets/js/28.ad9cdafd.js"><link rel="prefetch" href="/assets/js/29.738a8c4a.js"><link rel="prefetch" href="/assets/js/3.13e892f5.js"><link rel="prefetch" href="/assets/js/30.5d2ae7ae.js"><link rel="prefetch" href="/assets/js/31.2a59449c.js"><link rel="prefetch" href="/assets/js/32.322ed58f.js"><link rel="prefetch" href="/assets/js/33.e18917c7.js"><link rel="prefetch" href="/assets/js/34.edfe8355.js"><link rel="prefetch" href="/assets/js/35.2c0b1e3e.js"><link rel="prefetch" href="/assets/js/36.b1fdf51f.js"><link rel="prefetch" href="/assets/js/37.11ee0b0c.js"><link rel="prefetch" href="/assets/js/38.0b050ca5.js"><link rel="prefetch" href="/assets/js/39.2bd20762.js"><link rel="prefetch" href="/assets/js/4.5bdb9365.js"><link rel="prefetch" href="/assets/js/40.eb0c66c8.js"><link rel="prefetch" href="/assets/js/41.933044bc.js"><link rel="prefetch" href="/assets/js/42.eac4ba39.js"><link rel="prefetch" href="/assets/js/43.8c61e37d.js"><link rel="prefetch" href="/assets/js/44.30f132bb.js"><link rel="prefetch" href="/assets/js/45.2477f9bb.js"><link rel="prefetch" href="/assets/js/46.e97df854.js"><link rel="prefetch" href="/assets/js/47.60f16a00.js"><link rel="prefetch" href="/assets/js/48.d01b463f.js"><link rel="prefetch" href="/assets/js/49.e3a15fc7.js"><link rel="prefetch" href="/assets/js/5.7c68fdb5.js"><link rel="prefetch" href="/assets/js/50.31265493.js"><link rel="prefetch" href="/assets/js/51.ed2cc5dc.js"><link rel="prefetch" href="/assets/js/52.3ae02665.js"><link rel="prefetch" href="/assets/js/53.69d15c58.js"><link rel="prefetch" href="/assets/js/54.bbab20a0.js"><link rel="prefetch" href="/assets/js/55.9617cf7e.js"><link rel="prefetch" href="/assets/js/56.13f9aef2.js"><link rel="prefetch" href="/assets/js/57.ba08cc35.js"><link rel="prefetch" href="/assets/js/58.63028d02.js"><link rel="prefetch" href="/assets/js/59.566c0b50.js"><link rel="prefetch" href="/assets/js/6.c8da7ca7.js"><link rel="prefetch" href="/assets/js/60.0801f3b3.js"><link rel="prefetch" href="/assets/js/61.ceae0570.js"><link rel="prefetch" href="/assets/js/63.15282044.js"><link rel="prefetch" href="/assets/js/64.7c666983.js"><link rel="prefetch" href="/assets/js/65.320c4670.js"><link rel="prefetch" href="/assets/js/66.253bab14.js"><link rel="prefetch" href="/assets/js/67.49c1e967.js"><link rel="prefetch" href="/assets/js/68.ae82def1.js"><link rel="prefetch" href="/assets/js/69.0877ad54.js"><link rel="prefetch" href="/assets/js/7.e4c88d0e.js"><link rel="prefetch" href="/assets/js/70.5e8208ea.js"><link rel="prefetch" href="/assets/js/71.52cb4845.js"><link rel="prefetch" href="/assets/js/72.8c575d51.js"><link rel="prefetch" href="/assets/js/73.b9ba874e.js"><link rel="prefetch" href="/assets/js/74.6b4693bb.js"><link rel="prefetch" href="/assets/js/75.e9378ce1.js"><link rel="prefetch" href="/assets/js/76.a80b13fc.js"><link rel="prefetch" href="/assets/js/77.d134968d.js"><link rel="prefetch" href="/assets/js/78.40d99cd8.js"><link rel="prefetch" href="/assets/js/79.2b663044.js"><link rel="prefetch" href="/assets/js/80.0b63f3ac.js"><link rel="prefetch" href="/assets/js/81.bc4031db.js"><link rel="prefetch" href="/assets/js/82.3152c02c.js"><link rel="prefetch" href="/assets/js/83.3fa2dc4b.js"><link rel="prefetch" href="/assets/js/84.e778c959.js"><link rel="prefetch" href="/assets/js/85.060ddc49.js"><link rel="prefetch" href="/assets/js/86.bb8138bb.js"><link rel="prefetch" href="/assets/js/87.72c01e68.js"><link rel="prefetch" href="/assets/js/88.e3e56223.js"><link rel="prefetch" href="/assets/js/89.198ff8d1.js"><link rel="prefetch" href="/assets/js/90.6437abb2.js"><link rel="prefetch" href="/assets/js/91.dbe1df52.js"><link rel="prefetch" href="/assets/js/92.6e732f3a.js"><link rel="prefetch" href="/assets/js/93.e98beea7.js"><link rel="prefetch" href="/assets/js/94.c62e88cb.js"><link rel="prefetch" href="/assets/js/95.f6aad986.js"><link rel="prefetch" href="/assets/js/96.e0630547.js"><link rel="prefetch" href="/assets/js/97.3cd76aa5.js"><link rel="prefetch" href="/assets/js/98.3bc2adce.js"><link rel="prefetch" href="/assets/js/99.88c20858.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.5143d2e0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b4a844ec.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">duangdong的qa</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/js/" class="nav-link router-link-active">
+  JS方面
+</a></div><div class="nav-item"><a href="/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/summary/" class="nav-link">
+  汇总
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  常见算法
+</a></div><div class="nav-item"><a href="/performance/" class="nav-link">
+  性能优化
+</a></div><div class="nav-item"><a href="/http/" class="nav-link">
+  网络协议
+</a></div><div class="nav-item"><a href="/css/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/face-sutra/" class="nav-link">
+  QA
+</a></div><div class="nav-item"><a href="https://link.aduang.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Home
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/js/" class="nav-link router-link-active">
+  JS方面
+</a></div><div class="nav-item"><a href="/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/summary/" class="nav-link">
+  汇总
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  常见算法
+</a></div><div class="nav-item"><a href="/performance/" class="nav-link">
+  性能优化
+</a></div><div class="nav-item"><a href="/http/" class="nav-link">
+  网络协议
+</a></div><div class="nav-item"><a href="/css/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/face-sutra/" class="nav-link">
+  QA
+</a></div><div class="nav-item"><a href="https://link.aduang.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Home
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/js/" aria-current="page" class="sidebar-link">相关问题总结</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>axios</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>d-js手动实现</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>i-节流防抖</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>j-深拷贝</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/js/j-深拷贝/Lodash是如何实现深拷贝的.html" class="active sidebar-link">Lodash是如何实现深拷贝的</a></li><li><a href="/js/j-深拷贝/assign原理及其实现.html" class="sidebar-link">Object.assign 原理及其实现</a></li><li><a href="/js/j-深拷贝/为什么会有深拷贝和浅拷贝.html" class="sidebar-link">为什么会有深拷贝和浅拷贝</a></li><li><a href="/js/j-深拷贝/深拷贝和浅拷贝的区别.html" class="sidebar-link">深拷贝和浅拷贝的区别</a></li><li><a href="/js/j-深拷贝/深拷贝实现.html" class="sidebar-link">深拷贝实现</a></li><li><a href="/js/j-深拷贝/详细解析赋值、浅拷贝和深拷贝的区别.html" class="sidebar-link">详细解析赋值、浅拷贝和深拷贝的区别</a></li><li><a href="/js/j-深拷贝/面试题之如何实现一个深拷贝.html" class="sidebar-link">面试题之如何实现一个深拷贝</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>k-数组</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>n-es6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>z-ts</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/js/宏任务和微任务.html" class="sidebar-link">十分钟把宏任务和微任务讲清楚</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>异步</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/js/观察者模式.html" class="sidebar-link">观察者模式</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="lodash是如何实现深拷贝的"><a href="#lodash是如何实现深拷贝的" class="header-anchor">#</a> Lodash是如何实现深拷贝的</h1> <blockquote><p><a href="https://muyiy.cn/blog/4/4.4.html" target="_blank" rel="noopener noreferrer">https://muyiy.cn/blog/4/4.4.html<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <h2 id="引言"><a href="#引言" class="header-anchor">#</a> <a href="https://muyiy.cn/blog/4/4.4.html#%E5%BC%95%E8%A8%80" target="_blank" rel="noopener noreferrer">#<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>引言</h2> <p>在上一篇文章中介绍了如何实现一个深拷贝，分别说明了对象、数组、循环引用、引用丢失、<code>Symbol</code> 和递归爆栈等情况下的深拷贝实践，今天我们来看看 <code>Lodash</code> 如何实现上述之外的函数、正则、Date、Buffer、Map、Set、原型链等情况下的深拷贝实践。本篇文章源码基于 <code>Lodash</code> 4.17.11 版本。</p> <p>更多内容请查看 <a href="https://github.com/yygmind/blog" target="_blank" rel="noopener noreferrer">GitHub<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="整体流程"><a href="#整体流程" class="header-anchor">#</a> <a href="https://muyiy.cn/blog/4/4.4.html#%E6%95%B4%E4%BD%93%E6%B5%81%E7%A8%8B" target="_blank" rel="noopener noreferrer">#<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>整体流程</h2> <h3 id="入口"><a href="#入口" class="header-anchor">#</a> <a href="https://muyiy.cn/blog/4/4.4.html#%E5%85%A5%E5%8F%A3" target="_blank" rel="noopener noreferrer">#<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>入口</h3> <p>入口文件是 <code>cloneDeep.js</code>，直接调用核心文件 <code>baseClone.js</code> 的方法。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token keyword">const</span> <span class="token constant">CLONE_DEEP_FLAG</span> <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">const</span> <span class="token constant">CLONE_SYMBOLS_FLAG</span> <span class="token operator">=</span> <span class="token number">4</span>
+
+<span class="token keyword">function</span> <span class="token function">cloneDeep</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">baseClone</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> <span class="token constant">CLONE_DEEP_FLAG</span> <span class="token operator">|</span> <span class="token constant">CLONE_SYMBOLS_FLAG</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>第一个参数是需要拷贝的对象，第二个是位掩码（Bitwise），关于位掩码的详细介绍请看下面拓展部分。</p> <h3 id="baseclone-方法"><a href="#baseclone-方法" class="header-anchor">#</a> <a href="https://muyiy.cn/blog/4/4.4.html#baseclone-%E6%96%B9%E6%B3%95" target="_blank" rel="noopener noreferrer">#<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>baseClone 方法</h3> <p>然后我们进入 <code>./.internal/baseClone.js</code> 路径查看具体方法，主要实现逻辑都在这个方法里。</p> <p>先介绍下该方法的参数 <code>baseClone(value, bitmask, customizer, key, object, stack)</code></p> <ul><li>value：需要拷贝的对象</li> <li>bitmask：位掩码，其中 1 是深拷贝，2 拷贝原型链上的属性，4 是拷贝 Symbols 属性</li> <li>customizer：定制的 <code>clone</code> 函数</li> <li>key：传入 value 值的 key</li> <li>object：传入 value 值的父对象</li> <li>stack：Stack 栈，用来处理循环引用</li></ul> <p>我将分成以下几部分进行讲解，可以选择自己感兴趣的部分阅读。</p> <ul><li>位掩码</li> <li>定制 <code>clone</code> 函数</li> <li>非对象</li> <li>数组 &amp; 正则</li> <li>对象 &amp; 函数</li> <li>循环引用</li> <li>Map &amp; Set</li> <li>Symbol &amp; 原型链</li></ul> <h3 id="baseclone-完整代码"><a href="#baseclone-完整代码" class="header-anchor">#</a> <a href="https://muyiy.cn/blog/4/4.4.html#baseclone-%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81" target="_blank" rel="noopener noreferrer">#<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>baseClone 完整代码</h3> <p>这部分就是核心代码了，各功能分割如下，详细功能实现部分将对各个功能详细解读。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token keyword">function</span> <span class="token function">baseClone</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> bitmask<span class="token punctuation">,</span> customizer<span class="token punctuation">,</span> key<span class="token punctuation">,</span> object<span class="token punctuation">,</span> stack</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> result
+
+    <span class="token comment">// 标志位</span>
+    <span class="token keyword">const</span> isDeep <span class="token operator">=</span> bitmask <span class="token operator">&amp;</span> <span class="token constant">CLONE_DEEP_FLAG</span>		<span class="token comment">// 深拷贝，true</span>
+    <span class="token keyword">const</span> isFlat <span class="token operator">=</span> bitmask <span class="token operator">&amp;</span> <span class="token constant">CLONE_FLAT_FLAG</span>		<span class="token comment">// 拷贝原型链，false</span>
+    <span class="token keyword">const</span> isFull <span class="token operator">=</span> bitmask <span class="token operator">&amp;</span> <span class="token constant">CLONE_SYMBOLS_FLAG</span>	<span class="token comment">// 拷贝 Symbol，true</span>
+
+    <span class="token comment">// 自定义 clone 函数</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>customizer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        result <span class="token operator">=</span> object <span class="token operator">?</span> <span class="token function">customizer</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> key<span class="token punctuation">,</span> object<span class="token punctuation">,</span> stack<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">customizer</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>result <span class="token operator">!==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> result
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 非对象  </span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">isObject</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> value
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">const</span> isArr <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+    <span class="token keyword">const</span> tag <span class="token operator">=</span> <span class="token function">getTag</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>isArr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 数组</span>
+        result <span class="token operator">=</span> <span class="token function">initCloneArray</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isDeep<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token function">copyArray</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> result<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 对象</span>
+        <span class="token keyword">const</span> isFunc <span class="token operator">=</span> <span class="token keyword">typeof</span> value <span class="token operator">==</span> <span class="token string">'function'</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isBuffer</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token function">cloneBuffer</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> isDeep<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>tag <span class="token operator">==</span> objectTag <span class="token operator">||</span> tag <span class="token operator">==</span> argsTag <span class="token operator">||</span> <span class="token punctuation">(</span>isFunc <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>object<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            result <span class="token operator">=</span> <span class="token punctuation">(</span>isFlat <span class="token operator">||</span> isFunc<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token operator">:</span> <span class="token function">initCloneObject</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isDeep<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> isFlat
+                    <span class="token operator">?</span> <span class="token function">copySymbolsIn</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> <span class="token function">copyObject</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> <span class="token function">keysIn</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">,</span> result<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                	<span class="token operator">:</span> <span class="token function">copySymbols</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>result<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>isFunc <span class="token operator">||</span> <span class="token operator">!</span>cloneableTags<span class="token punctuation">[</span>tag<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> object <span class="token operator">?</span> value <span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            result <span class="token operator">=</span> <span class="token function">initCloneByTag</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> tag<span class="token punctuation">,</span> isDeep<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 循环引用</span>
+    stack <span class="token operator">||</span> <span class="token punctuation">(</span>stack <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Stack</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> stacked <span class="token operator">=</span> stack<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>stacked<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> stacked
+    <span class="token punctuation">}</span>
+    stack<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> result<span class="token punctuation">)</span>
+
+    <span class="token comment">// Map</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>tag <span class="token operator">==</span> mapTag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        value<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">subValue<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            result<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token function">baseClone</span><span class="token punctuation">(</span>subValue<span class="token punctuation">,</span> bitmask<span class="token punctuation">,</span> customizer<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">,</span> stack<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> result
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Set</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>tag <span class="token operator">==</span> setTag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        value<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">subValue</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            result<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token function">baseClone</span><span class="token punctuation">(</span>subValue<span class="token punctuation">,</span> bitmask<span class="token punctuation">,</span> customizer<span class="token punctuation">,</span> subValue<span class="token punctuation">,</span> value<span class="token punctuation">,</span> stack<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> result
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// TypedArray</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isTypedArray</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> result
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Symbol &amp; 原型链</span>
+    <span class="token keyword">const</span> keysFunc <span class="token operator">=</span> isFull
+    	<span class="token operator">?</span> <span class="token punctuation">(</span>isFlat <span class="token operator">?</span> getAllKeysIn <span class="token operator">:</span> getAllKeys<span class="token punctuation">)</span>
+    	<span class="token operator">:</span> <span class="token punctuation">(</span>isFlat <span class="token operator">?</span> keysIn <span class="token operator">:</span> keys<span class="token punctuation">)</span>
+
+    <span class="token keyword">const</span> props <span class="token operator">=</span> isArr <span class="token operator">?</span> <span class="token keyword">undefined</span> <span class="token operator">:</span> <span class="token function">keysFunc</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+    
+    <span class="token comment">// 遍历赋值</span>
+    <span class="token function">arrayEach</span><span class="token punctuation">(</span>props <span class="token operator">||</span> value<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">subValue<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            key <span class="token operator">=</span> subValue
+            subValue <span class="token operator">=</span> value<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">assignValue</span><span class="token punctuation">(</span>result<span class="token punctuation">,</span> key<span class="token punctuation">,</span> <span class="token function">baseClone</span><span class="token punctuation">(</span>subValue<span class="token punctuation">,</span> bitmask<span class="token punctuation">,</span> customizer<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">,</span> stack<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 返回结果</span>
+    <span class="token keyword">return</span> result
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="详细功能实现"><a href="#详细功能实现" class="header-anchor">#</a> <a href="https://muyiy.cn/blog/4/4.4.html#%E8%AF%A6%E7%BB%86%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0" target="_blank" rel="noopener noreferrer">#<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>详细功能实现</h2> <h3 id="位掩码"><a href="#位掩码" class="header-anchor">#</a> <a href="https://muyiy.cn/blog/4/4.4.html#%E4%BD%8D%E6%8E%A9%E7%A0%81" target="_blank" rel="noopener noreferrer">#<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>位掩码</h3> <p>上面简单介绍了位掩码，参数定义如下。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token comment">// 主线代码</span>
+<span class="token keyword">const</span> <span class="token constant">CLONE_DEEP_FLAG</span> <span class="token operator">=</span> <span class="token number">1</span>		<span class="token comment">// 1 即 0001，深拷贝标志位</span>
+<span class="token keyword">const</span> <span class="token constant">CLONE_FLAT_FLAG</span> <span class="token operator">=</span> <span class="token number">2</span>		<span class="token comment">// 2 即 0010，拷贝原型链标志位，</span>
+<span class="token keyword">const</span> <span class="token constant">CLONE_SYMBOLS_FLAG</span> <span class="token operator">=</span> <span class="token number">4</span>	<span class="token comment">// 4 即 0100，拷贝 Symbols 标志位</span>
+</code></pre></div><p>位掩码用于处理同时存在多个布尔选项的情况，其中<strong>掩码中的每个选项的值都等于 2 的幂</strong>。相比直接使用变量来说，优点是可以节省内存（1/32）（来自<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators" target="_blank" rel="noopener noreferrer">MDN<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>）</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token comment">// 主线代码</span>
+<span class="token comment">// cloneDeep.js 添加标志位，1 | 4 即 0001 | 0100 即 0101 即 5</span>
+<span class="token constant">CLONE_DEEP_FLAG</span> <span class="token operator">|</span> <span class="token constant">CLONE_SYMBOLS_FLAG</span>
+
+<span class="token comment">// baseClone.js 取出标志位</span>
+<span class="token keyword">let</span> result <span class="token comment">// 初始化返回结果，后续代码需要，和位掩码无关</span>
+<span class="token keyword">const</span> isDeep <span class="token operator">=</span> bitmask <span class="token operator">&amp;</span> <span class="token constant">CLONE_DEEP_FLAG</span> 	<span class="token comment">// 5 &amp; 1 即 1 即 true</span>
+<span class="token keyword">const</span> isFlat <span class="token operator">=</span> bitmask <span class="token operator">&amp;</span> <span class="token constant">CLONE_FLAT_FLAG</span>	<span class="token comment">// 5 &amp; 2 即 0 即 false</span>
+<span class="token keyword">const</span> isFull <span class="token operator">=</span> bitmask <span class="token operator">&amp;</span> <span class="token constant">CLONE_SYMBOLS_FLAG</span> <span class="token comment">// 5 &amp; 4 即 4 即 true</span>
+</code></pre></div><p>常用的基本操作如下</p> <ul><li><code>a | b</code>：添加标志位 a 和 b</li> <li><code>mask &amp; a</code>：取出标志位 a</li> <li><code>mask &amp; ~a</code>：清除标志位 a</li> <li><code>mask ^ a</code>：取出与 a 的不同部分</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token keyword">var</span> <span class="token constant">FLAG_A</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// 0001</span>
+<span class="token keyword">var</span> <span class="token constant">FLAG_B</span> <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span> <span class="token comment">// 0100</span>
+
+<span class="token comment">// 添加标志位 a 和 b =&gt; a | b</span>
+<span class="token keyword">var</span> mask <span class="token operator">=</span> <span class="token constant">FLAG_A</span> <span class="token operator">|</span> <span class="token parameter"><span class="token constant">FLAG_B</span></span> <span class="token operator">=&gt;</span> <span class="token number">0101</span> <span class="token operator">=&gt;</span> <span class="token number">5</span>
+
+<span class="token comment">// 取出标志位 a =&gt; mask &amp; a</span>
+mask <span class="token operator">&amp;</span> <span class="token parameter"><span class="token constant">FLAG_A</span></span> <span class="token operator">=&gt;</span> <span class="token number">0001</span> <span class="token operator">=&gt;</span> <span class="token number">1</span>
+mask <span class="token operator">&amp;</span> <span class="token parameter"><span class="token constant">FLAG_B</span></span> <span class="token operator">=&gt;</span> <span class="token number">0100</span> <span class="token operator">=&gt;</span> <span class="token number">4</span>
+
+<span class="token comment">// 清除标记位 a =&gt; mask &amp; ~a</span>
+mask <span class="token operator">&amp;</span> <span class="token operator">~</span><span class="token parameter"><span class="token constant">FLAG_A</span></span> <span class="token operator">=&gt;</span> <span class="token number">0100</span> <span class="token operator">=&gt;</span> <span class="token number">4</span>
+
+<span class="token comment">// 取出与 a 的不同部分 =&gt; mask ^ a</span>
+mask <span class="token operator">^</span> <span class="token parameter"><span class="token constant">FLAG_A</span></span> <span class="token operator">=&gt;</span> <span class="token number">0100</span> <span class="token operator">=&gt;</span> <span class="token number">4</span>
+mask <span class="token operator">^</span> <span class="token parameter"><span class="token constant">FLAG_B</span></span> <span class="token operator">=&gt;</span> <span class="token number">0001</span> <span class="token operator">=&gt;</span> <span class="token number">1</span>
+<span class="token constant">FLAG_A</span> <span class="token operator">^</span> <span class="token parameter"><span class="token constant">FLAG_B</span></span> <span class="token operator">=&gt;</span> <span class="token number">0101</span> <span class="token operator">=&gt;</span> <span class="token number">5</span>
+</code></pre></div><h3 id="定制-clone-函数"><a href="#定制-clone-函数" class="header-anchor">#</a> <a href="https://muyiy.cn/blog/4/4.4.html#%E5%AE%9A%E5%88%B6-clone-%E5%87%BD%E6%95%B0" target="_blank" rel="noopener noreferrer">#<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>定制 <code>clone</code> 函数</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token comment">// 主线代码</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>customizer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	result <span class="token operator">=</span> object <span class="token operator">?</span> <span class="token function">customizer</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> key<span class="token punctuation">,</span> object<span class="token punctuation">,</span> stack<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">customizer</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>result <span class="token operator">!==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> result
+<span class="token punctuation">}</span>
+</code></pre></div><p>上面代码比较清晰，存在定制 <code>clone</code> 函数时，如果存在 value 值的父对象，就传入 <code>value、key、object、stack</code> 这些值，不存在父对象直接传入 <code>value</code>执行定制函数。函数返回值 <code>result</code> 不为空则返回执行结果。</p> <p>这部分是为了定制 <code>clone</code> 函数暴露出来的方法。</p> <h3 id="非对象"><a href="#非对象" class="header-anchor">#</a> <a href="https://muyiy.cn/blog/4/4.4.html#%E9%9D%9E%E5%AF%B9%E8%B1%A1" target="_blank" rel="noopener noreferrer">#<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>非对象</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token comment">// 主线代码</span>
+<span class="token comment">//判断要拷贝的值是否是对象，非对象直接返回本来的值</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">isObject</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> value<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// ../isObject.js</span>
+<span class="token keyword">function</span> <span class="token function">isObject</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> type <span class="token operator">=</span> <span class="token keyword">typeof</span> value<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> value <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>type <span class="token operator">==</span> <span class="token string">'object'</span> <span class="token operator">||</span> type <span class="token operator">=</span><span class="token string">'function'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这里的处理和我在【进阶3-3】的处理一样，有一点不同在于对象的判断中加入了 <code>function</code>，对于函数的拷贝详见下面函数部分。</p> <h3 id="数组-正则"><a href="#数组-正则" class="header-anchor">#</a> <a href="https://muyiy.cn/blog/4/4.4.html#%E6%95%B0%E7%BB%84-%E6%AD%A3%E5%88%99" target="_blank" rel="noopener noreferrer">#<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>数组 &amp; 正则</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token comment">// 主线代码</span>
+<span class="token keyword">const</span> isArr <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+<span class="token keyword">const</span> hasOwnProperty <span class="token operator">=</span> <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>hasOwnProperty
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>isArr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 数组</span>
+    result <span class="token operator">=</span> <span class="token function">initCloneArray</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isDeep<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">copyArray</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> result<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span> <span class="token comment">// 非数组，后面解析</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 初始化一个数组</span>
+<span class="token keyword">function</span> <span class="token function">initCloneArray</span><span class="token punctuation">(</span><span class="token parameter">array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  	<span class="token keyword">const</span> <span class="token punctuation">{</span> length <span class="token punctuation">}</span> <span class="token operator">=</span> array
+    <span class="token comment">// 构造相同长度的新数组</span>
+  	<span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">array<span class="token punctuation">.</span>constructor</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span>
+
+  	<span class="token comment">// 正则 `RegExp#exec` 返回的数组</span>
+  	<span class="token keyword">if</span> <span class="token punctuation">(</span>length <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'string'</span> <span class="token operator">&amp;&amp;</span> <span class="token function">hasOwnProperty</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span> <span class="token string">'index'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   	 	result<span class="token punctuation">.</span>index <span class="token operator">=</span> array<span class="token punctuation">.</span>index
+    	result<span class="token punctuation">.</span>input <span class="token operator">=</span> array<span class="token punctuation">.</span>input
+  	<span class="token punctuation">}</span>
+  	<span class="token keyword">return</span> result
+<span class="token punctuation">}</span>
+    
+<span class="token comment">// ... 未完待续，最后部分有数组遍历赋值    </span>
+</code></pre></div><p>传入的对象是数组时，构造一个相同长度的数组 <code>new array.constructor(length)</code>，这里相当于 <code>new Array(length)</code>，因为 <code>array.constructor === Array</code>。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+a<span class="token punctuation">.</span>constructor <span class="token operator">===</span> Array<span class="token punctuation">;</span> <span class="token comment">// true</span>
+
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">;</span>
+a<span class="token punctuation">.</span>constructor <span class="token operator">===</span> Array <span class="token comment">// true</span>
+</code></pre></div><p>如果存在正则 <code>RegExp#exec</code> 返回的数组，拷贝属性 <code>index</code> 和 <code>input</code>。判断逻辑是 1、数组长度大于 0，2、数组第一个元素是字符串类型，3、数组存在 <code>index</code> 属性。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>length <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'string'</span> <span class="token operator">&amp;&amp;</span> <span class="token function">hasOwnProperty</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span> <span class="token string">'index'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    result<span class="token punctuation">.</span>index <span class="token operator">=</span> array<span class="token punctuation">.</span>index
+    result<span class="token punctuation">.</span>input <span class="token operator">=</span> array<span class="token punctuation">.</span>input
+<span class="token punctuation">}</span>
+</code></pre></div><p>其中正则表达式 <code>regexObj.exec(str)</code> 匹配成功时，返回一个数组，并更新正则表达式对象的属性。返回的数组将完全匹配成功的文本作为第一项，将正则括号里匹配成功的作为数组填充到后面。匹配失败时返回 <code>null</code>。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token keyword">var</span> re <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">quick\s(brown).+?(jumps)</span><span class="token regex-delimiter">/</span><span class="token regex-flags">ig</span></span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> result <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span><span class="token string">'The Quick Brown Fox Jumps Over The Lazy Dog'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// [</span>
+<span class="token comment">//	0: &quot;Quick Brown Fox Jumps&quot; 	// 匹配的全部字符串</span>
+<span class="token comment">//	1: &quot;Brown&quot;					// 括号中的分组捕获</span>
+<span class="token comment">//	2: &quot;Jumps&quot;</span>
+<span class="token comment">//	groups: undefined</span>
+<span class="token comment">//	index: 4					// 匹配到的字符位于原始字符串的基于0的索引值</span>
+<span class="token comment">//	input: &quot;The Quick Brown Fox Jumps Over The Lazy Dog&quot; // 原始字符串</span>
+<span class="token comment">//	length: 3</span>
+<span class="token comment">// ]</span>
+</code></pre></div><p>如果不是深拷贝，传入<code>value</code> 和 <code>result</code>，直接返回浅拷贝后的数组。这里的浅拷贝方式就是循环然后复制。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isDeep<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token function">copyArray</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> result<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 浅拷贝数组</span>
+<span class="token keyword">function</span> <span class="token function">copyArray</span><span class="token punctuation">(</span><span class="token parameter">source<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+  <span class="token keyword">const</span> length <span class="token operator">=</span> source<span class="token punctuation">.</span>length
+  array <span class="token operator">||</span> <span class="token punctuation">(</span>array <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">++</span>index <span class="token operator">&lt;</span> length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    array<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> source<span class="token punctuation">[</span>index<span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> array
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="对象-函数"><a href="#对象-函数" class="header-anchor">#</a> <a href="https://muyiy.cn/blog/4/4.4.html#%E5%AF%B9%E8%B1%A1-%E5%87%BD%E6%95%B0" target="_blank" rel="noopener noreferrer">#<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>对象 &amp; 函数</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token comment">// 主线代码</span>
+<span class="token keyword">const</span> isArr <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+<span class="token keyword">const</span> tag <span class="token operator">=</span> <span class="token function">getTag</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>isArr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span> <span class="token comment">// 数组情况，详见上面解析</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 函数</span>
+    <span class="token keyword">const</span> isFunc <span class="token operator">=</span> <span class="token keyword">typeof</span> value <span class="token operator">==</span> <span class="token string">'function'</span>
+
+    <span class="token comment">// 如果是 Buffer 对象，拷贝并返回</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isBuffer</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">cloneBuffer</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> isDeep<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// Object 对象、类数组、或者是函数但没有父对象</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>tag <span class="token operator">==</span> objectTag <span class="token operator">||</span> tag <span class="token operator">==</span> argsTag <span class="token operator">||</span> <span class="token punctuation">(</span>isFunc <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>object<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 拷贝原型链或者 value 是函数时，返回 {}，不然初始化对象</span>
+        result <span class="token operator">=</span> <span class="token punctuation">(</span>isFlat <span class="token operator">||</span> isFunc<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token operator">:</span> <span class="token function">initCloneObject</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isDeep<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> isFlat
+                <span class="token operator">?</span> <span class="token function">copySymbolsIn</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> <span class="token function">copyObject</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> <span class="token function">keysIn</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">,</span> result<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            	<span class="token operator">:</span> <span class="token function">copySymbols</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>result<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 在 cloneableTags 中，只有 error 和 weakmap 返回 false</span>
+        <span class="token comment">// 函数或者 error 或者 weakmap 时，</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>isFunc <span class="token operator">||</span> <span class="token operator">!</span>cloneableTags<span class="token punctuation">[</span>tag<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 存在父对象返回value，不然返回空对象 {}</span>
+            <span class="token keyword">return</span> object <span class="token operator">?</span> value <span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 初始化非常规类型</span>
+        result <span class="token operator">=</span> <span class="token function">initCloneByTag</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> tag<span class="token punctuation">,</span> isDeep<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>通过上面代码可以发现，函数、<code>error</code> 和 <code>weakmap</code> 时返回空对象 {}，并不会真正拷贝函数。</p> <p><code>value</code> 类型是 <code>Object</code> 对象和类数组时，调用 <code>initCloneObject</code> 初始化对象，最终调用 <code>Object.create</code> 生成新对象。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token keyword">function</span> <span class="token function">initCloneObject</span><span class="token punctuation">(</span><span class="token parameter">object</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 构造函数并且自己不在自己的原型链上</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> object<span class="token punctuation">.</span>constructor <span class="token operator">==</span> <span class="token string">'function'</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token function">isPrototype</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token operator">?</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">getPrototypeOf</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    	<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 本质上实现了一个instanceof，用来测试自己是否在自己的原型链上</span>
+<span class="token keyword">function</span> <span class="token function">isPrototype</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> Ctor <span class="token operator">=</span> value <span class="token operator">&amp;&amp;</span> value<span class="token punctuation">.</span>constructor
+    <span class="token comment">// 寻找对应原型</span>
+    <span class="token keyword">const</span> proto <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> Ctor <span class="token operator">==</span> <span class="token string">'function'</span> <span class="token operator">&amp;&amp;</span> <span class="token class-name">Ctor</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype
+    <span class="token keyword">return</span> value <span class="token operator">===</span> proto
+<span class="token punctuation">}</span>
+</code></pre></div><p>其中 <code>Object</code> 的构造函数是一个函数对象。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">typeof</span> obj<span class="token punctuation">.</span>constructor<span class="token punctuation">;</span> 
+<span class="token comment">// 'function'</span>
+
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">typeof</span> obj2<span class="token punctuation">.</span>constructor<span class="token punctuation">;</span>
+<span class="token comment">// 'function'</span>
+</code></pre></div><p>对于非常规类型对象，通过各自类型分别进行初始化。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token keyword">function</span> <span class="token function">initCloneByTag</span><span class="token punctuation">(</span><span class="token parameter">object<span class="token punctuation">,</span> tag<span class="token punctuation">,</span> isDeep</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> Ctor <span class="token operator">=</span> object<span class="token punctuation">.</span>constructor
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span>tag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token literal-property property">arrayBufferTag</span><span class="token operator">:</span>
+            <span class="token keyword">return</span> <span class="token function">cloneArrayBuffer</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span>
+
+        <span class="token keyword">case</span> <span class="token literal-property property">boolTag</span><span class="token operator">:</span> <span class="token comment">// 布尔与时间类型</span>
+        <span class="token keyword">case</span> <span class="token literal-property property">dateTag</span><span class="token operator">:</span>
+            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Ctor</span><span class="token punctuation">(</span><span class="token operator">+</span>object<span class="token punctuation">)</span> <span class="token comment">// + 转换为数字</span>
+
+        <span class="token keyword">case</span> <span class="token literal-property property">dataViewTag</span><span class="token operator">:</span>
+            <span class="token keyword">return</span> <span class="token function">cloneDataView</span><span class="token punctuation">(</span>object<span class="token punctuation">,</span> isDeep<span class="token punctuation">)</span>
+
+        <span class="token keyword">case</span> <span class="token literal-property property">float32Tag</span><span class="token operator">:</span> <span class="token keyword">case</span> <span class="token literal-property property">float64Tag</span><span class="token operator">:</span>
+        <span class="token keyword">case</span> <span class="token literal-property property">int8Tag</span><span class="token operator">:</span> <span class="token keyword">case</span> <span class="token literal-property property">int16Tag</span><span class="token operator">:</span> <span class="token keyword">case</span> <span class="token literal-property property">int32Tag</span><span class="token operator">:</span>
+        <span class="token keyword">case</span> <span class="token literal-property property">uint8Tag</span><span class="token operator">:</span> <span class="token keyword">case</span> <span class="token literal-property property">uint8ClampedTag</span><span class="token operator">:</span> <span class="token keyword">case</span> <span class="token literal-property property">uint16Tag</span><span class="token operator">:</span> <span class="token keyword">case</span> <span class="token literal-property property">uint32Tag</span><span class="token operator">:</span>
+            <span class="token keyword">return</span> <span class="token function">cloneTypedArray</span><span class="token punctuation">(</span>object<span class="token punctuation">,</span> isDeep<span class="token punctuation">)</span>
+
+        <span class="token keyword">case</span> <span class="token literal-property property">mapTag</span><span class="token operator">:</span> <span class="token comment">// Map 类型</span>
+            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Ctor</span>
+
+        <span class="token keyword">case</span> <span class="token literal-property property">numberTag</span><span class="token operator">:</span> <span class="token comment">// 数字和字符串类型</span>
+        <span class="token keyword">case</span> <span class="token literal-property property">stringTag</span><span class="token operator">:</span>
+            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Ctor</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span>
+
+        <span class="token keyword">case</span> <span class="token literal-property property">regexpTag</span><span class="token operator">:</span> <span class="token comment">// 正则</span>
+            <span class="token keyword">return</span> <span class="token function">cloneRegExp</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span>
+
+        <span class="token keyword">case</span> <span class="token literal-property property">setTag</span><span class="token operator">:</span> <span class="token comment">// Set 类型</span>
+            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Ctor</span>
+
+        <span class="token keyword">case</span> <span class="token literal-property property">symbolTag</span><span class="token operator">:</span> <span class="token comment">// Symbol 类型</span>
+            <span class="token keyword">return</span> <span class="token function">cloneSymbol</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>拷贝正则类型</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token comment">// \w 用于匹配字母，数字或下划线字符，相当于[A-Za-z0-9_]</span>
+<span class="token keyword">const</span> reFlags <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\w*$</span><span class="token regex-delimiter">/</span></span>
+<span class="token keyword">function</span> <span class="token function">cloneRegExp</span><span class="token punctuation">(</span><span class="token parameter">regexp</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 返回当前匹配的文本</span>
+    <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">regexp<span class="token punctuation">.</span>constructor</span><span class="token punctuation">(</span>regexp<span class="token punctuation">.</span>source<span class="token punctuation">,</span> reFlags<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>regexp<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment">// 下一次匹配的起始索引</span>
+    result<span class="token punctuation">.</span>lastIndex <span class="token operator">=</span> regexp<span class="token punctuation">.</span>lastIndex
+    <span class="token keyword">return</span> result
+<span class="token punctuation">}</span>
+</code></pre></div><p>初始化 <code>Symbol</code> 类型</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token keyword">const</span> symbolValueOf <span class="token operator">=</span> <span class="token class-name">Symbol</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>valueOf
+<span class="token keyword">function</span> <span class="token function">cloneSymbol</span><span class="token punctuation">(</span><span class="token parameter">symbol</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">Object</span><span class="token punctuation">(</span><span class="token function">symbolValueOf</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>symbol<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="循环引用"><a href="#循环引用" class="header-anchor">#</a> <a href="https://muyiy.cn/blog/4/4.4.html#%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8" target="_blank" rel="noopener noreferrer">#<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>循环引用</h3> <p>构造了一个栈用来解决循环引用的问题。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token comment">// 主线代码</span>
+stack <span class="token operator">||</span> <span class="token punctuation">(</span>stack <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Stack</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> stacked <span class="token operator">=</span> stack<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+<span class="token comment">// 已存在</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>stacked<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> stacked
+<span class="token punctuation">}</span>
+stack<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> result<span class="token punctuation">)</span>
+</code></pre></div><p>如果当前需要拷贝的值已存在于栈中，说明有环，直接返回即可。栈中没有该值时保存到栈中，传入 <code>value</code> 和 <code>result</code>。这里的 <code>result</code> 是一个对象引用，后续对 <code>result</code> 的修改也会反应到栈中。</p> <h3 id="map-set"><a href="#map-set" class="header-anchor">#</a> <a href="https://muyiy.cn/blog/4/4.4.html#map-set" target="_blank" rel="noopener noreferrer">#<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>Map &amp; Set</h3> <p><code>value</code> 值是 <code>Map</code> 类型时，遍历 <code>value</code> 并递归其 <code>subValue</code>，遍历完成返回 <code>result</code> 结果。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token comment">// 主线代码</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>tag <span class="token operator">==</span> mapTag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    value<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">subValue<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        result<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token function">baseClone</span><span class="token punctuation">(</span>subValue<span class="token punctuation">,</span> bitmask<span class="token punctuation">,</span> customizer<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">,</span> stack<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> result
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>value</code> 值是 <code>Set</code> 类型时，遍历 <code>value</code> 并递归其 <code>subValue</code>，遍历完成返回 <code>result</code> 结果。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token comment">// 主线代码</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>tag <span class="token operator">==</span> setTag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    value<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">subValue</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        result<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token function">baseClone</span><span class="token punctuation">(</span>subValue<span class="token punctuation">,</span> bitmask<span class="token punctuation">,</span> customizer<span class="token punctuation">,</span> subValue<span class="token punctuation">,</span> value<span class="token punctuation">,</span> stack<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> result
+<span class="token punctuation">}</span>
+</code></pre></div><p>上面的区别在于添加元素的 API 不同，即 <code>Map.set</code> 和 <code>Set.add</code>。</p> <h3 id="symbol-原型链"><a href="#symbol-原型链" class="header-anchor">#</a> <a href="https://muyiy.cn/blog/4/4.4.html#symbol-%E5%8E%9F%E5%9E%8B%E9%93%BE" target="_blank" rel="noopener noreferrer">#<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>Symbol &amp; 原型链</h3> <p>这里我们介绍下 <code>Symbol</code> 和 原型链属性的拷贝，通过标志位 <code>isFull</code> 和 <code>isFlat</code> 来控制是否拷贝。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token comment">// 主线代码</span>
+<span class="token comment">// 类型化数组对象</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isTypedArray</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> result
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> keysFunc <span class="token operator">=</span> isFull <span class="token comment">// 拷贝 Symbol 标志位</span>
+	<span class="token operator">?</span> <span class="token punctuation">(</span>isFlat 			<span class="token comment">// 拷贝原型链属性标志位</span>
+       <span class="token operator">?</span> getAllKeysIn 	<span class="token comment">// 包含自身和原型链上可枚举属性名以及 Symbol</span>
+       <span class="token operator">:</span> getAllKeys<span class="token punctuation">)</span>	<span class="token comment">// 仅包含自身可枚举属性名以及 Symbol</span>
+	<span class="token operator">:</span> <span class="token punctuation">(</span>isFlat 
+       <span class="token operator">?</span> keysIn 		<span class="token comment">// 包含自身和原型链上可枚举属性名的数组</span>
+       <span class="token operator">:</span> keys<span class="token punctuation">)</span>			<span class="token comment">// 仅包含自身可枚举属性名的数组</span>
+
+<span class="token keyword">const</span> props <span class="token operator">=</span> isArr <span class="token operator">?</span> <span class="token keyword">undefined</span> <span class="token operator">:</span> <span class="token function">keysFunc</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+<span class="token function">arrayEach</span><span class="token punctuation">(</span>props <span class="token operator">||</span> value<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">subValue<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        key <span class="token operator">=</span> subValue
+        subValue <span class="token operator">=</span> value<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 递归拷贝（易受调用堆栈限制）</span>
+    <span class="token function">assignValue</span><span class="token punctuation">(</span>result<span class="token punctuation">,</span> key<span class="token punctuation">,</span> <span class="token function">baseClone</span><span class="token punctuation">(</span>subValue<span class="token punctuation">,</span> bitmask<span class="token punctuation">,</span> customizer<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">,</span> stack<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">return</span> result
+</code></pre></div><p>我们先来看下怎么获取自身、原型链、Symbol 这几种属性名组成的数组 <code>keys</code>。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token comment">// 创建一个包含自身和原型链上可枚举属性名以及 Symbol 的数组</span>
+<span class="token comment">// 使用 for...in 遍历</span>
+<span class="token keyword">function</span> <span class="token function">getAllKeysIn</span><span class="token punctuation">(</span><span class="token parameter">object</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token function">keysIn</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token function">getSymbolsIn</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> result
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 创建一个仅包含自身可枚举属性名以及 Symbol 的数组</span>
+<span class="token comment">// 非 ArrayLike 数组使用 Object.keys</span>
+<span class="token keyword">function</span> <span class="token function">getAllKeys</span><span class="token punctuation">(</span><span class="token parameter">object</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token function">keys</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token function">getSymbols</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> result
+<span class="token punctuation">}</span>
+</code></pre></div><p>上面通过 <code>keysIn</code> 和 <code>keys</code> 获取常规可枚举属性，通过 <code>getSymbolsIn</code> 和 <code>getSymbols</code> 获取 <code>Symbol</code> 可枚举属性。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token comment">// 创建一个包含自身和原型链上可枚举属性名的数组</span>
+<span class="token comment">// 使用 for...in 遍历</span>
+<span class="token keyword">function</span> <span class="token function">keysIn</span><span class="token punctuation">(</span><span class="token parameter">object</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> key <span class="token keyword">in</span> object<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> result
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 创建一个仅包含自身可枚举属性名的数组</span>
+<span class="token comment">// 非 ArrayLike 数组使用 Object.keys</span>
+<span class="token keyword">function</span> <span class="token function">keys</span><span class="token punctuation">(</span><span class="token parameter">object</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">isArrayLike</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span>
+        <span class="token operator">?</span> <span class="token function">arrayLikeKeys</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span>
+    	<span class="token operator">:</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token function">Object</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 测试代码</span>
+<span class="token keyword">function</span> <span class="token function">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">1</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>b <span class="token operator">=</span> <span class="token number">2</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">Foo</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>c <span class="token operator">=</span> <span class="token number">3</span>
+
+<span class="token function">keysIn</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">)</span>
+<span class="token comment">// ['a', 'b', 'c'] (迭代顺序无法保证)</span>
+     
+<span class="token function">keys</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">)</span>
+<span class="token comment">// ['a', 'b'] (迭代顺序无法保证)</span>
+</code></pre></div><p>常规属性遍历原型链用的是 <code>for.. in</code>，那么 <code>Symbol</code> 是如何遍历原型链的呢，这里通过循环以及使用 <code>Object.getPrototypeOf</code> 获取原型链上的 <code>Symbol</code>。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token comment">// 创建一个包含自身和原型链上可枚举 Symbol 的数组</span>
+<span class="token comment">// 通过循环和使用 Object.getPrototypeOf 获取原型链上的 Symbol</span>
+<span class="token keyword">function</span> <span class="token function">getSymbolsIn</span> <span class="token punctuation">(</span><span class="token parameter">object</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>object<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 循环</span>
+        result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token function">getSymbols</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        object <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">getPrototypeOf</span><span class="token punctuation">(</span><span class="token function">Object</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> result
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 创建一个仅包含自身可枚举 Symbol 的数组</span>
+<span class="token comment">// 通过 Object.getOwnPropertySymbols 获取 Symbol 属性</span>
+<span class="token keyword">const</span> nativeGetSymbols <span class="token operator">=</span> Object<span class="token punctuation">.</span>getOwnPropertySymbols
+<span class="token keyword">const</span> propertyIsEnumerable <span class="token operator">=</span> <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>propertyIsEnumerable
+
+<span class="token keyword">function</span> <span class="token function">getSymbols</span> <span class="token punctuation">(</span><span class="token parameter">object</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>object <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 判空</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    object <span class="token operator">=</span> <span class="token function">Object</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token function">nativeGetSymbols</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">symbol</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">propertyIsEnumerable</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>object<span class="token punctuation">,</span> symbol<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>我们回到主线代码，获取到 <code>keys</code> 组成的 <code>props</code> 数组之后，遍历并递归。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token comment">// 主线代码</span>
+<span class="token keyword">const</span> props <span class="token operator">=</span> isArr <span class="token operator">?</span> <span class="token keyword">undefined</span> <span class="token operator">:</span> <span class="token function">keysFunc</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+<span class="token function">arrayEach</span><span class="token punctuation">(</span>props <span class="token operator">||</span> value<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">subValue<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// props 时替换 key 和 subValue，因为 props 里面的 subValue 只是 value 的 key</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        key <span class="token operator">=</span> subValue
+        subValue <span class="token operator">=</span> value<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 递归拷贝（易受调用堆栈限制）</span>
+    <span class="token function">assignValue</span><span class="token punctuation">(</span>result<span class="token punctuation">,</span> key<span class="token punctuation">,</span> <span class="token function">baseClone</span><span class="token punctuation">(</span>subValue<span class="token punctuation">,</span> bitmask<span class="token punctuation">,</span> customizer<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">,</span> stack<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 返回结果，主线结束</span>
+<span class="token keyword">return</span> result
+</code></pre></div><p>我们看下 <code>arrayEach</code> 的实现，主要实现了一个遍历，并在 <code>iteratee</code> 返回为 false 时退出。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token comment">// 迭代数组</span>
+<span class="token comment">// iteratee 是每次迭代调用的函数</span>
+<span class="token keyword">function</span> <span class="token function">arrayEach</span><span class="token punctuation">(</span><span class="token parameter">array<span class="token punctuation">,</span> iteratee</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+    <span class="token keyword">const</span> length <span class="token operator">=</span> array<span class="token punctuation">.</span>length
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">++</span>index <span class="token operator">&lt;</span> length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">iteratee</span><span class="token punctuation">(</span>array<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">,</span> index<span class="token punctuation">,</span> array<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">break</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> array
+<span class="token punctuation">}</span>
+</code></pre></div><p>我们看下 <code>assignValue</code> 的实现，在值不相等情况下，将 value 分配给 <code>object[key]</code>。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 木易杨</span>
+<span class="token keyword">const</span> hasOwnProperty <span class="token operator">=</span> <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>hasOwnProperty
+
+<span class="token comment">// 如果现有值不相等，则将 value 分配给 object[key]。</span>
+<span class="token keyword">function</span> <span class="token function">assignValue</span><span class="token punctuation">(</span><span class="token parameter">object<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> objValue <span class="token operator">=</span> object<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+
+    <span class="token comment">// 不相等</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span> <span class="token punctuation">(</span><span class="token function">hasOwnProperty</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>object<span class="token punctuation">,</span> key<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">eq</span><span class="token punctuation">(</span>objValue<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 值可用</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">!==</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">/</span> value<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">/</span> objValue<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">baseAssignValue</span><span class="token punctuation">(</span>object<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token comment">// 值未定义而且键 key 不在对象中    </span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">===</span> <span class="token keyword">undefined</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token punctuation">(</span>key <span class="token keyword">in</span> object<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">baseAssignValue</span><span class="token punctuation">(</span>object<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 赋值基本实现，其中没有值检查。</span>
+<span class="token keyword">function</span> <span class="token function">baseAssignValue</span><span class="token punctuation">(</span><span class="token parameter">object<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>key <span class="token operator">==</span> <span class="token string">'__proto__'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>object<span class="token punctuation">,</span> key<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            <span class="token string-property property">'configurable'</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token string-property property">'enumerable'</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token string-property property">'value'</span><span class="token operator">:</span> value<span class="token punctuation">,</span>
+            <span class="token string-property property">'writable'</span><span class="token operator">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        object<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> value
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 比较两个值是否相等</span>
+<span class="token comment">// (value !== value &amp;&amp; other !== other) 是为了判断 NaN</span>
+<span class="token keyword">function</span> <span class="token function">eq</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> other</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> value <span class="token operator">===</span> other <span class="token operator">||</span> <span class="token punctuation">(</span>value <span class="token operator">!==</span> value <span class="token operator">&amp;&amp;</span> other <span class="token operator">!==</span> other<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="参考"><a href="#参考" class="header-anchor">#</a> <a href="https://muyiy.cn/blog/4/4.4.html#%E5%8F%82%E8%80%83" target="_blank" rel="noopener noreferrer">#<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>参考</h2> <blockquote><p><a href="https://github.com/lodash/lodash/" target="_blank" rel="noopener noreferrer">lodash<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://github.com/moyui/BlogPosts/blob/master/2018/lodash%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%BA%90%E7%A0%81%E6%8E%A2%E7%A9%B6.md" target="_blank" rel="noopener noreferrer">lodash深拷贝源码探究<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators" target="_blank" rel="noopener noreferrer">按位操作符<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec" target="_blank" rel="noopener noreferrer">RegExp.prototype.exec()<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">5/8/2024, 3:01:19 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/js/i-节流防抖/防抖实现1.html" class="prev">
+        原理
+      </a></span> <span class="next"><a href="/js/j-深拷贝/assign原理及其实现.html">
+        Object.assign 原理及其实现
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.07981acf.js" defer></script><script src="/assets/js/2.57da4f88.js" defer></script><script src="/assets/js/1.a76cc220.js" defer></script><script src="/assets/js/62.9f28e1a4.js" defer></script>
+  </body>
+</html>

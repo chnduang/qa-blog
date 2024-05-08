@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>新出炉大厂面试题100道整理 | duangdong的qa</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?0088ce24040b03f2947322ab31d23414";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+    <script>
+  var _hmt = _hmt || [];
+  _hmt.push(['_requirePlugin', 'UrlChangeTracker', {
+    shouldTrackUrlChange: function (newPath, oldPath) {
+      newPath = newPath.split('#')[0];
+      oldPath = oldPath.split('#')[0];
+      return newPath != oldPath;
+    }}
+  ]);
+  </script>
+    <meta name="description" content="前端QA集锦">
+    <meta name="keywords" content="qd-blog,js,vuepress,leetcode,react,react进阶,css,js进阶,react性能优化,js设计模式">
+    
+    <link rel="preload" href="/assets/css/0.styles.b4a844ec.css" as="style"><link rel="preload" href="/assets/js/app.07981acf.js" as="script"><link rel="preload" href="/assets/js/2.57da4f88.js" as="script"><link rel="preload" href="/assets/js/1.a76cc220.js" as="script"><link rel="preload" href="/assets/js/130.22372a24.js" as="script"><link rel="prefetch" href="/assets/js/10.50f73657.js"><link rel="prefetch" href="/assets/js/100.ed998eb0.js"><link rel="prefetch" href="/assets/js/101.c8472505.js"><link rel="prefetch" href="/assets/js/102.d600a66c.js"><link rel="prefetch" href="/assets/js/103.c2d41a43.js"><link rel="prefetch" href="/assets/js/104.dc119219.js"><link rel="prefetch" href="/assets/js/105.8707757e.js"><link rel="prefetch" href="/assets/js/106.33c299b9.js"><link rel="prefetch" href="/assets/js/107.8eafcc06.js"><link rel="prefetch" href="/assets/js/108.eeb8c861.js"><link rel="prefetch" href="/assets/js/109.d7579372.js"><link rel="prefetch" href="/assets/js/11.0390ceee.js"><link rel="prefetch" href="/assets/js/110.4cdb688a.js"><link rel="prefetch" href="/assets/js/111.95d0f748.js"><link rel="prefetch" href="/assets/js/112.fae5a13a.js"><link rel="prefetch" href="/assets/js/113.7cefcf49.js"><link rel="prefetch" href="/assets/js/114.49f03fa7.js"><link rel="prefetch" href="/assets/js/115.73eebb69.js"><link rel="prefetch" href="/assets/js/116.3b9205f3.js"><link rel="prefetch" href="/assets/js/117.dc4fcb53.js"><link rel="prefetch" href="/assets/js/118.1191553b.js"><link rel="prefetch" href="/assets/js/119.705d33d0.js"><link rel="prefetch" href="/assets/js/12.f88bec36.js"><link rel="prefetch" href="/assets/js/120.d3227497.js"><link rel="prefetch" href="/assets/js/121.32bcc7c2.js"><link rel="prefetch" href="/assets/js/122.55a7d973.js"><link rel="prefetch" href="/assets/js/123.07b3f53a.js"><link rel="prefetch" href="/assets/js/124.851c0100.js"><link rel="prefetch" href="/assets/js/125.c1de1f95.js"><link rel="prefetch" href="/assets/js/126.ea96a075.js"><link rel="prefetch" href="/assets/js/127.bcf311b8.js"><link rel="prefetch" href="/assets/js/128.e1c4d95e.js"><link rel="prefetch" href="/assets/js/129.09afee9c.js"><link rel="prefetch" href="/assets/js/13.963ad03b.js"><link rel="prefetch" href="/assets/js/131.4db39cda.js"><link rel="prefetch" href="/assets/js/132.afcfdf65.js"><link rel="prefetch" href="/assets/js/133.35b0df52.js"><link rel="prefetch" href="/assets/js/134.9ad9188e.js"><link rel="prefetch" href="/assets/js/135.d7ca4b93.js"><link rel="prefetch" href="/assets/js/136.403dc2de.js"><link rel="prefetch" href="/assets/js/137.f972aed9.js"><link rel="prefetch" href="/assets/js/138.7536ef7d.js"><link rel="prefetch" href="/assets/js/139.05186195.js"><link rel="prefetch" href="/assets/js/14.512f15b9.js"><link rel="prefetch" href="/assets/js/140.f7b5e550.js"><link rel="prefetch" href="/assets/js/141.16938126.js"><link rel="prefetch" href="/assets/js/142.0d18982a.js"><link rel="prefetch" href="/assets/js/143.f82390e5.js"><link rel="prefetch" href="/assets/js/144.bac62f6d.js"><link rel="prefetch" href="/assets/js/145.255f2397.js"><link rel="prefetch" href="/assets/js/146.226da4b5.js"><link rel="prefetch" href="/assets/js/147.236f8a9f.js"><link rel="prefetch" href="/assets/js/148.8d472c06.js"><link rel="prefetch" href="/assets/js/149.4170f8c0.js"><link rel="prefetch" href="/assets/js/15.a674496c.js"><link rel="prefetch" href="/assets/js/150.ff7b0269.js"><link rel="prefetch" href="/assets/js/151.0a1c7058.js"><link rel="prefetch" href="/assets/js/152.584c412a.js"><link rel="prefetch" href="/assets/js/153.220d027b.js"><link rel="prefetch" href="/assets/js/154.09a9219e.js"><link rel="prefetch" href="/assets/js/155.6c8dbf71.js"><link rel="prefetch" href="/assets/js/156.a9d81dce.js"><link rel="prefetch" href="/assets/js/157.e53c1adb.js"><link rel="prefetch" href="/assets/js/158.11f55456.js"><link rel="prefetch" href="/assets/js/159.2c05d7f2.js"><link rel="prefetch" href="/assets/js/16.ed7e507f.js"><link rel="prefetch" href="/assets/js/160.27616923.js"><link rel="prefetch" href="/assets/js/17.de667ca5.js"><link rel="prefetch" href="/assets/js/18.b44e84af.js"><link rel="prefetch" href="/assets/js/19.5b5ad6a1.js"><link rel="prefetch" href="/assets/js/20.6800493a.js"><link rel="prefetch" href="/assets/js/21.6589052c.js"><link rel="prefetch" href="/assets/js/22.f648d829.js"><link rel="prefetch" href="/assets/js/23.21fe11d7.js"><link rel="prefetch" href="/assets/js/24.7a3e65b2.js"><link rel="prefetch" href="/assets/js/25.9e2d6c46.js"><link rel="prefetch" href="/assets/js/26.0dcf1d19.js"><link rel="prefetch" href="/assets/js/27.bd79a51b.js"><link rel="prefetch" href="/assets/js/28.ad9cdafd.js"><link rel="prefetch" href="/assets/js/29.738a8c4a.js"><link rel="prefetch" href="/assets/js/3.13e892f5.js"><link rel="prefetch" href="/assets/js/30.5d2ae7ae.js"><link rel="prefetch" href="/assets/js/31.2a59449c.js"><link rel="prefetch" href="/assets/js/32.322ed58f.js"><link rel="prefetch" href="/assets/js/33.e18917c7.js"><link rel="prefetch" href="/assets/js/34.edfe8355.js"><link rel="prefetch" href="/assets/js/35.2c0b1e3e.js"><link rel="prefetch" href="/assets/js/36.b1fdf51f.js"><link rel="prefetch" href="/assets/js/37.11ee0b0c.js"><link rel="prefetch" href="/assets/js/38.0b050ca5.js"><link rel="prefetch" href="/assets/js/39.2bd20762.js"><link rel="prefetch" href="/assets/js/4.5bdb9365.js"><link rel="prefetch" href="/assets/js/40.eb0c66c8.js"><link rel="prefetch" href="/assets/js/41.933044bc.js"><link rel="prefetch" href="/assets/js/42.eac4ba39.js"><link rel="prefetch" href="/assets/js/43.8c61e37d.js"><link rel="prefetch" href="/assets/js/44.30f132bb.js"><link rel="prefetch" href="/assets/js/45.2477f9bb.js"><link rel="prefetch" href="/assets/js/46.e97df854.js"><link rel="prefetch" href="/assets/js/47.60f16a00.js"><link rel="prefetch" href="/assets/js/48.d01b463f.js"><link rel="prefetch" href="/assets/js/49.e3a15fc7.js"><link rel="prefetch" href="/assets/js/5.7c68fdb5.js"><link rel="prefetch" href="/assets/js/50.31265493.js"><link rel="prefetch" href="/assets/js/51.ed2cc5dc.js"><link rel="prefetch" href="/assets/js/52.3ae02665.js"><link rel="prefetch" href="/assets/js/53.69d15c58.js"><link rel="prefetch" href="/assets/js/54.bbab20a0.js"><link rel="prefetch" href="/assets/js/55.9617cf7e.js"><link rel="prefetch" href="/assets/js/56.13f9aef2.js"><link rel="prefetch" href="/assets/js/57.ba08cc35.js"><link rel="prefetch" href="/assets/js/58.63028d02.js"><link rel="prefetch" href="/assets/js/59.566c0b50.js"><link rel="prefetch" href="/assets/js/6.c8da7ca7.js"><link rel="prefetch" href="/assets/js/60.0801f3b3.js"><link rel="prefetch" href="/assets/js/61.ceae0570.js"><link rel="prefetch" href="/assets/js/62.9f28e1a4.js"><link rel="prefetch" href="/assets/js/63.15282044.js"><link rel="prefetch" href="/assets/js/64.7c666983.js"><link rel="prefetch" href="/assets/js/65.320c4670.js"><link rel="prefetch" href="/assets/js/66.253bab14.js"><link rel="prefetch" href="/assets/js/67.49c1e967.js"><link rel="prefetch" href="/assets/js/68.ae82def1.js"><link rel="prefetch" href="/assets/js/69.0877ad54.js"><link rel="prefetch" href="/assets/js/7.e4c88d0e.js"><link rel="prefetch" href="/assets/js/70.5e8208ea.js"><link rel="prefetch" href="/assets/js/71.52cb4845.js"><link rel="prefetch" href="/assets/js/72.8c575d51.js"><link rel="prefetch" href="/assets/js/73.b9ba874e.js"><link rel="prefetch" href="/assets/js/74.6b4693bb.js"><link rel="prefetch" href="/assets/js/75.e9378ce1.js"><link rel="prefetch" href="/assets/js/76.a80b13fc.js"><link rel="prefetch" href="/assets/js/77.d134968d.js"><link rel="prefetch" href="/assets/js/78.40d99cd8.js"><link rel="prefetch" href="/assets/js/79.2b663044.js"><link rel="prefetch" href="/assets/js/80.0b63f3ac.js"><link rel="prefetch" href="/assets/js/81.bc4031db.js"><link rel="prefetch" href="/assets/js/82.3152c02c.js"><link rel="prefetch" href="/assets/js/83.3fa2dc4b.js"><link rel="prefetch" href="/assets/js/84.e778c959.js"><link rel="prefetch" href="/assets/js/85.060ddc49.js"><link rel="prefetch" href="/assets/js/86.bb8138bb.js"><link rel="prefetch" href="/assets/js/87.72c01e68.js"><link rel="prefetch" href="/assets/js/88.e3e56223.js"><link rel="prefetch" href="/assets/js/89.198ff8d1.js"><link rel="prefetch" href="/assets/js/90.6437abb2.js"><link rel="prefetch" href="/assets/js/91.dbe1df52.js"><link rel="prefetch" href="/assets/js/92.6e732f3a.js"><link rel="prefetch" href="/assets/js/93.e98beea7.js"><link rel="prefetch" href="/assets/js/94.c62e88cb.js"><link rel="prefetch" href="/assets/js/95.f6aad986.js"><link rel="prefetch" href="/assets/js/96.e0630547.js"><link rel="prefetch" href="/assets/js/97.3cd76aa5.js"><link rel="prefetch" href="/assets/js/98.3bc2adce.js"><link rel="prefetch" href="/assets/js/99.88c20858.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.5143d2e0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b4a844ec.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">duangdong的qa</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/js/" class="nav-link">
+  JS方面
+</a></div><div class="nav-item"><a href="/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/summary/" class="nav-link router-link-active">
+  汇总
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  常见算法
+</a></div><div class="nav-item"><a href="/performance/" class="nav-link">
+  性能优化
+</a></div><div class="nav-item"><a href="/http/" class="nav-link">
+  网络协议
+</a></div><div class="nav-item"><a href="/css/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/face-sutra/" class="nav-link">
+  QA
+</a></div><div class="nav-item"><a href="https://link.aduang.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Home
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/js/" class="nav-link">
+  JS方面
+</a></div><div class="nav-item"><a href="/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/summary/" class="nav-link router-link-active">
+  汇总
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  常见算法
+</a></div><div class="nav-item"><a href="/performance/" class="nav-link">
+  性能优化
+</a></div><div class="nav-item"><a href="/http/" class="nav-link">
+  网络协议
+</a></div><div class="nav-item"><a href="/css/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/face-sutra/" class="nav-link">
+  QA
+</a></div><div class="nav-item"><a href="https://link.aduang.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Home
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/summary/" aria-current="page" class="sidebar-link">八股文</a></li><li><a href="/summary/20+Vue面试题整理.html" class="sidebar-link">20+Vue面试题整理</a></li><li><a href="/summary/60道.html" class="sidebar-link">前端经典面试题</a></li><li><a href="/summary/一份热乎乎的滴滴前端面经.html" class="sidebar-link">一份热乎乎的滴滴前端面经</a></li><li><a href="/summary/你可能需要的三轮网易面经.html" class="sidebar-link">你可能需要的三轮网易面经</a></li><li><a href="/summary/听说你对packagejson很熟.html" class="sidebar-link">面试官：听说你对package.json很熟？</a></li><li><a href="/summary/新出炉大厂面试题100道整理.html" class="active sidebar-link">新出炉大厂面试题100道整理</a></li><li><a href="/summary/牛客.html" class="sidebar-link">牛客网最新百道前端 JavaScript 笔试题</a></li><li><a href="/summary/脚撕专有钉钉前端面试题.html" class="sidebar-link">脚撕专有钉钉前端面试题</a></li><li><a href="/summary/送你 54 道 JavaScript 面试题.html" class="sidebar-link">送你 54 道 JavaScript 面试题</a></li><li><a href="/summary/送你21道高频JavaScript手写面试题.html" class="sidebar-link">送你21道高频JavaScript手写面试题</a></li><li><a href="/summary/阿里字节快手面经个人成长经验分享.html" class="sidebar-link">2021 阿里字节快手面经个人成长经验分享</a></li><li><a href="/summary/阿里腾讯面试梳理.html" class="sidebar-link">阿里腾讯面试梳理 &amp; 个人成长经历分享</a></li><li><a href="/summary/面经.html" class="sidebar-link">一些面经</a></li><li><a href="/summary/高频前端面试问题及答案整理.html" class="sidebar-link">高频前端面试问题及答案整理</a></li><li><a href="/summary/高频考点浏览器面试题.html" class="sidebar-link">高频考点浏览器面试题</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="新出炉大厂面试题100道整理"><a href="#新出炉大厂面试题100道整理" class="header-anchor">#</a> 新出炉大厂面试题100道整理</h1> <blockquote><p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg5MjMxMzY5Mw==&amp;action=getalbum&amp;album_id=1719758398499454985&amp;scene=173&amp;from_msgid=2247484107&amp;from_itemidx=1&amp;count=3&amp;nolastread=1#wechat_redirect" target="_blank" rel="noopener noreferrer">https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg5MjMxMzY5Mw==&amp;action=getalbum&amp;album_id=1719758398499454985&amp;scene=173&amp;from_msgid=2247484107&amp;from_itemidx=1&amp;count=3&amp;nolastread=1#wechat_redirect<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <h2 id="html篇"><a href="#html篇" class="header-anchor">#</a> html篇</h2> <p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/2KticQlBJtdyL62HppibhdeZqQrLxjwoNibpV9OFianFsXTsm9B7fKHfias64aUHT6lddtjhlytRX0ic01GpULOlibmFw/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p> <h3 id="问题一-meta标签常用属性值的写法和作用"><a href="#问题一-meta标签常用属性值的写法和作用" class="header-anchor">#</a> . 问题一:Meta标签常用属性值的写法和作用</h3> <p>答：
+meta 标签提供关于HTML文档的元数据。元数据不会显示在页面上，但是对于机器是可读的。它可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 web 服务。</p> <p>必要属性</p> <p>name:属性名
+content:属性内容
+charset: charset为HTML5中新增的，用来声明字符编码;
+http-equiv:属性在HTML4中有很多值，在HTML5中只有refresh、default-style、content-type可用</p> <p>name的值和说明</p> <p>application name   当前页所属Web应用系统的名称
+keywords       描述网站内容的关键词,以逗号隔开，用于SEO搜索
+description       当前页的说明
+author         当前页的作者名
+copyright       版权信息
+renderer       renderer是为双核浏览器准备的，用于指定双核浏览器默认以何种方式渲染页面
+viewreport       它提供有关视口初始大小的提示，仅供移动设备使用</p> <p><strong>viewreport</strong>
+meta标签的name属性值为viewreport时的视口的大小</p> <p>1.content内容为空时，默认视口宽度为980
+2.content设置width，不设置initail-scale时，视口宽度为设置的width值
+3.content不设置width，只设置initail-scale时，是可以根据initail-scale的值计算出视口的宽度
+initail-scale = 屏幕宽度 / 视口宽度
+4.content同时设置width和initail-scale时，视口宽度为width的值，页面显示按照initail-scale比率进行缩放
+5.一般都是进行如下设置，来实现视口宽等于设备宽，布局完成后屏幕显示也不进行缩放</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+</code></pre></div><p><strong>声明字符编码</strong>
+charset属性为HTML5新增的属性，用于声明字符编码,以下两种写法效果一样</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;meta charset=&quot;utf-8&quot;&gt; //HTML5
+</code></pre></div><p><strong>模拟http标头字段</strong></p> <p>http-equiv属性与content属性结合使用, http-equiv属性为指定所要模拟的标头字段的名称，content属性用来提供值。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;meta http-equiv=&quot;参数&quot; content=&quot;具体的描述&quot;&gt;
+</code></pre></div><p>content-Type 声明网页字符编码:</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;meta http-equiv=&quot;content-Type&quot; content=&quot;text/html charset=UTF-8&quot;&gt;
+</code></pre></div><p>refresh 指定一个时间间隔(以秒为单位),在此时间过去之后从服务器重新载入当前页面,也可以另外指定一个页面.</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;2;URL=http://www.baidu.com&quot;&gt;//2秒后在当前页跳转到百度
+</code></pre></div><p>X-UA-Compatible 浏览器采取何种版本渲染当前页面</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt; //指定IE和Chrome使用最新版本渲染当前页面
+</code></pre></div><p>expires 用于设定网页的到期时间，过期后网页必须到服务器上重新传输</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;meta http-equiv=&quot;expires&quot; content=&quot;Sunday 22 July 2016 16:30 GMT&quot;&gt;
+</code></pre></div><p>catch-control 用于指定所有缓存机制在整个请求/响应链中必须服从的指令</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;meta http-equiv=&quot;cache-control&quot; content=&quot;no-cache&quot;&gt;
+</code></pre></div><h2 id="js篇"><a href="#js篇" class="header-anchor">#</a> js篇</h2> <p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/2KticQlBJtdyUum0Pw5GMxyk5Fv7DiciavFwXo3QDWSreE3gE0nsd3K8vET6ia73QMHtdTCzWOmV6vNnOEicVedYuNg/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p> <h3 id="问题1-给对象加上iterator接口-使之能被-for-of遍历"><a href="#问题1-给对象加上iterator接口-使之能被-for-of遍历" class="header-anchor">#</a> . 问题1: 给对象加上iterator接口,使之能被 for of遍历</h3> <p>ES6 规定，默认的 Iterator 接口部署在数据结构的 Symbol.iterator 属性，或者说，一个数据结构只要具有Symbol.iterator属性，就可以认为是“可遍历的”（iterable）。Symbol.iterator 属性本身是一个函数，就是当前数据结构默认的遍历器生成函数</p> <p>因为object 没有 Symbol.iterator 属性，所以不能被 for of 遍历。</p> <div class="language- extra-class"><pre class="language-text"><code>const text = {
+   a: 1,
+   b: 2,
+   c:3
+}
+for(let i of text){
+    console.log(i) //报错：Uncaught TypeError: text is not iterable
+}
+</code></pre></div><p>所以，object想要被 for … of遍历 ，必须在原来的基础上加上 Symbol.iterator 接口属性。</p> <div class="language- extra-class"><pre class="language-text"><code>const text = {
+   a: 1,
+   b: 2,
+   c:3
+}
+text[Symbol.iterator] = function (){
+    const _this = this
+    return {
+        index:-1,
+        next(){
+            const arr = Object.keys( _this )
+            if(this.index &lt; arr.length){
+                this.index++
+                return {
+                    value:_this[arr[this.index]],
+                    done:false
+                }
+            }else{
+                return {
+                    value:undefined,
+                    done:true
+                }
+            }
+        }
+    }
+}
+
+for(let i of text){
+    console.log(i) // 1 2 3 undefined
+}
+</code></pre></div><h3 id="问题2-统计按钮一秒钟点击次数"><a href="#问题2-统计按钮一秒钟点击次数" class="header-anchor">#</a> . 问题2:统计按钮一秒钟点击次数？</h3> <p>这道题是变相考对防抖函数+闭包的理解</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;script&gt;
+
+const button = document.getElementById('button')
+function debounce(fn, time) {
+    let number = 0 , timer  = null
+    return function(...arg) { 
+        fn.apply(this, arg)
+        number++
+        if (timer) return
+        timer = setTimeout(() =&gt; {
+           console.log( '点击'+ number + '次' )
+           number = 0
+           timer = null
+        }, time)
+    }
+}
+button.onclick = debounce(()=&gt;{
+    console.log(1111)
+},1000)
+
+&lt;/script&gt;
+</code></pre></div><p>效果如下</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <h3 id="问题3-单页面应用路由的原理"><a href="#问题3-单页面应用路由的原理" class="header-anchor">#</a> . 问题3:单页面应用路由的原理</h3> <p>无论我们用vue还是react构建单页面应用，都离不开路由的概念，路由跳转监听url改变，根据路由的改变来决定渲染的页面。</p> <h4 id="hash模式"><a href="#hash模式" class="header-anchor">#</a> hash模式</h4> <p><strong>改变路由</strong></p> <div class="language- extra-class"><pre class="language-text"><code>const path = &quot;home&quot;
+window.location.hash = path
+</code></pre></div><p><strong>监听路由</strong></p> <div class="language- extra-class"><pre class="language-text"><code>window.addEventListener('hashchange',function(e){
+  //路由发生改变时切换渲染组件...
+});
+</code></pre></div><h4 id="histroy模式"><a href="#histroy模式" class="header-anchor">#</a> histroy模式</h4> <p><strong>改变路由</strong></p> <div class="language- extra-class"><pre class="language-text"><code>var path = &quot;home&quot;
+history.pushState(null,null,'?='+path);
+</code></pre></div><p><strong>监听路由</strong></p> <div class="language- extra-class"><pre class="language-text"><code>window.addEventListener('popstate',function(e){
+   //路由发生改变时切换渲染组件...
+})
+</code></pre></div><h3 id="问题4-如下打印结果"><a href="#问题4-如下打印结果" class="header-anchor">#</a> . 问题4:如下打印结果</h3> <p>执行如下代码，回发生什么？</p> <div class="language- extra-class"><pre class="language-text"><code>function fn1(){
+    console.log(a)
+}
+var a = 1
+
+function fn2(){
+    console.log(a)
+    let a = 2;
+    console.log(a)
+    fn1()
+}
+
+fn2()
+</code></pre></div><p>结果：//Uncaught ReferenceError: Cannot access 'a' before initialization</p> <p><strong>let 暂时性死区</strong></p> <p>let/const是使用区块作用域；var是使用函数作用域</p> <p>在let/const声明之前就访问对应的变量与常量，会抛出ReferenceError错误；但在var声明之前就访问对应的变量，则会得到undefined</p> <div class="language- extra-class"><pre class="language-text"><code>console.log(a) // undefined
+console.log(b) // causes ReferenceError: b is not defined
+var a = 1
+let b = 2 
+</code></pre></div><h3 id="问题5-apply和call-bind的区别"><a href="#问题5-apply和call-bind的区别" class="header-anchor">#</a> . 问题5:apply和call,bind的区别</h3> <p><strong>apply，call和bind都是 用来改变this的指向</strong></p> <p><strong>apply和call会让当前函数立即执行，而bind会返回一个函数，后续需要的时候再调用执行</strong></p> <p><strong>apply，call的区别实参数不同</strong></p> <div class="language- extra-class"><pre class="language-text"><code>const foot ={
+    apple:'苹果'
+}
+function eat(a,b){
+   console.log(a,b,this)
+}
+
+const bindEat = eat.bind(foot)
+
+eat(1,2) // 1 2 Window
+
+bindEat(1,2) //1 2  foot 
+
+eat.call(foot,1,2) //1 2  foot
+
+/* apply参数已数组形式传递  */
+eat.apply(foot,[1,2]) //1 2  foot
+</code></pre></div><h3 id="问题6-开发过程中遇到的内存泄露情况-如何解决的"><a href="#问题6-开发过程中遇到的内存泄露情况-如何解决的" class="header-anchor">#</a> . 问题6:开发过程中遇到的内存泄露情况，如何解决的?</h3> <p>javascript内存泄漏几种情况</p> <p><strong>1 意外的全局变量</strong></p> <div class="language- extra-class"><pre class="language-text"><code>function foo(arg) { 
+    bar = &quot;this is a hidden global variable&quot;; 
+}
+</code></pre></div><p>另一种意外的全局变量可能由 this 创建：</p> <div class="language- extra-class"><pre class="language-text"><code>function foo() { 
+    this.variable = &quot;potential accidental global&quot;; 
+} 
+// Foo 调用自己，this 指向了全局对象（window） 
+// 而不是 undefined 
+foo();
+</code></pre></div><p>尽管我们讨论了一些意外的全局变量，但是仍有一些明确的全局变量产生的垃圾。它们被定义为不可回收（除非定义为空或重新分配）。尤其当全局变量用于 临时存储和处理大量信息时，需要多加小心。如果必须使用全局变量存储大量数据时，确保用完以后把它设置为 null 或者重新定义。与全局变量相关的增加内存消耗的一个主因是缓存。缓存数据是为了重用，缓存必须有一个大小上限才有用。高内存消耗导致缓存突破上限，因为缓 存内容无法被回收。</p> <p><strong>2被遗忘的计时器或回调函数</strong></p> <div class="language- extra-class"><pre class="language-text"><code>var someResource = getData(); 
+setInterval(function() { 
+    var node = document.getElementById('Node'); 
+    if(node) { 
+        // 处理 node 和 someResource 
+        node.innerHTML = JSON.stringify(someResource)); 
+    } 
+}, 1000);
+</code></pre></div><p>与节点或数据关联的计时器不再需要，node 对象可以删除，整个回调函数也不需要了。可是，计时器回调函数仍然没被回收（计时器停止才会被回收）。同时，someResource 如果存储了大量的数据，也是无法被回收的。</p> <p><strong>3脱离 DOM 的引用</strong></p> <div class="language- extra-class"><pre class="language-text"><code>var elements = { 
+    button: document.getElementById('button'), 
+    image: document.getElementById('image'), 
+    text: document.getElementById('text') 
+}; 
+
+function doStuff() { 
+    image.src = 'http://some.url/image'; 
+    button.click(); 
+    console.log(text.innerHTML); 
+    // 更多逻辑 
+} 
+
+function removeButton() { 
+    // 按钮是 body 的后代元素 
+    document.body.removeChild(document.getElementById('button')); 
+
+    // 此时，仍旧存在一个全局的 #button 的引用 
+    // elements 字典。button 元素仍旧在内存中，不能被 GC 回收。 
+}
+</code></pre></div><p><strong>4 闭包的错误使用</strong></p> <div class="language- extra-class"><pre class="language-text"><code>var theThing = null; 
+var replaceThing = function () { 
+  var originalThing = theThing; 
+  var unused = function () { 
+    if (originalThing) 
+      console.log(&quot;hi&quot;); 
+  }; 
+  theThing = { 
+    longStr: new Array(1000000).join('*'), 
+    someMethod: function () { 
+      console.log(someMessage); 
+    } 
+  }; 
+}; 
+setInterval(replaceThing, 1000); 
+</code></pre></div><p>每次调用 replaceThing ，theThing 得到一个包含一个大数组和一个新闭包（someMethod）的新对象。同时，变量 unused 是一个引用 originalThing 的闭包（先前的 replaceThing 又调用了 theThing ）。思绪混乱了吗？最重要的事情是，闭包的作用域一旦创建，它们有同样的父级作用域，作用域是共享的。someMethod 可以通过 theThing 使用，someMethod 与 unused 分享闭包作用域，尽管 unused从未使用，它引用的 originalThing 迫使它保留在内存中（防止被回收）。当这段代码反复运行，就会看到内存占用不断上升，垃圾回收器（GC）并无法降低内存占用。本质上，闭包的链表已经创建，每一个闭包作用域携带一个指向大数组的间接的引用，造成严重的内存泄露。</p> <p><strong>解决内存泄漏方式</strong></p> <p>1 使用严格模式，合理声明变量。使用严格模式可以避免第一种情况的发生。</p> <p>2 及时清理定时器，延时器，对于不需要的定时器和延时器，一定要及时清除。</p> <p>3 合理应用闭包，合理的应用闭包，避免闭包函数反复执行导致内存无法及时释放。</p> <h3 id="问题7-介绍一下proto和prototype"><a href="#问题7-介绍一下proto和prototype" class="header-anchor">#</a> . 问题7:介绍一下<strong>proto</strong>和prototype</h3> <p><strong>proto</strong>和prototype 是我们在平时工作中容易忽略的问题，对象原型 和 原型链 的概念也容易混淆。</p> <p>**<em>*proto*<em>是每个对象都有的属性</em></em> ，在JS里，万物皆对象。方法（Function）是对象，方法的原型(Function.prototype)是对象。因此，它们都会具有对象共有的特点。即：对象具有属性proto，可称为隐式原型，一个对象的隐式原型指向构造该对象的构造函数的原型，这也保证了实例能够访问在构造函数原型中定义的属性和方法。</p> <p><strong>prototypee是函数才有的属性</strong>，方法(Function)方法这个特殊的对象，除了和其他对象一样有上述proto属性之外，还有自己特有的属性——原型属性（prototype），这个属性是一个指针，指向一个对象，这个对象的用途就是包含所有实例共享的属性和方法就是该实例的<strong>proto</strong>。原型对象也有一个属性，叫做constructor，这个属性包含了一个指针，指回原构造函数。</p> <div class="language- extra-class"><pre class="language-text"><code> let a = function (){
+
+ }
+ a.prototype.eat = function(){ console.log(111) }
+ const na = new a()
+ console.log( na.__proto__ === a.prototype ) // ture
+</code></pre></div><h3 id="问题8-说一下arguments对象"><a href="#问题8-说一下arguments对象" class="header-anchor">#</a> . 问题8:说一下arguments对象</h3> <p>在函数调用的时候，浏览器每次都会传递进arguments对象,arguments 对象实际上是所在函数的一个内置类数组对象，arguments对象不是一个 Array 。它类似于Array，但除了length属性和索引元素之外没有任何Array属性。例如，它没有 pop 方法。但是它可以被转换为一个真正的Array.typeof参数返回 'object'。</p> <p>属性
+<strong>arguments.callee</strong>指向参数所属的当前执行的函数。指向调用当前函数的函数。
+<strong>arguments.length</strong>传递给函数的参数数量。
+**arguments[@@iterator]**返回一个新的Array 迭代器 对象，该对象包含参数中每个索引的值。</p> <h3 id="问题9-怎么实现一个队列的数据结构"><a href="#问题9-怎么实现一个队列的数据结构" class="header-anchor">#</a> . 问题9:怎么实现一个队列的数据结构？</h3> <p><strong>介绍</strong>
+队列也是一种线性表。它允许在表的一端插入数据，在另一端删除元素。插入元素的这一端称之为队尾。删除元素的这一端我们称之为队首。</p> <p><strong>特性</strong>
+1 在队尾插入元素，在队首删除元素。
+2 FIFO（先进先出），就向排队取票一样。</p> <p><strong>简单js实现</strong></p> <div class="language- extra-class"><pre class="language-text"><code>class Queue {
+    constructor(){
+        this.queue = []
+    }
+    /* 进入队列 */
+    enqueue(item){
+        this.queue.push(item)
+    }
+    /* 移除队列 */
+    dequeue(){
+        this.queue.shift()
+    }
+    /* 获取队列长度 */
+    size(){
+        return this.queue.length
+    }
+    /* 判断是否为空 */
+}
+</code></pre></div><h2 id="css"><a href="#css" class="header-anchor">#</a> css</h2> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <h3 id="问题一-什么是vw-vh布局-有哪些有优点-有哪些缺陷"><a href="#问题一-什么是vw-vh布局-有哪些有优点-有哪些缺陷" class="header-anchor">#</a> . 问题一：什么是vw+vh布局？有哪些有优点？有哪些缺陷？</h3> <p>解答：</p> <p><strong>1什么是什么是vw/vh</strong></p> <p>css3中引入了一个新的单位vw/vh，与视图窗口有关，vw表示相对于视图窗口的宽度，vh表示相对于视图窗口高度，除了vw和vh外，还有vmin和vmax两个相关的单位。各个单位具体的含义如下：
+单位含义vw相对于视窗的宽度，视窗宽度是100vwvh相对于视窗的高度，视窗高度是100vhvminvw和vh中的较小值vmaxvw和vh中的较大值；
+这里我们发现视窗宽高都是100vw／100vh，那么vw或者vh，下简称vw，很类似百分比单位。vw和%的区别为：
+单位含义%大部分相对于祖先元素，也有相对于自身的情况比如（border-radius、translate等)vw/vh相对于视窗的尺寸
+从对比中我们可以发现，vw单位与百分比类似，单确有区别，前面我们介绍了百分比单位的换算困难，这里的vw更像&quot;理想的百分比单位&quot;。任意层级元素，在使用vw单位的情况下，1vw都等于视图宽度的百分之一。</p> <p><strong>2vw单位换算</strong></p> <p>同样的，如果要将px换算成vw单位，很简单，只要确定视图的窗口大小（布局视口），如果我们将布局视口设置成分辨率大小，比如对于iphone6/7 375*667的分辨率，那么px可以通过如下方式换算成vw：</p> <div class="language- extra-class"><pre class="language-text"><code>1px = （1/375）*100 vw
+</code></pre></div><p><strong>3缺陷</strong></p> <p>1 绝大多数的浏览器支持vw单位，但是ie9-11不支持vmin和vmax，考虑到vmin和vmax单位不常用，vw单位在绝大部分高版本浏览器内的支持性很好，但是opera浏览器整体不支持vw单位，如果需要兼容opera浏览器的布局，不推荐使用vw。</p> <p>2 由于是相对手机窗口，针对不同的手机视图大小不同，所以需要对单位进行换算处理。</p> <h3 id="问题二-什么是rem布局-rem布局的缺陷。"><a href="#问题二-什么是rem布局-rem布局的缺陷。" class="header-anchor">#</a> . 问题二:什么是rem布局？rem布局的缺陷。</h3> <p>答：</p> <p><strong>rem布局</strong></p> <p>rem是一个灵活的、可扩展的单位，由浏览器转化像素并显示。与em单位不同，rem单位无论嵌套层级如何，都只相对于浏览器的根元素（HTML元素）的font-size。默认情况下，html元素的font-size为16px，所以：
+1 rem = 12px
+为了计算方便，通常可以将html的font-size设置成：</p> <div class="language- extra-class"><pre class="language-text"><code>html{ font-size: 62.5% }
+</code></pre></div><p>这种情况下：
+1 rem = 10px
+rem单位都是相对于根元素html的font-size来决定大小的,根元素的font-size相当于提供了一个基准，当页面的size发生变化时，只需要改变font-size的值，那么以rem为固定单位的元素的大小也会发生响应的变化。因此，如果通过rem来实现响应式的布局，只需要根据视图容器的大小，动态的改变font-size即可。</p> <p><strong>rem布局缺陷</strong></p> <p>1 在响应式布局中，必须通过js来动态控制根元素font-size的大小。
+1 css样式和js代码有一定的耦合性。且必须将改变font-size的代码放在css样式之前</p> <h3 id="问题三-怎么让chrome支持小于12px-的文字"><a href="#问题三-怎么让chrome支持小于12px-的文字" class="header-anchor">#</a> . 问题三:怎么让Chrome支持小于12px 的文字</h3> <p>谷歌浏览器默认最小字体为12px，若想让chorme支持12px字体，只需要用css3属性transform就可以</p> <p>🌰例子：在谷歌浏览器写出10px字体</p> <div class="language- extra-class"><pre class="language-text"><code>transform:scale(0.5);
+font-size:20px;
+</code></pre></div><p>搞定收工～～～</p> <h3 id="问题四-透明度opacity和rgba的区别"><a href="#问题四-透明度opacity和rgba的区别" class="header-anchor">#</a> . 问题四：透明度opacity和rgba的区别</h3> <p><strong>opacity</strong></p> <p>取值在0到1之间，0表示完全透明，1表示完全不透明。</p> <div class="language- extra-class"><pre class="language-text"><code>.box{opacity: 0.5;}
+</code></pre></div><p><strong>rgba</strong></p> <p>rgba中的R表示红色，G表示绿色，B表示蓝色，三种颜色的值都可以是正整数或百分数。A表示Alpha透明度。取值0~1之间，类似opacity。</p> <div class="language- extra-class"><pre class="language-text"><code>.box{background: rgba(255,0,0,0.5);}
+</code></pre></div><p><strong>rgba和opacity的区别</strong>
+rgba()和opacity都能实现透明效果，但最大的不同是opacity作用于元素，以及元素内的所有内容的透明度，而rgba()只作用于元素的颜色或其背景色。</p> <h3 id="问题五-position的属性值有哪些"><a href="#问题五-position的属性值有哪些" class="header-anchor">#</a> . 问题五:position的属性值有哪些？</h3> <p><strong>absolute</strong><br>
+生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。</p> <p>元素的位置通过 &quot;left&quot;, &quot;top&quot;, &quot;right&quot; 以及 &quot;bottom&quot; 属性进行规定。</p> <p><strong>fixed</strong><br>
+生成绝对定位的元素，相对于浏览器窗口进行定位。</p> <p>元素的位置通过 &quot;left&quot;, &quot;top&quot;, &quot;right&quot; 以及 &quot;bottom&quot; 属性进行规定。</p> <p><strong>relative</strong><br>
+生成相对定位的元素，相对于其正常位置进行定位。因此，&quot;left:20&quot; 会向元素的 LEFT 位置添加 20 像素。</p> <p><strong>static</strong>
+默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。
+<strong>inherit</strong><br>
+规定应该从父元素继承 position 属性的值。</p> <h3 id="问题六-display的属性值有哪些"><a href="#问题六-display的属性值有哪些" class="header-anchor">#</a> . 问题六:display的属性值有哪些？</h3> <p>none（元素不会被显示）;</p> <p>block（元素将显示为块级元素，元素前后会带有换行符）;</p> <p>inline（元素会被显示为内联元素，元素前后没有换行符）;</p> <p>inline-block（行内块元素。CSS2.1新增的值）;</p> <p>table（元素会作为块级表格来显示，类似table，表格前后带有换行符）;</p> <p>table-row（元素会作为一个表格行显示，类似tr）;</p> <p>table-cell（元素会作为一个表格单元格显示，类似td和th）</p> <p>flex 弹性盒结构</p> <p>gird 网格结构</p> <h3 id="问题七-垂直水平居中的方案有哪些-尽量说全面一些"><a href="#问题七-垂直水平居中的方案有哪些-尽量说全面一些" class="header-anchor">#</a> . 问题七:垂直水平居中的方案有哪些（尽量说全面一些）</h3> <p><strong>position absolute 50% + 负margin -50%</strong></p> <div class="language- extra-class"><pre class="language-text"><code>.container {
+    position: relative;
+}
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50%;
+    margin-left: -50%;
+}
+</code></pre></div><p><strong>position absolute  50% + transform -50%</strong></p> <div class="language- extra-class"><pre class="language-text"><code>.container {
+    position: relative;
+}
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+</code></pre></div><p><strong>css-table</strong></p> <div class="language- extra-class"><pre class="language-text"><code>/* 此处引用上面的公共代码 */
+.container {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.box {
+    display: inline-block;
+}
+</code></pre></div><p><strong>flex</strong></p> <div class="language- extra-class"><pre class="language-text"><code>/* 此处引用上面的公共代码 */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-center {
+    text-align: center;
+}
+</code></pre></div><p><strong>grid</strong></p> <div class="language- extra-class"><pre class="language-text"><code>/* 此处引用上面的公共代码 */
+.container {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.box-center {
+    text-align: center;
+}
+</code></pre></div><h2 id="vue-篇"><a href="#vue-篇" class="header-anchor">#</a> vue 篇</h2> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <h3 id="问题1-vue各个生命周期及其作用"><a href="#问题1-vue各个生命周期及其作用" class="header-anchor">#</a> . 问题1:vue各个生命周期及其作用</h3> <p>1.初始化</p> <p><strong>beforeCreate</strong>：大vue已经初始化，只是数据初始化与事件系统构建尚未形成，不能获取DOM节点（没有data，没有el）
+使用场景：因为此时data和methods都拿不到，所以通常在实例以外使用。
+<strong>created</strong>：实例已经创建，仍然不能获取DOM节点（有data，没有el）
+使用场景：模板渲染成html前调用，此时可以获取data和methods， 可以初始化进行数据请求，得到渲染数据，，异步操作可以放在这里
+2 挂载
+<strong>beforeMount</strong>是个过渡阶段，此时依然获取不到具体的DOM节点，但是vue挂载的根节点已经创建（有data，有el）
+<strong>mounted</strong>：组件挂载完成，数据和DOM都已经被渲染出来了
+使用场景：模板渲染成html后调用，通常是初始化页面完成后再对数据和DOM做一些操作，需要操作DOM的方法可以放在这里
+3.更新
+<strong>beforeUpdate</strong>：检测到数据更新时，但在DOM更新前执行
+<strong>updated</strong>：更新结束后执行
+使用场景：需要对数据更新做统一处理的；如果需要区分不同的数据更新操作可以使用$nextTick
+4.销毁
+<strong>beforeDestroy</strong>：当要销毁vue实例时，在销毁前执行
+<strong>destroyed</strong>：销毁vue实例时执行</p> <p>父子组件mounted和destroyed顺序</p> <p>beforeMount执行顺序 先父后子</p> <p>mounted执行顺序,先子后父</p> <p>beforeDestroy 执行顺序，先父后子</p> <p>destroyed 执行顺序 ， 先子后父</p> <h3 id="问题2-vue3的双向绑定原理-与vue2-0比起来有那些优势"><a href="#问题2-vue3的双向绑定原理-与vue2-0比起来有那些优势" class="header-anchor">#</a> . 问题2:vue3的双向绑定原理,与vue2.0比起来有那些优势？</h3> <p>vue3.0 的数据绑定原理 proxy 对象
+vue3.0 于 Proxy 的 observer 实现， 代替了Vue 2 系列中基于 Object.defineProperty 做为响应式原理</p> <p>感兴趣的同学可以看一下笔者的vue3.0响应式原理详解</p> <p>传送门：vue3.0 响应式原理(超详细)</p> <p>优势：
+1 对属性的添加、删除动作的监测；
+2 对数组基于下标的修改、对于 .length 修改的监测；
+3 对 Map、Set、WeakMap 和 WeakSet 的支持；；
+4 vue3 对依赖收集用的是weaMap，WeakSet，保持了对键名所引用的对象的弱引用，即垃圾回收机制不将该引用考虑在内，一旦不再需要，WeakMap 里面的键名对象和所对应的键值对会自动消失，不用手动删除引用。
+5 vue2.0 初始化data时候，对于对象等引用数据类型，进行了递归处理，也就是对于一些挂载在data上属性,但是并没有用到的属性，也同样做了响应式处理，而vue3.0之后访问到父级属性之后，在进行下一层track,也就是说初始化data时候无需把大量性能浪费在递归上。</p> <h3 id="问题3-vue路由卫士"><a href="#问题3-vue路由卫士" class="header-anchor">#</a> . 问题3:vue路由卫士？</h3> <p>vue中路由守卫一共有三种，一个全局路由守卫，一个是组件内路由守卫，一个是router独享守卫。</p> <p><strong>一、全局路由守卫</strong></p> <p>只要全局路由变化，就会触发全局的路由守卫。
+全局路由守卫有个两个：一个是全局前置守卫，一个是全局后置守卫。</p> <div class="language- extra-class"><pre class="language-text"><code>router.beforeEach((to, from, next) =&gt; {
+    console.log(to) =&gt; // 到哪个页面去？
+    console.log(from) =&gt; // 从哪个页面来？
+    next() =&gt; // 一个回调函数
+}
+router.afterEach（to，from） = {}
+</code></pre></div><p>next(false): 中断当前的导航。如果浏览器的 URL 改变了 (可能是用户手动或者浏览器后退按钮)，那么 URL 地址会重置到 from 路由对应的地址,next('/') 或者 next({ path: '/' }): 跳转到一个不同的地址。当前的导航被中断，然后进行一个新的导航。你可以向 next 传递任意位置对象，且允许设置诸如 replace: true、name: 'home' 之类的选项以及任何用在 router-link 的 to prop 或 router.push 中的选项.</p> <p><strong>二、组件路由守卫</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// 跟methods: {}等同级别书写，组件路由守卫是写在每个单独的vue文件里面的路由守卫
+beforeRouteEnter (to, from, next) {
+    // 注意，在路由进入之前，组件实例还未渲染，所以无法获取this实例，只能通过vm来访问组件实例
+    next(vm =&gt; {})
+}
+beforeRouteUpdate (to, from, next) {
+    // 同一页面，刷新不同数据时调用，
+}
+beforeRouteLeave (to, from, next) {
+    // 离开当前路由页面时调用
+}
+</code></pre></div><p><strong>三、路由独享守卫</strong>
+路由独享守卫是在路由配置页面单独给路由配置的一个守卫</p> <div class="language- extra-class"><pre class="language-text"><code>export default new VueRouter({
+    routes: [
+        {
+            path: '/',
+            name: 'home',
+            component: 'Home',
+            beforeEnter: (to, from, next) =&gt; {
+               // ...
+            }
+        }
+    ]
+})
+</code></pre></div><h3 id="问题4-vue-中watch和computed区别"><a href="#问题4-vue-中watch和computed区别" class="header-anchor">#</a> . 问题4:vue 中watch和computed区别？</h3> <p>watch侧重点是对数据更新所产生的依赖追踪，而computed侧重点是对数据的缓存与处理引用，这就是watch和computed本质的区别 ,computed可以看作一种特殊的data数据类型 ，它内部进行了二次依赖收集 ，第一次依赖收集是引用computed属性值，而进行的依赖收集 ，第二次是对computed内部是否关联data或者props的属性，而又进行的一次依赖收集。</p> <p>下面我们按照vue3.0两个例子，来分别两者之前在流程上有什么区别。</p> <p><strong>watch</strong></p> <div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;app&quot;&gt;
+   &lt;p&gt;{{ count }}&lt;/p&gt;
+   &lt;button @input=&quot;add&quot; &gt;add&lt;/button&gt;
+&lt;/div&gt;
+&lt;script&gt;
+const { reactive, watch, toRefs } = Vue
+Vue.createApp({
+  setup(){
+    const state = reactive({
+       count:1,
+    })
+    const add = () =&gt; state.count++
+    watch(state.count,(count, prevCount) =&gt; {
+       console.log('新的count=' , count )
+    })
+    return {
+      ...toRefs(state),
+      add
+    }
+  }
+}).mount('#app')
+&lt;/script&gt;
+</code></pre></div><p>从上述例子我们看出，当点击add后count变化 ，而是 watch作用就是，追踪到count变化 ，而促使回调函数执行。我们用一张流程图来解析整个流程。</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <p><strong>computed</strong></p> <div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;app&quot;&gt;
+   &lt;p&gt;{{ plusOne }}&lt;/p&gt;
+   &lt;button @input=&quot;add&quot; &gt;add&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+Vue.createApp({
+  data: () =&gt; ({
+    number: 1
+  }),
+  computed: {
+    plusOne() {
+      return this.number + 1
+    }  
+  },
+  methods: {
+    add(){
+      this.number++
+    }
+  }
+}).mount('#app')
+&lt;/script&gt;
+</code></pre></div><p>当我们点击add改变的是number，但是引用过this.number的computed也更新了新的值 ，页面更新，我们可以看出 plusOne计算属性可以看作一个对number缓存的数据类型，data下的number收集了plusOne依赖项，同样plusOne也收集了的依赖促使更新视图，我们用一张流程图来解析整个流程。</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <p>如果想要看原理解析请看笔者的文章</p> <p>传送门 vue3.0 watch 和 computed源码解析(举例图解)</p> <h3 id="问题5-vue中data为什么要是个函数"><a href="#问题5-vue中data为什么要是个函数" class="header-anchor">#</a> . 问题5:vue中data为什么要是个函数？</h3> <p>vue中data必须是一个函数是和js本身特性有关。</p> <p>我们做vue项目的时候，所有的vue组件都是基于大vue实例化的，我们可以用一个简单例子来解释一下：</p> <div class="language- extra-class"><pre class="language-text"><code>function Vue(){
+
+}
+Vue.prototype.data = {
+    name:'jack',
+    age:22,
+}
+var componentA = new Vue();
+var componentB = new Vue();
+componentA.data.age=55;
+console.log(componentA,componentB)
+</code></pre></div><p>此时，componentA 和 componentB data之间指向了同一个内存地址，age 都变成了 55， 导致了问题！
+接下来很好解释为什么 vue 组件需要 function 了：</p> <div class="language- extra-class"><pre class="language-text"><code>function Vue(){
+ this.data = this.data()
+}
+Vue.prototype.data = function (){
+    return {
+    name:'jack',
+    age:22,
+}
+}
+var componentA = new Vue();
+var componentB = new Vue();
+componentA.data.age=55;
+console.log(componentA,componentB)
+</code></pre></div><p>componentA 和 componentB data之间相互独立, age 分别是 55 和 22
+<strong>当data是一个方法的时候，每一个实例化组件都会形成一个独立的data对象，相互之间没有影响。</strong></p> <h2 id="react-篇"><a href="#react-篇" class="header-anchor">#</a> react 篇</h2> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <h3 id="问题1-setstate是同步的还是异步的"><a href="#问题1-setstate是同步的还是异步的" class="header-anchor">#</a> . 问题1:setState是同步的还是异步的？</h3> <p>对于这个问题，笔者自己总结了一下：对于setState是同步还是异步，对于整个react代码执行上下文来说，<strong>setState是同步的</strong>，但是setState触发以后，并不一定得到新的数据，这里有一个react有一个<strong>batchUpdate批量更新</strong>的概念。</p> <p>我们来看一个例子🌰：</p> <div class="language- extra-class"><pre class="language-text"><code>class Example extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      val: 0
+    };
+  }
+
+  componentDidMount() {
+    this.setState({val: this.state.val + 1});
+    console.log(this.state.val);    // 第 1 次 log
+
+    this.setState({val: this.state.val + 1});
+    console.log(this.state.val);    // 第 2 次 log
+
+    setTimeout(() =&gt; {
+      this.setState({val: this.state.val + 1});
+      console.log(this.state.val);  // 第 3 次 log
+
+      this.setState({val: this.state.val + 1});
+      console.log(this.state.val);  // 第 4 次 log
+    }, 0);
+  }
+
+  render() {
+    return null;
+  }
+};
+</code></pre></div><p>答案是：0 0 2 3</p> <p>在React的setState函数实现中，会根据一个变量isBatchingUpdates判断是直接更新this.state还是放到队列中回头再说，而isBatchingUpdates默认是false，也就表示setState会同步更新this.state，但是，有一个函数batchedUpdates，这个函数会把isBatchingUpdates修改为true，而当React在调用事件处理函数之前就会调用这个batchedUpdates，造成的后果，就是由React控制的事件处理过程setState不会同步更新this.state 。</p> <h3 id="问题2-介绍一下-react-hooks-api及其如何使用"><a href="#问题2-介绍一下-react-hooks-api及其如何使用" class="header-anchor">#</a> . 问题2:介绍一下 react-hooks API及其如何使用？</h3> <p>usestate 无状态组件的state</p> <p>useCallback,useMemo 性能优化利器.</p> <p>useContext 可以使用操纵react context.</p> <p>useEffect ，useLayoutEffect 副作用钩子 可以替代class声明组件中的声明周期 .useLayoutEffect 在浏览器渲染之前 ， effect在浏览器渲染之后</p> <p>useReducer 功能可以参考redux</p> <p>useRef 可以获取元素和组件实例，还可以缓存数据</p> <p>详细的react-hooks使用可以戳👇</p> <p>传送门：react-hooks如何使用？</p> <h2 id="webpack篇"><a href="#webpack篇" class="header-anchor">#</a> webpack篇</h2> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <h3 id="问题一-webpack性能优化"><a href="#问题一-webpack性能优化" class="header-anchor">#</a> . 问题一:webpack性能优化？</h3> <p>打包的时间和打包之后文件的体积是影响webpack性能的主要因素。所以我们可以从这两个方面入手，来优化webpack性能。</p> <p><strong>1合理使用loader</strong>
+用 include 或 exclude 来帮我们避免不必要的转译，优化loader的管辖范围。</p> <p><strong>2缓存babel编译过的文件</strong></p> <p>loader: 'babel-loader?cacheDirectory=true'
+如上，我们只需要为 loader 增加相应的参数设定。选择开启缓存将转译结果缓存至文件系统，可以提交babel-loader的工作效率。</p> <p><strong>3  DllPlugin类库引入</strong></p> <p>DllPlugin 是基于 Windows 动态链接库（dll）的思想被创作出来的。这个插件会把第三方库单独打包到一个文件中，这个文件就是一个单纯的依赖库。这个依赖库不会跟着你的业务代码一起被重新打包，只有当依赖自身发生版本变化时才会重新打包。</p> <p><strong>4 happypack多进程编译</strong></p> <p>我们都知道nodejs是单线程。无法一次性执行多个任务。这样会使得所有任务都排队执行。happypack可以根据cpu核数优势，建立子进程child_process,充分利用多核优势解决这个问题。提高了打包的效率。</p> <div class="language- extra-class"><pre class="language-text"><code>const HappyPack = require('happypack')
+// 手动创建进程池
+const happyThreadPool =  HappyPack.ThreadPool({ size: os.cpus().length })
+module.exports = {
+  module: {
+    rules: [
+      ...
+      {
+        test: /\.js$/,
+        // 问号后面的查询参数指定了处理这类文件的HappyPack实例的名字
+        loader: 'happypack/loader?id=happyBabel',
+        ...
+      },
+    ],
+  },
+  plugins: [
+    ...
+    new HappyPack({
+      // 这个HappyPack的“名字”就叫做happyBabel，和楼上的查询参数遥相呼应
+      id: 'happyBabel',
+      // 指定进程池
+      threadPool: happyThreadPool,
+      loaders: ['babel-loader?cacheDirectory']
+    })
+  ],
+}
+</code></pre></div><p>`
+happypack成功，启动了三个进程编译。加快了loader的加载速度。</p> <p><strong>5 scope Hoisting</strong></p> <p>scope Hoisting的作用是分析模块之前的依赖关系 ， 把打包之后的公共模块合到同一个函数中去。它会代码体积更小，因为函数申明语句会产生大量代码；代码在运行时因为创建的函数作用域更少了，内存开销也随之变小。</p> <div class="language- extra-class"><pre class="language-text"><code>const ModuleConcatenationPlugin = require('webpack/lib/optimize/ModuleConcatenationPlugin');
+
+module.exports = {
+  resolve: {
+    // 针对 Npm 中的第三方模块优先采用 jsnext:main 中指向的 ES6 模块化语法的文件
+    mainFields: ['jsnext:main', 'browser', 'main']
+  },
+  plugins: [
+    // 开启 Scope Hoisting
+    new ModuleConcatenationPlugin(),
+  ],
+};
+</code></pre></div><p><strong>6  tree Shaking 删除冗余代码</strong></p> <p>Tree-Shaking可以通过分析出import/exports依赖关系。对于没有使用的代码。可以自动删除。这样就减少了项目的体积。</p> <p>举个例子🌰：</p> <p>import { a, b } from './pages'
+a()
+pages 文件里，我虽然导出了两个页面：
+export const a = ()=&gt;{ console.log(666) }
+export const b = ()=&gt;{ console.log(666) }
+所以打包的结果会保留这部分：
+export const a = ()=&gt;{ console.log(666) }
+b方法直接删掉，这就是 Tree-Shaking 帮我们做的事情。删掉了没有用到的代码。</p> <p><strong>7 按需加载</strong></p> <p>像vue 和 react spa应用，首次加载的过程中，由于初始化要加载很多路由，加载很多组件页面。会导致 首屏时间 非常长。一定程度上会影响到用户体验。所以我们需要换一种按需加载的方式。一次只加载想要看到的内容</p> <p>require.ensure 形式</p> <div class="language- extra-class"><pre class="language-text"><code>const getComponent =&gt; (location, cb) {
+  require.ensure([], (require) =&gt; {
+    cb(null, require('../pages/AComponent').default)
+  }, 'a')
+}
+&lt;Route path=&quot;/a&quot; getComponent={getComponent}&gt;
+</code></pre></div><p>import形式</p> <div class="language- extra-class"><pre class="language-text"><code>import B from '@/pages/business/b.vue'
+//按需加载变成了：
+const B = () =&gt; import('@/pages/business/b.vue')
+</code></pre></div><p><strong>8 按需引用</strong></p> <p>不知道大家有没有体会到，当我们用antd等这种UI组件库的时候。明明只想要用其中的一两个组件，却要把整个组件库连同样式库一起引进来，就会造成打包后的体积突然增加了好几倍。为了解决这个问题，我们可以采取按需引入的方式。</p> <p>拿antd为例，需要我们在.babelrc文件中这样声明，</p> <div class="language- extra-class"><pre class="language-text"><code>{
+&quot;presets&quot;: [
+   [
+    &quot;@babel/preset-env&quot;,
+    {
+      &quot;targets&quot;: {
+          &quot;chrome&quot;: &quot;67&quot;
+      },
+    &quot;useBuiltIns&quot;: &quot;usage&quot;,
+     &quot;corejs&quot;: 2
+    }
+   ],
+    &quot;@babel/preset-react&quot;
+ ],
+  &quot;plugins&quot;: [
+  [
+   &quot;@babel/plugin-transform-runtime&quot;,
+  ],
+  //重点按需引入antd里面的style
+  [  &quot;import&quot;, {
+   &quot;libraryName&quot;: &quot;antd&quot;,
+   &quot;libraryDirectory&quot;: &quot;es&quot;,
+   &quot;style&quot;: true
+  }]
+ ]
+}
+</code></pre></div><p>经过如上配置之后，我们会发现体积比没有处理的要小很多。</p> <h3 id="问题二-webpack怎么配置多页面应用"><a href="#问题二-webpack怎么配置多页面应用" class="header-anchor">#</a> . 问题二:webpack怎么配置多页面应用？</h3> <p>实际这个问题变相再问webpack，配置多入口和多个html对应</p> <p><strong>entry</strong> 应该这么配 ,entry支持 string array object</p> <div class="language- extra-class"><pre class="language-text"><code>{
+  //入口文件配置 string | array | object
+  entry: {
+    index: './src/index.js',
+    list: './src/list.js',
+    detail: './src/detail.js'
+  },
+}
+</code></pre></div><p><strong>html输出配置</strong> 输出html需要webpack插件 html-webpack-plugin</p> <div class="language- extra-class"><pre class="language-text"><code>{
+    plugins: [
+    new htmlWebpackPulgin({
+      title: 'hello 我是首页',
+      template: './index.html',
+      inject: 'head',
+      filename: 'index.html',
+      chunks: ['index'] //对应 index.js
+    }),
+    new htmlWebpackPulgin({
+      title: 'hello 我是列表',
+      template: './index.html',
+      inject: 'body',
+      filename: 'list.html',
+      chunks: ['list'] // 对应 list.js
+    }),
+    new htmlWebpackPulgin({
+      title: 'hello 我是详情',
+      template: './index.html',
+      inject: 'body',
+      filename: 'detail.html',
+      chunks: ['detail']  //对应detail.js
+    })
+  ]
+}
+</code></pre></div><h2 id="http篇"><a href="#http篇" class="header-anchor">#</a> http篇</h2> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <h3 id="问题1-url请求页面之后浏览器的解析过程"><a href="#问题1-url请求页面之后浏览器的解析过程" class="header-anchor">#</a> . 问题1:URL请求页面之后浏览器的解析过程</h3> <p>1.用户输入网址，浏览器发起DNS查询请求，域名解析。</p> <p>2.三次握手</p> <p>3.建立tcp连接，发送http请求</p> <p>4.服务器接受到请求,并相应http请求</p> <p>5.浏览器对返回的html进行解析，在这期间可能继续请求css，js等文件，浏览器渲染、构建网页</p> <p>6.断开连接，四次挥手</p> <p>7.浏览器对页面进行渲染呈现给用户</p> <h3 id="问题2-javascript的同源策略"><a href="#问题2-javascript的同源策略" class="header-anchor">#</a> . 问题2:javascript的同源策略</h3> <p>同源策略是一个重要的安全策略，它用于限制一个origin的文档或者它加载的脚本如何能与另一个源的资源进行交互。它能帮助阻隔恶意文档，减少可能被攻击的媒介。</p> <p>如果两个 URL 的 protocol、port (如果有指定的话)和 host 都相同的话，则这两个 URL 是同源。这个方案也被称为“协议/主机/端口元组”，或者直接是 “元组”。（“元组” 是指一组项目构成的整体，双重/三重/四重/五重/等的通用形式）。</p> <p><strong>源的继承</strong>
+在页面中通过 about:blank 或 javascript: URL 执行的脚本会继承打开该 URL 的文档的源，因为这些类型的 URLs 没有包含源服务器的相关信息。</p> <p><strong>源的修改</strong>
+满足某些限制条件的情况下，页面是可以修改它的源。脚本可以将 document.domain 的值设置为其当前域或其当前域的父域。如果将其设置为其当前域的父域，则这个较短的父域将用于后续源检查。</p> <h3 id="问题3-怎么解决ie浏览器对get请求的缓存"><a href="#问题3-怎么解决ie浏览器对get请求的缓存" class="header-anchor">#</a> . 问题3:怎么解决ie浏览器对get请求的缓存？</h3> <p>不知道大家有没有过一种情况，在低版本ie浏览器下，在短暂的时间内发出相同的get情况（比如相同时间请求一个数据列表多次)，就会发现请求只发送了一次，其他的请求都被浏览器缓存了，对于这种缓存ajax情况，我们可以在url拼上时间戳，这样浏览器就不会认为这是相同的情况，就不会缓存get情况。</p> <p><strong>以aixos为例，我们可以在每次发起请求的时候对get请求加以拦截</strong></p> <div class="language- extra-class"><pre class="language-text"><code>/* 拦截器 */
+axios.interceptors.request.use(
+    (config) =&gt; {
+        const method   = config.method || 'get'
+        if (method.toLowerCase() === 'get') {  /* 防止浏览器缓存 */
+            const url  = config.url || ''
+            const t = new Date().getTime()
+            config.url = `${url}${url.indexOf('?') === -1 ? '?' : '&amp;'}t=${t}`
+        }else if(method.toLowerCase() === 'post'){ /* 设置不同请求头 */
+            //...
+        }
+        return config
+    },
+    (error) =&gt; { 
+    }
+)
+</code></pre></div><p>如上，就完美解决了ajax被ie浏览器缓存的问题。</p> <h2 id="参考文档"><a href="#参考文档" class="header-anchor">#</a> 参考文档</h2> <blockquote><p>布局常用解决方案对比(媒体查询、百分比、rem和vw/vh）
+css中的多种垂直水平居中
+JavaScript内存泄露的4种方式及如何避免
+vue路由守卫哪几种？
+Vue组件为什么data必须是一个函数？
+深入 setState 机制</p></blockquote> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">5/8/2024, 3:01:19 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/summary/听说你对packagejson很熟.html" class="prev">
+        面试官：听说你对package.json很熟？
+      </a></span> <span class="next"><a href="/summary/牛客.html">
+        牛客网最新百道前端 JavaScript 笔试题
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.07981acf.js" defer></script><script src="/assets/js/2.57da4f88.js" defer></script><script src="/assets/js/1.a76cc220.js" defer></script><script src="/assets/js/130.22372a24.js" defer></script>
+  </body>
+</html>

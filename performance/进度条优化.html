@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>进度条优化 | duangdong的qa</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?0088ce24040b03f2947322ab31d23414";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+    <script>
+  var _hmt = _hmt || [];
+  _hmt.push(['_requirePlugin', 'UrlChangeTracker', {
+    shouldTrackUrlChange: function (newPath, oldPath) {
+      newPath = newPath.split('#')[0];
+      oldPath = oldPath.split('#')[0];
+      return newPath != oldPath;
+    }}
+  ]);
+  </script>
+    <meta name="description" content="前端QA集锦">
+    <meta name="keywords" content="qd-blog,js,vuepress,leetcode,react,react进阶,css,js进阶,react性能优化,js设计模式">
+    
+    <link rel="preload" href="/assets/css/0.styles.b4a844ec.css" as="style"><link rel="preload" href="/assets/js/app.07981acf.js" as="script"><link rel="preload" href="/assets/js/2.57da4f88.js" as="script"><link rel="preload" href="/assets/js/1.a76cc220.js" as="script"><link rel="preload" href="/assets/js/90.6437abb2.js" as="script"><link rel="prefetch" href="/assets/js/10.50f73657.js"><link rel="prefetch" href="/assets/js/100.ed998eb0.js"><link rel="prefetch" href="/assets/js/101.c8472505.js"><link rel="prefetch" href="/assets/js/102.d600a66c.js"><link rel="prefetch" href="/assets/js/103.c2d41a43.js"><link rel="prefetch" href="/assets/js/104.dc119219.js"><link rel="prefetch" href="/assets/js/105.8707757e.js"><link rel="prefetch" href="/assets/js/106.33c299b9.js"><link rel="prefetch" href="/assets/js/107.8eafcc06.js"><link rel="prefetch" href="/assets/js/108.eeb8c861.js"><link rel="prefetch" href="/assets/js/109.d7579372.js"><link rel="prefetch" href="/assets/js/11.0390ceee.js"><link rel="prefetch" href="/assets/js/110.4cdb688a.js"><link rel="prefetch" href="/assets/js/111.95d0f748.js"><link rel="prefetch" href="/assets/js/112.fae5a13a.js"><link rel="prefetch" href="/assets/js/113.7cefcf49.js"><link rel="prefetch" href="/assets/js/114.49f03fa7.js"><link rel="prefetch" href="/assets/js/115.73eebb69.js"><link rel="prefetch" href="/assets/js/116.3b9205f3.js"><link rel="prefetch" href="/assets/js/117.dc4fcb53.js"><link rel="prefetch" href="/assets/js/118.1191553b.js"><link rel="prefetch" href="/assets/js/119.705d33d0.js"><link rel="prefetch" href="/assets/js/12.f88bec36.js"><link rel="prefetch" href="/assets/js/120.d3227497.js"><link rel="prefetch" href="/assets/js/121.32bcc7c2.js"><link rel="prefetch" href="/assets/js/122.55a7d973.js"><link rel="prefetch" href="/assets/js/123.07b3f53a.js"><link rel="prefetch" href="/assets/js/124.851c0100.js"><link rel="prefetch" href="/assets/js/125.c1de1f95.js"><link rel="prefetch" href="/assets/js/126.ea96a075.js"><link rel="prefetch" href="/assets/js/127.bcf311b8.js"><link rel="prefetch" href="/assets/js/128.e1c4d95e.js"><link rel="prefetch" href="/assets/js/129.09afee9c.js"><link rel="prefetch" href="/assets/js/13.963ad03b.js"><link rel="prefetch" href="/assets/js/130.22372a24.js"><link rel="prefetch" href="/assets/js/131.4db39cda.js"><link rel="prefetch" href="/assets/js/132.afcfdf65.js"><link rel="prefetch" href="/assets/js/133.35b0df52.js"><link rel="prefetch" href="/assets/js/134.9ad9188e.js"><link rel="prefetch" href="/assets/js/135.d7ca4b93.js"><link rel="prefetch" href="/assets/js/136.403dc2de.js"><link rel="prefetch" href="/assets/js/137.f972aed9.js"><link rel="prefetch" href="/assets/js/138.7536ef7d.js"><link rel="prefetch" href="/assets/js/139.05186195.js"><link rel="prefetch" href="/assets/js/14.512f15b9.js"><link rel="prefetch" href="/assets/js/140.f7b5e550.js"><link rel="prefetch" href="/assets/js/141.16938126.js"><link rel="prefetch" href="/assets/js/142.0d18982a.js"><link rel="prefetch" href="/assets/js/143.f82390e5.js"><link rel="prefetch" href="/assets/js/144.bac62f6d.js"><link rel="prefetch" href="/assets/js/145.255f2397.js"><link rel="prefetch" href="/assets/js/146.226da4b5.js"><link rel="prefetch" href="/assets/js/147.236f8a9f.js"><link rel="prefetch" href="/assets/js/148.8d472c06.js"><link rel="prefetch" href="/assets/js/149.4170f8c0.js"><link rel="prefetch" href="/assets/js/15.a674496c.js"><link rel="prefetch" href="/assets/js/150.ff7b0269.js"><link rel="prefetch" href="/assets/js/151.0a1c7058.js"><link rel="prefetch" href="/assets/js/152.584c412a.js"><link rel="prefetch" href="/assets/js/153.220d027b.js"><link rel="prefetch" href="/assets/js/154.09a9219e.js"><link rel="prefetch" href="/assets/js/155.6c8dbf71.js"><link rel="prefetch" href="/assets/js/156.a9d81dce.js"><link rel="prefetch" href="/assets/js/157.e53c1adb.js"><link rel="prefetch" href="/assets/js/158.11f55456.js"><link rel="prefetch" href="/assets/js/159.2c05d7f2.js"><link rel="prefetch" href="/assets/js/16.ed7e507f.js"><link rel="prefetch" href="/assets/js/160.27616923.js"><link rel="prefetch" href="/assets/js/17.de667ca5.js"><link rel="prefetch" href="/assets/js/18.b44e84af.js"><link rel="prefetch" href="/assets/js/19.5b5ad6a1.js"><link rel="prefetch" href="/assets/js/20.6800493a.js"><link rel="prefetch" href="/assets/js/21.6589052c.js"><link rel="prefetch" href="/assets/js/22.f648d829.js"><link rel="prefetch" href="/assets/js/23.21fe11d7.js"><link rel="prefetch" href="/assets/js/24.7a3e65b2.js"><link rel="prefetch" href="/assets/js/25.9e2d6c46.js"><link rel="prefetch" href="/assets/js/26.0dcf1d19.js"><link rel="prefetch" href="/assets/js/27.bd79a51b.js"><link rel="prefetch" href="/assets/js/28.ad9cdafd.js"><link rel="prefetch" href="/assets/js/29.738a8c4a.js"><link rel="prefetch" href="/assets/js/3.13e892f5.js"><link rel="prefetch" href="/assets/js/30.5d2ae7ae.js"><link rel="prefetch" href="/assets/js/31.2a59449c.js"><link rel="prefetch" href="/assets/js/32.322ed58f.js"><link rel="prefetch" href="/assets/js/33.e18917c7.js"><link rel="prefetch" href="/assets/js/34.edfe8355.js"><link rel="prefetch" href="/assets/js/35.2c0b1e3e.js"><link rel="prefetch" href="/assets/js/36.b1fdf51f.js"><link rel="prefetch" href="/assets/js/37.11ee0b0c.js"><link rel="prefetch" href="/assets/js/38.0b050ca5.js"><link rel="prefetch" href="/assets/js/39.2bd20762.js"><link rel="prefetch" href="/assets/js/4.5bdb9365.js"><link rel="prefetch" href="/assets/js/40.eb0c66c8.js"><link rel="prefetch" href="/assets/js/41.933044bc.js"><link rel="prefetch" href="/assets/js/42.eac4ba39.js"><link rel="prefetch" href="/assets/js/43.8c61e37d.js"><link rel="prefetch" href="/assets/js/44.30f132bb.js"><link rel="prefetch" href="/assets/js/45.2477f9bb.js"><link rel="prefetch" href="/assets/js/46.e97df854.js"><link rel="prefetch" href="/assets/js/47.60f16a00.js"><link rel="prefetch" href="/assets/js/48.d01b463f.js"><link rel="prefetch" href="/assets/js/49.e3a15fc7.js"><link rel="prefetch" href="/assets/js/5.7c68fdb5.js"><link rel="prefetch" href="/assets/js/50.31265493.js"><link rel="prefetch" href="/assets/js/51.ed2cc5dc.js"><link rel="prefetch" href="/assets/js/52.3ae02665.js"><link rel="prefetch" href="/assets/js/53.69d15c58.js"><link rel="prefetch" href="/assets/js/54.bbab20a0.js"><link rel="prefetch" href="/assets/js/55.9617cf7e.js"><link rel="prefetch" href="/assets/js/56.13f9aef2.js"><link rel="prefetch" href="/assets/js/57.ba08cc35.js"><link rel="prefetch" href="/assets/js/58.63028d02.js"><link rel="prefetch" href="/assets/js/59.566c0b50.js"><link rel="prefetch" href="/assets/js/6.c8da7ca7.js"><link rel="prefetch" href="/assets/js/60.0801f3b3.js"><link rel="prefetch" href="/assets/js/61.ceae0570.js"><link rel="prefetch" href="/assets/js/62.9f28e1a4.js"><link rel="prefetch" href="/assets/js/63.15282044.js"><link rel="prefetch" href="/assets/js/64.7c666983.js"><link rel="prefetch" href="/assets/js/65.320c4670.js"><link rel="prefetch" href="/assets/js/66.253bab14.js"><link rel="prefetch" href="/assets/js/67.49c1e967.js"><link rel="prefetch" href="/assets/js/68.ae82def1.js"><link rel="prefetch" href="/assets/js/69.0877ad54.js"><link rel="prefetch" href="/assets/js/7.e4c88d0e.js"><link rel="prefetch" href="/assets/js/70.5e8208ea.js"><link rel="prefetch" href="/assets/js/71.52cb4845.js"><link rel="prefetch" href="/assets/js/72.8c575d51.js"><link rel="prefetch" href="/assets/js/73.b9ba874e.js"><link rel="prefetch" href="/assets/js/74.6b4693bb.js"><link rel="prefetch" href="/assets/js/75.e9378ce1.js"><link rel="prefetch" href="/assets/js/76.a80b13fc.js"><link rel="prefetch" href="/assets/js/77.d134968d.js"><link rel="prefetch" href="/assets/js/78.40d99cd8.js"><link rel="prefetch" href="/assets/js/79.2b663044.js"><link rel="prefetch" href="/assets/js/80.0b63f3ac.js"><link rel="prefetch" href="/assets/js/81.bc4031db.js"><link rel="prefetch" href="/assets/js/82.3152c02c.js"><link rel="prefetch" href="/assets/js/83.3fa2dc4b.js"><link rel="prefetch" href="/assets/js/84.e778c959.js"><link rel="prefetch" href="/assets/js/85.060ddc49.js"><link rel="prefetch" href="/assets/js/86.bb8138bb.js"><link rel="prefetch" href="/assets/js/87.72c01e68.js"><link rel="prefetch" href="/assets/js/88.e3e56223.js"><link rel="prefetch" href="/assets/js/89.198ff8d1.js"><link rel="prefetch" href="/assets/js/91.dbe1df52.js"><link rel="prefetch" href="/assets/js/92.6e732f3a.js"><link rel="prefetch" href="/assets/js/93.e98beea7.js"><link rel="prefetch" href="/assets/js/94.c62e88cb.js"><link rel="prefetch" href="/assets/js/95.f6aad986.js"><link rel="prefetch" href="/assets/js/96.e0630547.js"><link rel="prefetch" href="/assets/js/97.3cd76aa5.js"><link rel="prefetch" href="/assets/js/98.3bc2adce.js"><link rel="prefetch" href="/assets/js/99.88c20858.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.5143d2e0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b4a844ec.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">duangdong的qa</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/js/" class="nav-link">
+  JS方面
+</a></div><div class="nav-item"><a href="/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/summary/" class="nav-link">
+  汇总
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  常见算法
+</a></div><div class="nav-item"><a href="/performance/" class="nav-link router-link-active">
+  性能优化
+</a></div><div class="nav-item"><a href="/http/" class="nav-link">
+  网络协议
+</a></div><div class="nav-item"><a href="/css/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/face-sutra/" class="nav-link">
+  QA
+</a></div><div class="nav-item"><a href="https://link.aduang.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Home
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/js/" class="nav-link">
+  JS方面
+</a></div><div class="nav-item"><a href="/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/summary/" class="nav-link">
+  汇总
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  常见算法
+</a></div><div class="nav-item"><a href="/performance/" class="nav-link router-link-active">
+  性能优化
+</a></div><div class="nav-item"><a href="/http/" class="nav-link">
+  网络协议
+</a></div><div class="nav-item"><a href="/css/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/face-sutra/" class="nav-link">
+  QA
+</a></div><div class="nav-item"><a href="https://link.aduang.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Home
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/performance/" aria-current="page" class="sidebar-link">八股文</a></li><li><a href="/performance/21 道关于性能优化的面试题.html" class="sidebar-link">21 道关于性能优化的面试题（附答案）</a></li><li><a href="/performance/JavaScript复杂判断的更优雅写法.html" class="sidebar-link">JavaScript 复杂判断的更优雅写法</a></li><li><a href="/performance/为什你应该使用picture标签而不是Img标签.html" class="sidebar-link">为什你应该使用picture标签而不是Img标签</a></li><li><a href="/performance/从前端性能优化引申出来的5道经典面试题.html" class="sidebar-link">从前端性能优化引申出来的 5 道经典面试题</a></li><li><a href="/performance/前端错误监控系统.html" class="sidebar-link">这三年沉淀的前端错误监控系统，一篇文章讲透给你</a></li><li><a href="/performance/性能优化.html" class="sidebar-link">写给中高级前端关于性能优化的9大策略和6大指标</a></li><li><a href="/performance/节流防抖.html" class="sidebar-link">函数防抖与节流</a></li><li><a href="/performance/进度条优化.html" class="active sidebar-link">进度条优化</a></li><li><a href="/performance/逻辑判断.html" class="sidebar-link">编写高质量可维护的代码之优化逻辑判断</a></li><li><a href="/performance/降级处理.html" class="sidebar-link">浅析前端异常及降级处理</a></li><li><a href="/performance/项目中做过哪些安全防范措施.html" class="sidebar-link">你在项目中做过哪些安全防范措施？</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="进度条优化"><a href="#进度条优化" class="header-anchor">#</a> 进度条优化</h2> <blockquote><p><a href="https://mp.weixin.qq.com/s/w8jmLDqSG-aSU4cS7U02nA" target="_blank" rel="noopener noreferrer">https://mp.weixin.qq.com/s/w8jmLDqSG-aSU4cS7U02nA<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <h1 id="part1前言"><a href="#part1前言" class="header-anchor">#</a> Part1前言</h1> <p>大家好，我是零一。最近我准备在组里进行代码串讲，所以我梳理了下项目之前的业务代码。在梳理的过程中，我看到了有个<strong>进度条组件</strong>写的非常好，这又想起我刚开始学前端时写的进度条的代码，跟这个比起来真的差距太大了（大部分的初学者应该都想不到，而且我第一次实习的公司带我的mentor亦是如此）。</p> <p>因此，我想给大家分享一下这个<strong>思路极好</strong>的<strong>进度条组件</strong>，同时它也存在<strong>非常严重</strong>的性能问题，本文末尾也会讲解一下<strong>问题所在</strong>以及<strong>优化方式</strong></p> <h1 id="part2进度条的应用场景"><a href="#part2进度条的应用场景" class="header-anchor">#</a> Part2进度条的应用场景</h1> <p>一般进度条组件都出现在类似抖音播放视频的这样场景中，如图中底部的箭头所示：</p> <p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/gMvNo9rxo42ucMKfnEZsfRVv28cGjfPpbRxQJgFFh4p6ibgFflEENGNN1sLRsta02XiabiarMWP3eJa2R4mD2MzGQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p> <p>进度条随着视频的长度而进行增长，视频暂停，进度条的动画也会随之暂停</p> <p>接下来看看大部分人是怎么写的，为什么说思路和性能不好。这里以React为例，Vue开发者也不用怕看不懂，主要是看思路</p> <p>主要实现功能：</p> <ul><li>支持播放、暂停、重播</li> <li>播放结束后，播放次数+1，并重新开始播放</li></ul> <h1 id="part3不推荐的写法"><a href="#part3不推荐的写法" class="header-anchor">#</a> Part3不推荐的写法</h1> <p><strong>组件部分</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// index.jsx
+import { useState } from 'react'
+import './index.css'
+
+let timer = null  //  递增进度的定时器
+let totalTime = 3000  // 假设视频播放为3s
+
+function App() {
+    const [progress, setProgress] = useState(0)  // 进度
+    const [isPlay, setIsPlay] = useState(false)  // 是否播放
+    
+    // setProgress的递增逻辑
+    const handlerProgress = pre =&gt; {
+        if(pre &lt; 100) return pre + 1;
+        else {  
+          alert('播放结束')
+          return 0   // 播放结束，重新开始播放
+        }
+    }
+    
+    // 开始播放 &amp;&amp; 暂停播放
+    const handleVideo = () =&gt; {
+        setIsPlay(!isPlay)
+        isPlay
+        ? clearInterval(timer)
+        : timer = setInterval(() =&gt; setProgress(handlerProgress), totalTime / 100)
+    }
+    
+    // 重播
+    const replay = () =&gt; {
+        setIsPlay(true)
+        if(timer) clearInterval(timer);
+        setProgress(0)
+        timer = setInterval(() =&gt; setProgress(handlerProgress), totalTime / 100)
+    }
+    
+    return (
+        &lt;div id=&quot;root&quot;&gt;
+            &lt;button onClick={handleVideo}&gt;{ isPlay ? '暂停' : '播放' }&lt;/button&gt;
+            &lt;button onClick={replay}&gt;重播&lt;/button&gt;
+            &lt;div className=&quot;container&quot;&gt;
+                &lt;div className=&quot;progress&quot; style={{ width: `${progress}%` }}/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre></div><p><strong>样式部分</strong></p> <div class="language- extra-class"><pre class="language-text"><code>.container {
+    height: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background-color: red;
+}
+</code></pre></div><p>来简单演示一下这个进度条的样子</p> <p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/gMvNo9rxo42ucMKfnEZsfRVv28cGjfPpRktTcDkQ0wkVyH7BkdDHo2qhpPic95IZISfic6EPRoCtjY09VzFpiaPibw/640?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p> <p>为什么说这种写法不太好呢？因为我们是通过定时器来快速递增变量<code>progress</code>以此来实现进度增加的，变量每次改变都会驱动视图重新计算渲染，这必然是性能很差的（说实话，我在体验这个demo的时候，肉眼可见的小卡顿）</p> <p>除此之外呢？其实还有一个造成卡顿的原因，你们不妨猜猜看，我们放到最后一起讲，想知道答案的小伙伴可以直接滑到下面</p> <h1 id="part4推荐的写法"><a href="#part4推荐的写法" class="header-anchor">#</a> Part4推荐的写法</h1> <p>这里推荐的就是我在阅读代码时看到的比较优秀的方案了，接下来分享给大家</p> <p><strong>组件部分</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// index.jsx
+import { useState } from 'react'
+import './index.css'
+
+let totalTime = 3000  // 假设视频播放为3s
+
+function App() {
+    const [isPlay, setIsPlay] = useState(false)  // 是否播放
+    const [count, setCount] = useState(0)  // 播放次数
+    const [type, setType] = useState(0)   // 使用哪个动画。0: @keyframes play; 1: @keyframes replay;
+    
+    // 暂停 &amp;&amp; 播放
+    const handleVideo = () =&gt; setIsPlay(!isPlay);
+    
+    // 重播
+    const replay = () =&gt; {
+        setIsPlay(true)
+        setType(type ? 0 : 1)
+    }
+    
+    // 动画结束时触发的事件
+    const end = () =&gt; {
+        setCount(count + 1)  // 播放次数 +1
+        replay()   // 重新开始播放
+    }
+    
+    return (
+        &lt;div id=&quot;root&quot;&gt;
+            &lt;button onClick={handleVideo}&gt;{ isPlay ? '暂停' : '播放' }&lt;/button&gt;
+            &lt;button onClick={replay}&gt;重播&lt;/button&gt;
+            &lt;span&gt;{ `播放次数为：${count}` }&lt;/span&gt;
+            &lt;div className=&quot;container&quot;&gt;
+                &lt;div 
+                    className={`progress ${isPlay ? 'play' : 'pause'}`} 
+                    style={{
+                        animationDuration: `${totalTime}ms`,
+                        animationName: `${type ? 'replay' : 'play'}`
+                    }}
+                    onAnimationEnd={end}  // 动画结束时的事件
+                /&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre></div><p><strong>样式部分</strong></p> <div class="language- extra-class"><pre class="language-text"><code>@keyframes play {   
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes replay {
+    to {
+        width: 100%;
+    }
+}
+
+.container {
+    height: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background-color: red;
+    animation-timing-function: linear;
+}
+
+.progress.play {     /* 使animation动画启动 */
+    animation-play-state: running;
+}
+
+.progress.pause {    /* 使animation动画暂停 */
+    animation-play-state: paused;
+}
+</code></pre></div><p>我们设置了两个<code>@keyframes</code>动画是为了在使进度条重新播放时可以做一个切换，即点击 &quot;重播&quot; 时，直接切换到另一个动画，就可以实现进度条从0开始递增</p> <p>同时我们还设置了两个类名的样式，分别用于控制动画的播放和暂停</p> <p>播放完成时，播放次数+1的功能可以通过事件<code>animationend</code>来监听即可</p> <p>同样的，来看一下这套方案的效果图（跟前一套方案功能一模一样）</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <p>对比一下前一套方案，你就能知道这种写法不需要去一直修改数据来驱动视图的改变，减少了框架内的大量计算，提升了不少的性能</p> <h1 id="part5缺陷"><a href="#part5缺陷" class="header-anchor">#</a> Part5缺陷</h1> <p>第二种方案虽然性能很好，但是与第一种方案一样，存在另外一个隐藏的性能问题，这也是我在排查前同事代码性能问题时所发现的。</p> <p><strong>缺陷：这两种方案都会引发频繁的重排和重绘</strong></p> <p>可以借助<code>chrome devtools performance</code>来验证一下页面的情况</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <p>小小的一个进度条触发了那么那么多次重排和重绘，那么它到底有什么影响呢？来简单回顾一下重排和重绘的影响</p> <p><strong>重排</strong>：浏览器需要重新计算元素的几何属性，而且其他元素的几何属性或位置可能也会因此改变受到影响。</p> <p><strong>重绘</strong>：不是所有的DOM变化都影响元素的几何属性，如果改变元素的背景色并不影响它的宽度和高度，这种情况，只会发生一次重绘，而不会发生重排，因为元素的布局没改变</p> <p>所以知道了重排和重绘造成的严重问题后，我们马上对其进行分析优化</p> <h1 id="part6极致的优化"><a href="#part6极致的优化" class="header-anchor">#</a> Part6极致的优化</h1> <p>先来看看一个非常常见的图<img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <p>页面的渲染，大体上走的就是这5个流程。当然也有办法跳过中间某些步骤，例如避免<code>Layout</code>和<code>Paint</code></p> <p>再来回顾一下有哪些方法会引起重排和重绘吧</p> <p><strong>触发重排的因素</strong>：添加或删除可见的DOM元素、改变元素位置、元素的尺寸改变（包括：外边距、内边距、边框、高度等）、内容改变（如：文本改变或图片被另外一个不同尺寸的图片替代）、浏览器窗口尺寸的改变、通过<code>display: none</code>隐藏⼀个DOM节点等</p> <p><strong>触发重绘的因素</strong>：重排必定触发重绘（重要）、通过<code>visibility: hidden</code>隐藏⼀个DOM节点、修改元素背景色、修改字体颜色等</p> <p>那么我们前面写的代码中到底是哪里触发了重排和重绘呢？简单检查一下，不难发现两种方案都是在不停改变元素的<code>width</code>，元素的宽度一改变必然会引起重排和重绘，更何况是超频繁的改变呢！</p> <p><strong>解决方案：启用GPU加速，避开重排和重绘的环节，将进度条单独提升到一个图层，即不影响其它元素</strong></p> <p>就单独针对第二种方案进行优化吧~我们只需要改动其css内容即可（标注出即为改动处）</p> <div class="language- extra-class"><pre class="language-text"><code>@keyframes play {     /* 通过transform来启用GPU加速，跳过重排重绘阶段 */
+    0% {  
+        transform: translateX(-50%) scaleX(0);  /* 用 scaleX 来代替 width */
+    }
+
+    to {
+        transform: translateX(0) scaleX(1);
+    }
+}
+
+@keyframes replay {
+    0% {
+        transform: translateX(-50%) scaleX(0);
+    }
+
+    to {
+        transform: translateX(0) scaleX(1);
+    }
+}
+
+.container {
+    height: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.progress {
+    height: 100%;
+    width: 100%;   /* 初始宽度为100%，因为我们要对其缩放 */
+    background-color: red;
+    will-change: transform;   /* 通过will-change告知浏览器提前做好优化准备 */
+    animation-timing-function: linear;
+}
+
+.progress.play {    
+    animation-play-state: running;
+}
+
+.progress.pause {   
+    animation-play-state: paused;
+}
+</code></pre></div><p>这里简单解释一下<code>translateX</code>和<code>scaleX</code>的数值设置。设置进度条<code>width: 100%</code>，我们通过<code>scaleX(0.5)</code>将其缩放一半，可以发现进度条长度为容器的一半且居中，此时我们就需要通过<code>translateX(-25%)</code>将其向左平移到最左端，为什么是<code>-25%</code>呢？因为进度条占了容器的一半且居中，表明左右的留白正好分别是<code>(100% - 50%) / 2 = 25%</code>，所以也不难得知当初始状态<code>scaleX(0)</code>时，<code>translateX</code>的值为<code>-(100% - 0%) / 2 = -50%</code></p> <p>这么做了以后，我们再次用<code>performance</code>检验一下</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <p>可以很明显地看到页面重排重绘的次数减少了很多很多，剩余的基本都是页面最基本的重排和重绘了。</p> <p>有人要说我标题党了，接下来给你们展示一下到底优化了多少性能</p> <p>先用刚极致优化完的跑一下<code>performance</code></p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <p>看图中右侧，FPS基本是稳定在<code>55 ~ 70</code>之间</p> <p>再来看看文章开头第一种方案的<code>performance</code>跑分</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <p>看图中右侧，FPS基本是稳定在<code>32 ~ 50</code>之间</p> <p>可以很清楚得看到，优化前的FPS波动非常严重，即不够稳定，所以容易出现卡顿问题；而优化后的FPS的变化是不大的，整体变化趋势比较平，几乎是一直线</p> <p>在这样一个极简页面中，我们优化后性能都大约提升了大约<code>40% ~ 54%</code></p> <p>那么如果在正常的项目中，考虑到页面的复杂性，我们优化后的方案既避免了页面反复得计算渲染，又避免了重绘回流，可想而知在那种情形下性能的提升应该是远不止<code>40% ~ 54%</code>的，emmmmmm，所以我说性能提高70%应该也不是很过分吧 hhhhh</p> <h1 id="part7小彩蛋"><a href="#part7小彩蛋" class="header-anchor">#</a> Part7小彩蛋</h1> <p>启用GPU加速会将元素提升到单独的一个图层中，我们可以通过<code>chrome devtools layers</code>来查看</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <p>这里就分别展示一下我们优化前和优化后的页面分层情况吧</p> <p><strong>「优化前」</strong></p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <p>很明显地看到，整个页面就只有<code>document</code>层，即进度条没有被分层出来</p> <p><strong>「优化后」</strong></p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <p>同样也很明显地可以看到，进度条被单独分出来一个图层了</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">5/8/2024, 3:01:19 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/performance/节流防抖.html" class="prev">
+        函数防抖与节流
+      </a></span> <span class="next"><a href="/performance/逻辑判断.html">
+        编写高质量可维护的代码之优化逻辑判断
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.07981acf.js" defer></script><script src="/assets/js/2.57da4f88.js" defer></script><script src="/assets/js/1.a76cc220.js" defer></script><script src="/assets/js/90.6437abb2.js" defer></script>
+  </body>
+</html>

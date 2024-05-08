@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>leetcode 最常见的150道前端面试题（简单题下） | duangdong的qa</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?0088ce24040b03f2947322ab31d23414";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+    <script>
+  var _hmt = _hmt || [];
+  _hmt.push(['_requirePlugin', 'UrlChangeTracker', {
+    shouldTrackUrlChange: function (newPath, oldPath) {
+      newPath = newPath.split('#')[0];
+      oldPath = oldPath.split('#')[0];
+      return newPath != oldPath;
+    }}
+  ]);
+  </script>
+    <meta name="description" content="前端QA集锦">
+    <meta name="keywords" content="qd-blog,js,vuepress,leetcode,react,react进阶,css,js进阶,react性能优化,js设计模式">
+    
+    <link rel="preload" href="/assets/css/0.styles.b4a844ec.css" as="style"><link rel="preload" href="/assets/js/app.07981acf.js" as="script"><link rel="preload" href="/assets/js/2.57da4f88.js" as="script"><link rel="preload" href="/assets/js/1.a76cc220.js" as="script"><link rel="preload" href="/assets/js/26.0dcf1d19.js" as="script"><link rel="prefetch" href="/assets/js/10.50f73657.js"><link rel="prefetch" href="/assets/js/100.ed998eb0.js"><link rel="prefetch" href="/assets/js/101.c8472505.js"><link rel="prefetch" href="/assets/js/102.d600a66c.js"><link rel="prefetch" href="/assets/js/103.c2d41a43.js"><link rel="prefetch" href="/assets/js/104.dc119219.js"><link rel="prefetch" href="/assets/js/105.8707757e.js"><link rel="prefetch" href="/assets/js/106.33c299b9.js"><link rel="prefetch" href="/assets/js/107.8eafcc06.js"><link rel="prefetch" href="/assets/js/108.eeb8c861.js"><link rel="prefetch" href="/assets/js/109.d7579372.js"><link rel="prefetch" href="/assets/js/11.0390ceee.js"><link rel="prefetch" href="/assets/js/110.4cdb688a.js"><link rel="prefetch" href="/assets/js/111.95d0f748.js"><link rel="prefetch" href="/assets/js/112.fae5a13a.js"><link rel="prefetch" href="/assets/js/113.7cefcf49.js"><link rel="prefetch" href="/assets/js/114.49f03fa7.js"><link rel="prefetch" href="/assets/js/115.73eebb69.js"><link rel="prefetch" href="/assets/js/116.3b9205f3.js"><link rel="prefetch" href="/assets/js/117.dc4fcb53.js"><link rel="prefetch" href="/assets/js/118.1191553b.js"><link rel="prefetch" href="/assets/js/119.705d33d0.js"><link rel="prefetch" href="/assets/js/12.f88bec36.js"><link rel="prefetch" href="/assets/js/120.d3227497.js"><link rel="prefetch" href="/assets/js/121.32bcc7c2.js"><link rel="prefetch" href="/assets/js/122.55a7d973.js"><link rel="prefetch" href="/assets/js/123.07b3f53a.js"><link rel="prefetch" href="/assets/js/124.851c0100.js"><link rel="prefetch" href="/assets/js/125.c1de1f95.js"><link rel="prefetch" href="/assets/js/126.ea96a075.js"><link rel="prefetch" href="/assets/js/127.bcf311b8.js"><link rel="prefetch" href="/assets/js/128.e1c4d95e.js"><link rel="prefetch" href="/assets/js/129.09afee9c.js"><link rel="prefetch" href="/assets/js/13.963ad03b.js"><link rel="prefetch" href="/assets/js/130.22372a24.js"><link rel="prefetch" href="/assets/js/131.4db39cda.js"><link rel="prefetch" href="/assets/js/132.afcfdf65.js"><link rel="prefetch" href="/assets/js/133.35b0df52.js"><link rel="prefetch" href="/assets/js/134.9ad9188e.js"><link rel="prefetch" href="/assets/js/135.d7ca4b93.js"><link rel="prefetch" href="/assets/js/136.403dc2de.js"><link rel="prefetch" href="/assets/js/137.f972aed9.js"><link rel="prefetch" href="/assets/js/138.7536ef7d.js"><link rel="prefetch" href="/assets/js/139.05186195.js"><link rel="prefetch" href="/assets/js/14.512f15b9.js"><link rel="prefetch" href="/assets/js/140.f7b5e550.js"><link rel="prefetch" href="/assets/js/141.16938126.js"><link rel="prefetch" href="/assets/js/142.0d18982a.js"><link rel="prefetch" href="/assets/js/143.f82390e5.js"><link rel="prefetch" href="/assets/js/144.bac62f6d.js"><link rel="prefetch" href="/assets/js/145.255f2397.js"><link rel="prefetch" href="/assets/js/146.226da4b5.js"><link rel="prefetch" href="/assets/js/147.236f8a9f.js"><link rel="prefetch" href="/assets/js/148.8d472c06.js"><link rel="prefetch" href="/assets/js/149.4170f8c0.js"><link rel="prefetch" href="/assets/js/15.a674496c.js"><link rel="prefetch" href="/assets/js/150.ff7b0269.js"><link rel="prefetch" href="/assets/js/151.0a1c7058.js"><link rel="prefetch" href="/assets/js/152.584c412a.js"><link rel="prefetch" href="/assets/js/153.220d027b.js"><link rel="prefetch" href="/assets/js/154.09a9219e.js"><link rel="prefetch" href="/assets/js/155.6c8dbf71.js"><link rel="prefetch" href="/assets/js/156.a9d81dce.js"><link rel="prefetch" href="/assets/js/157.e53c1adb.js"><link rel="prefetch" href="/assets/js/158.11f55456.js"><link rel="prefetch" href="/assets/js/159.2c05d7f2.js"><link rel="prefetch" href="/assets/js/16.ed7e507f.js"><link rel="prefetch" href="/assets/js/160.27616923.js"><link rel="prefetch" href="/assets/js/17.de667ca5.js"><link rel="prefetch" href="/assets/js/18.b44e84af.js"><link rel="prefetch" href="/assets/js/19.5b5ad6a1.js"><link rel="prefetch" href="/assets/js/20.6800493a.js"><link rel="prefetch" href="/assets/js/21.6589052c.js"><link rel="prefetch" href="/assets/js/22.f648d829.js"><link rel="prefetch" href="/assets/js/23.21fe11d7.js"><link rel="prefetch" href="/assets/js/24.7a3e65b2.js"><link rel="prefetch" href="/assets/js/25.9e2d6c46.js"><link rel="prefetch" href="/assets/js/27.bd79a51b.js"><link rel="prefetch" href="/assets/js/28.ad9cdafd.js"><link rel="prefetch" href="/assets/js/29.738a8c4a.js"><link rel="prefetch" href="/assets/js/3.13e892f5.js"><link rel="prefetch" href="/assets/js/30.5d2ae7ae.js"><link rel="prefetch" href="/assets/js/31.2a59449c.js"><link rel="prefetch" href="/assets/js/32.322ed58f.js"><link rel="prefetch" href="/assets/js/33.e18917c7.js"><link rel="prefetch" href="/assets/js/34.edfe8355.js"><link rel="prefetch" href="/assets/js/35.2c0b1e3e.js"><link rel="prefetch" href="/assets/js/36.b1fdf51f.js"><link rel="prefetch" href="/assets/js/37.11ee0b0c.js"><link rel="prefetch" href="/assets/js/38.0b050ca5.js"><link rel="prefetch" href="/assets/js/39.2bd20762.js"><link rel="prefetch" href="/assets/js/4.5bdb9365.js"><link rel="prefetch" href="/assets/js/40.eb0c66c8.js"><link rel="prefetch" href="/assets/js/41.933044bc.js"><link rel="prefetch" href="/assets/js/42.eac4ba39.js"><link rel="prefetch" href="/assets/js/43.8c61e37d.js"><link rel="prefetch" href="/assets/js/44.30f132bb.js"><link rel="prefetch" href="/assets/js/45.2477f9bb.js"><link rel="prefetch" href="/assets/js/46.e97df854.js"><link rel="prefetch" href="/assets/js/47.60f16a00.js"><link rel="prefetch" href="/assets/js/48.d01b463f.js"><link rel="prefetch" href="/assets/js/49.e3a15fc7.js"><link rel="prefetch" href="/assets/js/5.7c68fdb5.js"><link rel="prefetch" href="/assets/js/50.31265493.js"><link rel="prefetch" href="/assets/js/51.ed2cc5dc.js"><link rel="prefetch" href="/assets/js/52.3ae02665.js"><link rel="prefetch" href="/assets/js/53.69d15c58.js"><link rel="prefetch" href="/assets/js/54.bbab20a0.js"><link rel="prefetch" href="/assets/js/55.9617cf7e.js"><link rel="prefetch" href="/assets/js/56.13f9aef2.js"><link rel="prefetch" href="/assets/js/57.ba08cc35.js"><link rel="prefetch" href="/assets/js/58.63028d02.js"><link rel="prefetch" href="/assets/js/59.566c0b50.js"><link rel="prefetch" href="/assets/js/6.c8da7ca7.js"><link rel="prefetch" href="/assets/js/60.0801f3b3.js"><link rel="prefetch" href="/assets/js/61.ceae0570.js"><link rel="prefetch" href="/assets/js/62.9f28e1a4.js"><link rel="prefetch" href="/assets/js/63.15282044.js"><link rel="prefetch" href="/assets/js/64.7c666983.js"><link rel="prefetch" href="/assets/js/65.320c4670.js"><link rel="prefetch" href="/assets/js/66.253bab14.js"><link rel="prefetch" href="/assets/js/67.49c1e967.js"><link rel="prefetch" href="/assets/js/68.ae82def1.js"><link rel="prefetch" href="/assets/js/69.0877ad54.js"><link rel="prefetch" href="/assets/js/7.e4c88d0e.js"><link rel="prefetch" href="/assets/js/70.5e8208ea.js"><link rel="prefetch" href="/assets/js/71.52cb4845.js"><link rel="prefetch" href="/assets/js/72.8c575d51.js"><link rel="prefetch" href="/assets/js/73.b9ba874e.js"><link rel="prefetch" href="/assets/js/74.6b4693bb.js"><link rel="prefetch" href="/assets/js/75.e9378ce1.js"><link rel="prefetch" href="/assets/js/76.a80b13fc.js"><link rel="prefetch" href="/assets/js/77.d134968d.js"><link rel="prefetch" href="/assets/js/78.40d99cd8.js"><link rel="prefetch" href="/assets/js/79.2b663044.js"><link rel="prefetch" href="/assets/js/80.0b63f3ac.js"><link rel="prefetch" href="/assets/js/81.bc4031db.js"><link rel="prefetch" href="/assets/js/82.3152c02c.js"><link rel="prefetch" href="/assets/js/83.3fa2dc4b.js"><link rel="prefetch" href="/assets/js/84.e778c959.js"><link rel="prefetch" href="/assets/js/85.060ddc49.js"><link rel="prefetch" href="/assets/js/86.bb8138bb.js"><link rel="prefetch" href="/assets/js/87.72c01e68.js"><link rel="prefetch" href="/assets/js/88.e3e56223.js"><link rel="prefetch" href="/assets/js/89.198ff8d1.js"><link rel="prefetch" href="/assets/js/90.6437abb2.js"><link rel="prefetch" href="/assets/js/91.dbe1df52.js"><link rel="prefetch" href="/assets/js/92.6e732f3a.js"><link rel="prefetch" href="/assets/js/93.e98beea7.js"><link rel="prefetch" href="/assets/js/94.c62e88cb.js"><link rel="prefetch" href="/assets/js/95.f6aad986.js"><link rel="prefetch" href="/assets/js/96.e0630547.js"><link rel="prefetch" href="/assets/js/97.3cd76aa5.js"><link rel="prefetch" href="/assets/js/98.3bc2adce.js"><link rel="prefetch" href="/assets/js/99.88c20858.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.5143d2e0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b4a844ec.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">duangdong的qa</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/js/" class="nav-link">
+  JS方面
+</a></div><div class="nav-item"><a href="/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/summary/" class="nav-link">
+  汇总
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  常见算法
+</a></div><div class="nav-item"><a href="/performance/" class="nav-link">
+  性能优化
+</a></div><div class="nav-item"><a href="/http/" class="nav-link">
+  网络协议
+</a></div><div class="nav-item"><a href="/css/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/face-sutra/" class="nav-link">
+  QA
+</a></div><div class="nav-item"><a href="https://link.aduang.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Home
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/js/" class="nav-link">
+  JS方面
+</a></div><div class="nav-item"><a href="/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/summary/" class="nav-link">
+  汇总
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  常见算法
+</a></div><div class="nav-item"><a href="/performance/" class="nav-link">
+  性能优化
+</a></div><div class="nav-item"><a href="/http/" class="nav-link">
+  网络协议
+</a></div><div class="nav-item"><a href="/css/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/face-sutra/" class="nav-link">
+  QA
+</a></div><div class="nav-item"><a href="https://link.aduang.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Home
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/algorithm/" aria-current="page" class="sidebar-link">算法</a></li><li><a href="/algorithm/JavaScript面试中容易遇到的算法.html" class="sidebar-link">JavaScript面试中容易遇到的算法</a></li><li><a href="/algorithm/leetcode最常见的150道前端面试题.html" class="sidebar-link">leetcode最常见的150道前端面试题（简单题上）</a></li><li><a href="/algorithm/leetcode最常见的150道前端面试题2.html" class="active sidebar-link">leetcode 最常见的150道前端面试题（简单题下）</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="leetcode-最常见的150道前端面试题-简单题下"><a href="#leetcode-最常见的150道前端面试题-简单题下" class="header-anchor">#</a> leetcode 最常见的150道前端面试题（简单题下）</h2> <blockquote><p><a href="https://mp.weixin.qq.com/s/kofbFk64Ghv7UDLgF81UMQ" target="_blank" rel="noopener noreferrer">https://mp.weixin.qq.com/s/kofbFk64Ghv7UDLgF81UMQ<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <h2 id="二叉树-dfs"><a href="#二叉树-dfs" class="header-anchor">#</a> 二叉树（DFS）</h2> <h2 id="二叉树前中后遍历套路详解"><a href="#二叉树前中后遍历套路详解" class="header-anchor">#</a> 二叉树前中后遍历套路详解</h2> <p>前序遍历题目如下：</p> <p>root节点是A节点（下图的A节点），然后让你按照下图数字的顺序依次打印出节点。</p> <p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/H8M5QJDxMHooHWKWZD3tqVwTb3gxLebJaahnAwPDo7aSJTbN1P8ia8Y9K8vSia8gYvviaz3yJ9b3vwibWgxlWcPU3g/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片">d7948dc5e50e70cc84cfbd0e0cf989da40eb96167f03b710392be45b8c415662.png</p> <p>我们可以看到这其中的规律，就是<code>深度优先遍历，先遍历左子树，再遍历右子树</code>，这里我们不用递归，因为一些大厂严格要求二叉树遍历不用递归，递归太简单了。</p> <p>重点思路就是：<code>深度优先遍历，先遍历左子树，再遍历右子树</code>，</p> <p>所以，我们需要一套如何遍历一颗二叉树，并且是先左子树，再右子树的通用模板，如下</p> <div class="language- extra-class"><pre class="language-text"><code>var Traversal = function(root) {
+    const stack = [];
+    while (root || stack.length){
+      while(root){
+        stack.push(root);
+        root = root.left;
+      }
+      root = stack.pop();
+      root = root.right;
+    }
+    return res;
+};
+复制代码
+</code></pre></div><p>我们结合图片发现这个遍历产生的整体压栈的顺序是</p> <ul><li>A、B、D入栈，</li> <li>D出栈</li> <li>B出栈</li> <li>E入栈</li> <li>E出栈</li> <li>A出栈</li> <li>C入栈</li> <li>C出栈</li> <li>F入栈</li> <li>F出栈</li></ul> <p>我们把上面入栈的元素按顺序排列一下就是，A、B、D、E、C、F，而这就是前序遍历的顺序！解答完毕！</p> <p>是不是很有意思，下面的中序遍历，我们看看出栈顺序是不是中序遍历的要求：D、B、E、A、C、F（这就是中序遍历的要求，好了，两个题解决）</p> <p>放具体前序遍历代码：</p> <div class="language- extra-class"><pre class="language-text"><code>var preorderTraversal = function(root) {
+    // 初始化数据
+    const res =[];
+    const stack = [];
+    while (root || stack.length){
+      while(root){
+        res.push(root.val);
+        stack.push(root);
+        root = root.left;
+      }
+      root = stack.pop();
+      root = root.right;
+    }
+    return res;
+};
+复制代码
+</code></pre></div><p>中序遍历是一个意思，在前序遍历的基础上改造一下<img src="https://mmbiz.qpic.cn/sz_mmbiz_png/H8M5QJDxMHooHWKWZD3tqVwTb3gxLebJPK3LChu8L4VzEiccQtRz8Ay5pngbv3EP8Q95CiaDpBGUIrlf1FnY6zKw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p> <div class="language- extra-class"><pre class="language-text"><code>var preorderTraversal = function(root) {
+    // 初始化数据
+    const res =[];
+    const stack = [];
+    while (root || stack.length){
+      while(root){
+        stack.push(root);
+        root = root.left;
+      }
+      root = stack.pop();
+      res.push(root.val);
+      root = root.right;
+    }
+    return res;
+};
+复制代码
+</code></pre></div><p>后序遍历有点不太一样，但是套路是一样的，我们需要先遍历右子树，再遍历左子树，反着来，就可以了，代码如下：</p> <p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/H8M5QJDxMHooHWKWZD3tqVwTb3gxLebJyEPmvILrdMDZvgEUSoNQgOKJe6G2sowzzs2CDCqIPeyN3aFvuZuFCQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片">image.png</p> <div class="language- extra-class"><pre class="language-text"><code>var postorderTraversal = function(root) {
+  // 初始化数据
+    const res =[];
+    const stack = [];
+    while (root || stack.length){
+      while(root){
+        stack.push(root);
+        res.unshift(root.val);
+        root = root.right;
+      }
+      root = stack.pop();
+      root = root.left;
+    }
+    return res;
+};
+复制代码
+</code></pre></div><h2 id="对称二叉树"><a href="#对称二叉树" class="header-anchor">#</a> 对称二叉树</h2> <p>这个题简而言之就是判断一个二叉树是对称的，比如说：</p> <p>二叉树 [1,2,2,3,4,4,3] 是对称的。</p> <div class="language- extra-class"><pre class="language-text"><code>    1
+   / \
+  2   2
+ / \ / \
+3  4 4  3
+复制代码
+</code></pre></div><p>但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:</p> <div class="language- extra-class"><pre class="language-text"><code>    1
+   / \
+  2   2
+   \   \
+   3    3
+
+复制代码
+</code></pre></div><p>思路：</p> <p>递归解决：</p> <ul><li>判断两个指针当前节点值是否相等</li> <li>判断 <code>A</code> 的右子树与 <code>B</code> 的左子树是否对称</li> <li>判断 <code>A</code> 的左子树与 <code>B</code> 的右子树是否对称</li></ul> <div class="language- extra-class"><pre class="language-text"><code>function isSame(leftNode, rightNode){
+    if(leftNode === null &amp;&amp; rightNode === null) return true;
+    if(leftNode === null || rightNode === null) return false;
+    return leftNode.val === rightNode.val &amp;&amp; isSame(leftNode.left, rightNode.right) &amp;&amp; isSame(leftNode.right, rightNode.left)
+}
+var isSymmetric = function(root) {
+    if(!root) return root;
+    return isSame(root.left, root.right);
+};
+复制代码
+</code></pre></div><h2 id="二叉树的最大深度"><a href="#二叉树的最大深度" class="header-anchor">#</a> 二叉树的最大深度</h2> <p>这个题在面试滴滴的时候遇到过，主要是掌握二叉树遍历的套路</p> <ul><li>只要遍历到这个节点既没有左子树，又没有右子树的时候</li> <li>说明就到底部了，这个时候如果之前记录了深度，就可以比较是否比之前记录的深度大，大就更新深度</li> <li>然后以此类推，一直比较到深度最大的</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var maxDepth = function(root) {
+    if(!root) return root;
+    let ret = 1;
+    function dfs(root, depth){
+        if(!root.left &amp;&amp; !root.right) ret = Math.max(ret, depth);
+        if(root.left) dfs(root.left, depth+1);
+        if(root.right) dfs(root.right, depth+1);
+    }
+    dfs(root, ret);
+    return ret
+};
+复制代码
+</code></pre></div><h2 id="将有序数组转化为二叉搜索树"><a href="#将有序数组转化为二叉搜索树" class="header-anchor">#</a> 将有序数组转化为二叉搜索树</h2> <p>我们先看题：</p> <p>给你一个整数数组 nums ，其中元素已经按 升序 排列，请你将其转换为一棵 高度平衡 二叉搜索树。</p> <p>高度平衡 二叉树是一棵满足「每个节点的左右两个子树的高度差的绝对值不超过 1 」的二叉树。</p> <p>示例 1：</p> <p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/H8M5QJDxMHooHWKWZD3tqVwTb3gxLebJtNwcKdCOBUHn2libibvOkJrBicsDicLcDdxtW4hd6eZJnQfkCSmp9MMEgQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片">image.png</p> <div class="language- extra-class"><pre class="language-text"><code>输入：nums = [-10,-3,0,5,9]
+输出：[0,-3,9,-10,null,5]
+解释：[0,-10,5,null,-3,null,9] 也将被视为正确答案：
+复制代码
+</code></pre></div><p>示例 2：</p> <p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/H8M5QJDxMHooHWKWZD3tqVwTb3gxLebJWJboRJkqIIomVwSICFicL72WwnVjQzicwvrOlY0EfWiaWC8SkVHz8xXSg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片">image.png</p> <div class="language- extra-class"><pre class="language-text"><code>输入：nums = [1,3]
+输出：[3,1]
+解释：[1,3] 和 [3,1] 都是高度平衡二叉搜索树。
+ 
+
+提示：
+
+1 &lt;= nums.length &lt;= 104
+-104 &lt;= nums[i] &lt;= 104
+nums 按 严格递增 顺序排列
+复制代码
+</code></pre></div><p>思路：</p> <ul><li>构建一颗树包括：构建<code>root、构建 root.left 和 root.right</code></li> <li>题目要求&quot;高度平衡&quot; — 构建 <code>root</code> 时候，选择数组的中间元素作为 <code>root</code> 节点值，即可保持平衡。</li> <li>递归函数可以传递数组，也可以传递指针，选择传递指针的时候：l r 分别代表参与构建BST的数组的首尾索引。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var sortedArrayToBST = function(nums) {
+    return toBST(nums, 0, nums.length - 1)
+};
+const toBST = function(nums, l, r){
+    if( l &gt; r){
+        return null;
+    }
+    const mid = l + r &gt;&gt; 1;
+    const root = new TreeNode(nums[mid]);
+    root.left = toBST(nums, l, mid - 1);
+    root.right = toBST(nums, mid + 1, r);
+
+    return root;
+}
+复制代码
+</code></pre></div><h3 id="栈"><a href="#栈" class="header-anchor">#</a> 栈</h3> <p>栈是一种先进先出的数据结构，所以涉及到你需要<code>先进先出</code>这个想法后，就可以使用栈。</p> <p>其次我觉得栈跟递归很相似，递归是不是先压栈，然后先进来的先出去，就跟函数调用栈一样。</p> <h2 id="_20-有效的括号"><a href="#_20-有效的括号" class="header-anchor">#</a> 20. 有效的括号</h2> <p>这是一道很典型的用栈解决的问题， 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。</p> <p>有效字符串需满足：</p> <p>左括号必须用相同类型的右括号闭合。左括号必须以正确的顺序闭合。</p> <div class="language- extra-class"><pre class="language-text"><code>示例 1：
+
+输入：s = &quot;()&quot;
+输出：true
+示例 2：
+
+输入：s = &quot;()[]{}&quot;
+输出：true
+示例 3：
+
+输入：s = &quot;(]&quot;
+输出：false
+示例 4：
+
+输入：s = &quot;([)]&quot;
+输出：false
+复制代码
+</code></pre></div><p>思路：这道题有一规律：</p> <ol><li>右括号前面，必须是相对应的左括号，才能抵消！</li> <li>右括号前面，不是对应的左括号，那么该字符串，一定不是有效的括号！</li></ol> <p>也就是说左括号我们直接放入栈中即可，发现是右括号就要对比是否跟栈顶元素相匹配，不匹配就返回false</p> <div class="language- extra-class"><pre class="language-text"><code>var isValid = function(s) {
+    const map = { '{': '}', '(': ')', '[': ']' };
+    const stack = [];
+    for(let i of s){
+        if(map[i]){
+            stack.push(i);
+        } else {
+            if(map[stack[stack.length - 1]] === i){
+                stack.pop()
+            }else{
+                return false;
+            }
+        }
+    }
+    return stack.length === 0;
+};
+复制代码
+</code></pre></div><h2 id="_155、-最小栈"><a href="#_155、-最小栈" class="header-anchor">#</a> 155、 最小栈</h2> <p>先看题目：</p> <p>设计一个支持 <code>push ，pop ，top</code> 操作，并能在常数时间内检索到最小元素的栈。</p> <ul><li>push(x) —— 将元素 x 推入栈中。</li> <li>pop() —— 删除栈顶的元素。</li> <li>top() —— 获取栈顶元素。</li> <li>getMin() —— 检索栈中的最小元素。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>示例:
+
+MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin();   --&gt; 返回 -3.
+minStack.pop();
+minStack.top();      --&gt; 返回 0.
+minStack.getMin();   --&gt; 返回 -2.
+
+提示：
+
+pop、top 和 getMin 操作总是在 非空栈 上调用。
+复制代码
+</code></pre></div><p>我们先不写getMin方法，满足其他方法实现就非常简单，我们来看一下：</p> <div class="language- extra-class"><pre class="language-text"><code>var MinStack = function() {
+    this.stack = [];
+};
+
+MinStack.prototype.push = function(x) {
+    this.stack.push(x);
+};
+
+MinStack.prototype.pop = function() {
+    this.stack.pop();
+};
+
+MinStack.prototype.top = function() {
+    return this.stack[this.stack.length - 1];
+};
+复制代码
+</code></pre></div><p>如何保证每次取最小呢，我们举一个例子：<img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <p>如上图，我们需要一个辅助栈来记录最小值，</p> <ul><li>开始我们向stack push -2</li> <li>此时辅助栈minStack，因为此时stack最小的是-2，也push -2</li> <li>stack push 0</li> <li>此时辅助站minStack 会用 0 跟 -2对比，-2更小，minstack会push -2</li> <li>stack push -3</li> <li>此时辅助站minStack 会用 -3 跟 -2对比，-3更小，minstack会push -3</li></ul> <p>所以我们取最小的时候，总能在minStack中取到最小值，所以解法就出来了：</p> <div class="language- extra-class"><pre class="language-text"><code>var MinStack = function() {
+    this.stack = [];
+    // 辅助栈
+    this.minStack = [];
+};
+
+MinStack.prototype.push = function(x) {
+    this.stack.push(x);
+    // 如果是第一次或者当前x比最小栈里的最小值还小才push x
+    if(this.minStack.length === 0 || x &lt; this.minStack[this.minStack.length - 1]){
+        this.minStack.push(x)
+    } else {
+         this.minStack.push( this.minStack[this.minStack.length - 1])
+    }
+};
+
+MinStack.prototype.pop = function() {
+    this.stack.pop();
+    this.minStack.pop();
+};
+
+MinStack.prototype.top = function() {
+    return this.stack[this.stack.length - 1];
+};
+
+MinStack.prototype.getMin = function() {
+    return this.minStack[this.stack.length - 1];
+};
+复制代码
+</code></pre></div><h2 id="动态规划"><a href="#动态规划" class="header-anchor">#</a> 动态规划</h2> <p>动态规划，一定要知道动态转移方程，有了这个，就相当于解题的钥匙，我们从题目中体会一下</p> <h2 id="_53-最大子序和"><a href="#_53-最大子序和" class="header-anchor">#</a> 53. 最大子序和</h2> <p>题目如下：</p> <p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p> <div class="language- extra-class"><pre class="language-text"><code>示例 1：
+
+输入：nums = [-2,1,-3,4,-1,2,1,-5,4]
+输出：6
+解释：连续子数组 [4,-1,2,1] 的和最大，为 6 。
+示例 2：
+
+输入：nums = [1]
+输出：1
+示例 3：
+
+输入：nums = [0]
+输出：0
+复制代码
+</code></pre></div><p>思路：</p> <ul><li>这道题可以用动态规划来解决，关键是找动态转移方程</li> <li>我们动态转移方程中，dp表示每一个nums下标的最大自序和，所以dp[i]的意思为：包括下标i之前的最大连续子序列和为dp[i]。</li></ul> <p>确定转义方程的公示：</p> <p>dp[i]只有两个方向可以推出来：</p> <ul><li>1、如果dp[i - 1] &lt; 0，也就是当前遍历到nums的i，之前的最大子序和是负数，那么我们就没必要继续加它了，因为dp[i] = dp[i - 1] + nums[i] 会比nums[i]更小，所以此时还不如dp[i] = nums[i]，就是目前遍历到i的最大子序和呢</li> <li>2、同理dp[i - 1] &gt; 0，说明nums[i]值得去加dp[i - 1]，此时回避nums[i]更大</li></ul> <p>这样代码就出来了，其实更多的就是求dp，遍历nums每一个下标都会产生最大子序和，我们记录下来即可</p> <div class="language- extra-class"><pre class="language-text"><code>var maxSubArray = function(nums) {
+  let res = nums[0];
+  const dp = [nums[0]];
+  for(let i=1;i &lt; nums.length;i++){
+      if(dp[i-1]&gt;0){
+        dp[i]=nums[i]+dp[i-1]
+      }else{
+       dp[i]=nums[i]
+      }
+      
+    res=Math.max(dp[i],res)
+  }
+    return res
+};
+复制代码
+</code></pre></div><h2 id="_70-爬楼梯"><a href="#_70-爬楼梯" class="header-anchor">#</a> 70. 爬楼梯</h2> <p>先看题目：</p> <p>假设你正在爬楼梯。需要 n 阶你才能到达楼顶。</p> <p>每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？</p> <p>注意：给定 n 是一个正整数。</p> <div class="language- extra-class"><pre class="language-text"><code>示例 1：
+
+输入： 2
+输出： 2
+解释： 有两种方法可以爬到楼顶。
+1.  1 阶 + 1 阶
+2.  2 阶
+示例 2：
+
+输入： 3
+输出： 3
+解释： 有三种方法可以爬到楼顶。
+1.  1 阶 + 1 阶 + 1 阶
+2.  1 阶 + 2 阶
+3.  2 阶 + 1 阶
+复制代码
+</code></pre></div><p>涉及到动态规划，一定要知道动态转移方程，有了这个，就相当于解题的钥匙，</p> <p>这道题我们假设<code>dp[10]</code>表示爬到是你爬到<code>10</code>阶就到达楼顶的方法数，</p> <p>那么，<code>dp[10]</code> 是不是就是你爬到8阶，然后再走<code>2</code>步就到了，还有你走到<code>9</code>阶，再走<code>1</code>步就到了，</p> <p>所以 <code>dp[10]</code> 是不是等于 <code>dp[9]+dp[8]</code></p> <p>延伸一下 <code>dp[n]</code> 是不是等于 <code>dp[n \- 1] + dp[n \- 2]</code></p> <p>代码如下：</p> <div class="language- extra-class"><pre class="language-text"><code>var climbStairs = function(n) {
+    const dp = {};
+    dp[1] = 1;
+    dp[2] = 2;
+    for(let i = 3; i &lt;= n; i++){
+        dp[i] = dp[i-1] + dp[i-2]
+    }
+    return dp[n]
+};
+复制代码
+</code></pre></div><h2 id="数学问题"><a href="#数学问题" class="header-anchor">#</a> 数学问题</h2> <p>以下更多的是涉及数学问题，这些解法非常重要，因为在中级题里面会经常用到，比如我们马上讲到的<code>加一</code>这个题， 中级的两数相加都是一个模板。</p> <h2 id="_66-加一"><a href="#_66-加一" class="header-anchor">#</a> 66. 加一</h2> <p>题目如下：</p> <p>给定一个由 整数 组成的 非空 数组所表示的非负整数，在该数的基础上加一。</p> <p>最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。</p> <p>你可以假设除了整数 0 之外，这个整数不会以零开头。</p> <div class="language- extra-class"><pre class="language-text"><code>示例 1：
+
+输入：digits = [1,2,3]
+输出：[1,2,4]
+解释：输入数组表示数字 123。
+示例 2：
+
+输入：digits = [4,3,2,1]
+输出：[4,3,2,2]
+解释：输入数组表示数字 4321。
+示例 3：
+
+输入：digits = [0]
+输出：[1]
+复制代码
+</code></pre></div><p>这个题的关键有两点：</p> <ul><li>需要有一个进位的变量carry记录到底进位是几</li> <li>还需要一个每次迭代都重置和的变量sum来帮我们算是否进位，以及进位后的数字</li></ul> <p>记住这个题，这是两数字相加的套路，这次是+1，其实就是两数相加的题（腾讯面试遇到过两数相加）</p> <div class="language- extra-class"><pre class="language-text"><code>var plusOne = function(digits) {
+  let carry = 1; // 进位（因为我们确定+1，初始化进位就是1）
+  for(let i = digits.length - 1; i &gt;= 0; i--){
+      let sum = 0; // 这个变量是用来每次循环计算进位和digits[i]的值的
+      sum = digits[i] + carry; 
+      digits[i] = sum % 10; // 模运算取个位数
+      carry = (sum / 10) | 0; //  除以10是取百位数，并且｜0表示舍弃小数位
+  }
+  if(digits[0] === 0) digits.unshift(carry);
+  return digits
+};
+复制代码
+</code></pre></div><h2 id="_69-x的平方根"><a href="#_69-x的平方根" class="header-anchor">#</a> 69 x的平方根</h2> <p>题目如下：实现 int sqrt(int x) 函数。</p> <p>计算并返回 x 的平方根，其中 x 是非负整数。</p> <p>由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。</p> <p>示例 1:</p> <div class="language- extra-class"><pre class="language-text"><code>输入: 4
+输出: 2
+复制代码
+</code></pre></div><p>示例 2:</p> <div class="language- extra-class"><pre class="language-text"><code>输入: 8
+输出: 2
+说明: 8 的平方根是 2.82842..., 
+     由于返回类型是整数，小数部分将被舍去。
+复制代码
+</code></pre></div><p>这道题是典型的二分法解题，所以我们需要熟悉二分法的通用模板，我们出一个题：</p> <p><strong>在 [1, 2, 3, 4, 5, 6] 中找到 4，若存在则返回下标，不存在返回-1</strong></p> <div class="language- extra-class"><pre class="language-text"><code>const arr = [1, 2, 3, 4, 5, 6];
+function getIndex1(arr, key) {
+  let low = 0;
+  const high = arr.length - 1;
+  while (low &lt;= high) {
+    const mid = Math.floor((low + high) / 2);
+    if (key === arr[mid]) {
+      return mid;
+    }
+    if (key &gt; arr[mid]) {
+      low = mid + 1;
+    } else {
+      height = mid - 1;
+    }
+  }
+  return -1;
+}
+console.log(getIndex1(arr, 5)); // 4
+复制代码
+</code></pre></div><p>所以这道题的意思就是，我们找一个数平方跟x最相近的数，二分法的用法中也有找相近数的功能</p> <p>所以代码如下：</p> <div class="language- extra-class"><pre class="language-text"><code>var mySqrt = function(x) {
+    let [l , r] = [0, x];
+    let ans = -1;
+    while(l &lt;= r) {
+        const mid = (l + r) &gt;&gt; 1;
+        if(mid * mid &gt; x){
+            r = mid - 1
+        } else if(mid * mid &lt; x){
+            ans = mid; // 防止越界
+            l = mid + 1;
+        } else {
+            ans = mid;
+            return ans;
+        }
+    }
+    return ans;
+};
+};
+复制代码
+</code></pre></div><h2 id="_171-excel表序列号"><a href="#_171-excel表序列号" class="header-anchor">#</a> 171. Excel表序列号</h2> <p>这个题比较重要，也比较基础，简而言之就是进制转换，必须牢牢掌握</p> <p>题目如下：</p> <p>给你一个整数 columnNumber ，返回它在 Excel 表中相对应的列名称。</p> <p>例如：</p> <div class="language- extra-class"><pre class="language-text"><code>A -&gt; 1
+B -&gt; 2
+C -&gt; 3
+...
+Z -&gt; 26
+AA -&gt; 27
+AB -&gt; 28 
+...
+复制代码
+示例 1：
+
+输入：columnNumber = 1
+输出：&quot;A&quot;
+示例 2：
+
+输入：columnNumber = 28
+输出：&quot;AB&quot;
+示例 3：
+
+输入：columnNumber = 701
+输出：&quot;ZY&quot;
+示例 4：
+
+输入：columnNumber = 2147483647
+输出：&quot;FXSHRXW&quot;
+复制代码
+</code></pre></div><p>说白了，这就是一道26进制的问题，以前我们知道10进制转2进制就是不停的除2，把余数加起来，26进制也是一样，不停的除26</p> <p>思路：</p> <ul><li>初始化结果 <code>ans = 0</code>，遍历时将每个字母与 <code>A</code> 做减法，因为 <code>A</code> 表示 <code>1</code>，所以减法后需要每个数加 <code>1</code>，计算其代表的数值 <code>num = 字母 - ‘A’ + 1</code></li> <li>因为有 26 个字母，所以相当于 <code>26 进制</code>，每 <code>26</code> 个数则向前进一位</li> <li>所以每遍历一位则<code>ans = ans * 26 + num</code></li> <li>以 ZY 为例，Z 的值为 <code>26</code>，Y 的值为 <code>25</code>，则结果为 <code>26 * 26 + 25=701</code></li></ul> <div class="language- extra-class"><pre class="language-text"><code>var titleToNumber = function(columnTitle) {
+    let ans = 0;
+    for(let i = 0; i &lt; columnTitle.length; i++){
+        ans = ans * 26 + (columnTitle[i].charCodeAt() - 'A'.charCodeAt() + 1)
+    }
+    return ans;
+};
+复制代码
+</code></pre></div><h2 id="_172-阶乘中的零"><a href="#_172-阶乘中的零" class="header-anchor">#</a> 172. 阶乘中的零</h2> <p>题目：</p> <p>给定一个整数 n，返回 n! 结果尾数中零的数量。</p> <div class="language- extra-class"><pre class="language-text"><code>示例 1:
+
+输入: 3
+输出: 0
+解释: 3! = 6, 尾数中没有零。
+示例 2:
+
+输入: 5
+输出: 1
+解释: 5! = 120, 尾数中有 1 个零.
+复制代码
+</code></pre></div><p>这道题很简单，有多少个5就有多少个0，为什么这么说呢，我们分析一下题目</p> <p>比如说 5!，</p> <ul><li>也就是 <code>5 * 4 * 3 * 2 * 1 = 120</code>，我们发现只有1个0，怎么产生的呢，主要造成者就是 2 * 5 构造了一个0</li> <li>再看看10!</li></ul> <p>10! = 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 其中，除了10 = 2 * 5和本身有一对2 * 5，所以有两个0，这样这道题的规律就出来了，我们再精进一步</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片">image.png</p> <p>如上图，每四个数字都会出现一个或者多个2的因子，但是只有每 5 个数字才能找到一个或多个5的因子。所以总体上看来，2的因子是远远多于5的因子的，所以我们只需要找5的倍数就可以了。</p> <p>我们再进一步，按照上面的说法，我们需要计算比如10的阶乘有多少个0，要把10的阶乘算出来，其实我们只需要算10有几个5就好了，为什么呢</p> <p>我们发现只有5的倍数的阶乘，才会产生5, 所以我们需要看看阶层数有多少个5，代码如下：</p> <div class="language- extra-class"><pre class="language-text"><code>var trailingZeroes = function (n) {
+  let r = 0;
+  while (n &gt; 1) {
+    n = Math.floor(n / 5);
+    r += n;
+  }
+  return r;
+};
+复制代码
+</code></pre></div><h2 id="_190-颠倒二进制位"><a href="#_190-颠倒二进制位" class="header-anchor">#</a> 190.颠倒二进制位</h2> <p>题目如下：</p> <p>颠倒给定的 32 位无符号整数的二进制位。</p> <p>示例 1：</p> <div class="language- extra-class"><pre class="language-text"><code>输入: 00000010100101000001111010011100
+输出: 00111001011110000010100101000000
+解释: 输入的二进制串 00000010100101000001111010011100 表示无符号整数 43261596，
+     因此返回 964176192，其二进制表示形式为 00111001011110000010100101000000。
+复制代码
+</code></pre></div><p>示例 2：</p> <div class="language- extra-class"><pre class="language-text"><code>输入：11111111111111111111111111111101
+输出：10111111111111111111111111111111
+解释：输入的二进制串 11111111111111111111111111111101 表示无符号整数 4294967293，
+     因此返回 3221225471 其二进制表示形式为 10111111111111111111111111111111 。
+复制代码
+</code></pre></div><p>这类题，就是翻转字符串，我们可以把其转为字符串，再转成数组，再reverse一下，这里我们选用数学的方式去解答，不用这种转字符串的方式。</p> <p>解答这道题之前，我们需要了解的前置知识：</p> <ol><li><div class="language- extra-class"><pre class="language-text"><code>与预算 `&amp;`
+</code></pre></div></li></ol> <div class="language- extra-class"><pre class="language-text"><code>1 &amp; 1 // 1的2进制最后一位是1，得到1
+2 &amp; 0 // 2的2进制最后一位是0，得到0
+3 &amp; 1 // 3的2进制最后一位是1，得到1
+4 &amp; 0 // 4的2进制最后一位是0，得到0
+复制代码
+</code></pre></div><p>所以我们知道了怎么取10进制最后1位的2进制是几。</p> <ol><li>JavaScript 使用 32 位按位运算数(意思是我们的按位运算都会转成32位，你的数字不能超过32位，会出问题)</li></ol> <ul><li>JavaScript 将数字存储为 64 位浮点数，但所有按位运算都以 32 位二进制数执行。</li> <li>在执行位运算之前，JavaScript 将数字转换为 32 位有符号整数。</li> <li>执行按位操作后，结果将转换回 64 位 JavaScript 数。</li></ul> <ol><li><code>'&lt;&lt; 1' 运算</code></li></ol> <p>这个运算实际上就是把10进制乘以2，这个乘2在2进制上表现出右边填了一个0，我们距举例来说，</p> <ul><li>2的2进制是 10，2 &lt;&lt; 1 得到4， 4的2进制是100，所以比10多了个0</li> <li>3的2进制是 11，3 &lt;&lt; 1 得到6。6的2进制是110，所以比11多了个0</li></ul> <p>以上就是规律</p> <p>思路：循环取最后一位拼接起来即可</p> <div class="language- extra-class"><pre class="language-text"><code>var reverseBits = function (n) {
+  let result = 0
+  for (let i = 0; i &lt; 32; i++) {
+    result = (result &lt;&lt; 1) + (n &amp; 1)
+    n = n &gt;&gt; 1
+  }
+  // 为什么要 &gt;&gt;&gt; 0 呢，一位javascript没有无符号整数，全是有符号的
+  // 不&gt;&gt;&gt;0的话，得出来的值是负数，但是无符号整数是没有符号的
+  // javascript 有符号转化为无符号的方法就是&gt;&gt;&gt;0
+  return result &gt;&gt;&gt; 0
+}
+复制代码
+</code></pre></div><h2 id="_268-丢失的数字"><a href="#_268-丢失的数字" class="header-anchor">#</a> 268. 丢失的数字</h2> <p>题目如下：</p> <p>给定一个包含 [0, n] 中 n 个数的数组 nums ，找出 [0, n] 这个范围内没有出现在数组中的那个数。</p> <p>进阶：</p> <p>你能否实现线性时间复杂度、仅使用额外常数空间的算法解决此问题?</p> <div class="language- extra-class"><pre class="language-text"><code>示例 1：
+
+输入：nums = [3,0,1]
+输出：2
+解释：n = 3，因为有 3 个数字，所以所有的数字都在范围 [0,3] 内。2 是丢失的数字，因为它没有出现在 nums 中。
+示例 2：
+
+输入：nums = [0,1]
+输出：2
+解释：n = 2，因为有 2 个数字，所以所有的数字都在范围 [0,2] 内。2 是丢失的数字，因为它没有出现在 nums 中。
+复制代码
+</code></pre></div><p>这题很简单，就是用0-n的总和减去数组总和</p> <ul><li>0 - n 的总和用等差数列:<code>（首数+尾数）* 项数 / 2</code> 来求</li></ul> <div class="language- extra-class"><pre class="language-text"><code> var missingNumber = function(nums) {
+    const len = nums.length
+ 
+   let sum = ((1 + len) * len) / 2
+ 
+   for (let i = 0; i &lt; len; i++) {
+     sum -= nums[i]
+   }
+ 
+   return sum
+ }
+复制代码
+</code></pre></div><h2 id="_3的幂"><a href="#_3的幂" class="header-anchor">#</a> 3的幂</h2> <p>题目如下：</p> <p>给定一个整数，写一个函数来判断它是否是 3 的幂次方。如果是，返回 true ；否则，返回 false 。</p> <p>整数 n 是 3 的幂次方需满足：存在整数 x 使得 <code>n == 3的x次方</code></p> <div class="language- extra-class"><pre class="language-text"><code>示例 1：
+
+输入：n = 27
+输出：true
+示例 2：
+
+输入：n = 0
+输出：false
+示例 3：
+
+输入：n = 9
+输出：true
+复制代码
+</code></pre></div><p>思路</p> <ul><li>我们拿27来说：27 = 3 * 3 * 3，所以27是3的幂次方</li> <li>我们拿29来说：29 = 3 * 3 * 3点几</li></ul> <p>也就是说，如果是3的幂次方，一直除以3，除到最后就等于1比如27/3/3/3等于1 如果不是3的幂次方，除到最后就是3点几/3 等于1点几</p> <p>代码就出来了判断是不是等于1即可</p> <div class="language- extra-class"><pre class="language-text"><code>var isPowerOfThree = function(n) {
+    while(n &gt;= 3){
+        n /= 3;
+    }
+    return n === 1;
+};
+复制代码
+</code></pre></div><h2 id="_412-fizz-buzz"><a href="#_412-fizz-buzz" class="header-anchor">#</a> 412. Fizz Buzz</h2> <p>这个题没啥好说的，就按照题目说的写代码就行，先看题目：</p> <p>写一个程序，输出从 1 到 n 数字的字符串表示。</p> <ol><li>如果 n 是3的倍数，输出“Fizz”；</li> <li>如果 n 是5的倍数，输出“Buzz”；</li> <li>如果 n 同时是3和5的倍数，输出 “FizzBuzz”。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>示例：
+
+n = 15,
+
+返回:
+[
+    &quot;1&quot;,
+    &quot;2&quot;,
+    &quot;Fizz&quot;,
+    &quot;4&quot;,
+    &quot;Buzz&quot;,
+    &quot;Fizz&quot;,
+    &quot;7&quot;,
+    &quot;8&quot;,
+    &quot;Fizz&quot;,
+    &quot;Buzz&quot;,
+    &quot;11&quot;,
+    &quot;Fizz&quot;,
+    &quot;13&quot;,
+    &quot;14&quot;,
+    &quot;FizzBuzz&quot;
+]
+复制代码
+  var fizzBuzz = function (n) {
+    const list = [];
+    for (let i = 1; i &lt;= n; i++) {
+      const is3Times = i % 3 === 0; // 是否是3的倍数
+      const is5Times = i % 5 === 0; // 是否是5的倍数
+      const is15Times = is3Times &amp;&amp; is5Times; // 是否是15的倍数
+      if (is15Times) {
+        list.push('FizzBuzz');
+        continue;
+      }
+      if (is3Times) {
+        list.push('Fizz');
+        continue;
+      }
+      if (is5Times) {
+        list.push('Buzz');
+        continue;
+      }
+      list.push(`${i}`);
+    }
+    return list;
+  };
+复制代码
+</code></pre></div><ul><li></li> <li><ol><li>整数反转</li></ol></li></ul> <p>这个题跟之前的excel序号题差不多，我们先看题目：</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片">屏幕快照 2021-07-27 上午10.55.40.png</p> <p>思路如下：这道题可以将数字转字符串然后翻转，我们不用这种方法，用更纯正的数学方法，速度和效率更好。</p> <p>假设我们有一个数字12345，下图展示了翻转的过程</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片">image.png</p> <div class="language- extra-class"><pre class="language-text"><code>var reverse = function(x) {
+    let ret = 0;
+    while(x){
+        ret = ret * 10 + x % 10;
+        if(ret &gt; Math.pow(2, 31) - 1 || ret &lt; Math.pow(-2, 31)) return 0;
+        x = (x / 10) | 0
+    }
+    return ret
+};
+复制代码
+</code></pre></div><h2 id="环问题"><a href="#环问题" class="header-anchor">#</a> 环问题</h2> <p>这类问题的特点就是，你要循环寻找，到底怎么循环寻找，看题便知。</p> <h2 id="_141-环形链表"><a href="#_141-环形链表" class="header-anchor">#</a> 141. 环形链表</h2> <p>题目如下：</p> <p>给定一个链表，判断链表中是否有环。</p> <p>如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。</p> <p>如果链表中存在环，则返回 true 。否则，返回 false 。</p> <p><strong>示例 1：</strong></p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片">image.png</p> <div class="language- extra-class"><pre class="language-text"><code>输入：head = [3,2,0,-4], pos = 1
+输出： true
+解释： 链表中有一个环，其尾部连接到第二个节点。
+复制代码
+</code></pre></div><p><strong>示例 2：</strong><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片"></p> <div class="language- extra-class"><pre class="language-text"><code>输入：head = [1,2], pos = 0
+输出： true
+解释： 链表中有一个环，其尾部连接到第一个节点。
+复制代码
+</code></pre></div><p>我们采用标记法：</p> <p>给遍历过的节点打记号，如果遍历过程中遇到有记号的说明已环</p> <div class="language- extra-class"><pre class="language-text"><code>var hasCycle = function(head) {
+    let traversingNode = head;
+    while(traversingNode){
+        if(traversingNode.isVistitd) return true
+        traversingNode.isVistitd = true
+        traversingNode = traversingNode.next
+    }
+    return false;
+};
+复制代码
+</code></pre></div><h2 id="_160-相交链表"><a href="#_160-相交链表" class="header-anchor">#</a> 160. 相交链表</h2> <p>题目如下：</p> <p>给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 null 。</p> <p>图示两个链表在节点 c1 开始相交：</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片">image.png</p> <p>题目数据 <strong>保证</strong> 整个链式结构中不存在环。</p> <p><strong>注意</strong>，函数返回结果后，链表必须 <strong>保持其原始结构</strong> 。</p> <p>示例 1：</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片">image.png</p> <div class="language- extra-class"><pre class="language-text"><code>输入：intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3
+输出：Intersected at '8'
+解释：相交节点的值为 8 （注意，如果两个链表相交则不能为 0）。
+从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。
+在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。
+复制代码
+</code></pre></div><p>示例 2：</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片">image.png</p> <div class="language- extra-class"><pre class="language-text"><code>输入：intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1
+输出：Intersected at '2'
+解释：相交节点的值为 2 （注意，如果两个链表相交则不能为 0）。
+从各自的表头开始算起，链表 A 为 [0,9,1,2,4]，链表 B 为 [3,2,4]。
+在 A 中，相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。
+复制代码
+</code></pre></div><p>稍后更新本文章</p> <h2 id="_202-快乐数"><a href="#_202-快乐数" class="header-anchor">#</a> 202. 快乐数</h2> <p>题目如下：编写一个算法来判断一个数 n 是不是快乐数。</p> <p>「快乐数」定义为：</p> <ul><li>对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和。</li> <li>然后重复这个过程直到这个数变为 1，也可能是 无限循环 但始终变不到 1。</li> <li>如果 可以变为 1，那么这个数就是快乐数。</li> <li>如果 n 是快乐数就返回 true ；不是，则返回 false 。</li></ul> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片">image.png</p> <p>快乐数怎么分析呢？</p> <p>我们来看一个表，就会得出结论，一个数按照快乐数定义的方式分别每个数字平方，会有两种情况</p> <ul><li></li> <li><ol><li>得到<code>1</code></li></ol></li> <li></li> <li><ol><li>无限循环</li></ol></li></ul> <p>无限循环参照下图</p> <p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图片">image.png</p> <p>有人会说会不会一直变大，答案是不会：我们看下面列表，</p> <ul><li>可以看到如果你是13位，你的下一次快乐数算法会变为4位1053，</li> <li>如果你是<code>9999</code>, <code>4</code>位，下一个快乐数是<code>324</code></li></ul> <table><thead><tr><th style="text-align:center;">位数</th> <th style="text-align:center;">位数对应最大值</th> <th style="text-align:center;">下一个快乐数</th></tr></thead> <tbody><tr><td style="text-align:center;">1</td> <td style="text-align:center;">9</td> <td style="text-align:center;">81</td></tr> <tr><td style="text-align:center;">2</td> <td style="text-align:center;">99</td> <td style="text-align:center;">162</td></tr> <tr><td style="text-align:center;">3</td> <td style="text-align:center;">999</td> <td style="text-align:center;">243</td></tr> <tr><td style="text-align:center;">4</td> <td style="text-align:center;">9999</td> <td style="text-align:center;">324</td></tr> <tr><td style="text-align:center;">13</td> <td style="text-align:center;">9999999999999</td> <td style="text-align:center;">1053</td></tr></tbody></table> <p>所以代码只要判断这两种就行了，代码如下：</p> <div class="language- extra-class"><pre class="language-text"><code>// 封装获取快乐数的方法
+function getNext(n){
+    n = String(n);
+    let sum = 0;
+    for(let num of n){
+        sum = sum + Math.pow(+num, 2);
+    }
+    return sum;
+}
+var isHappy = function(n) {
+    // 哈希表来看是否循环
+    const map = {};
+    while( n !== 1 ){
+        map[n] = true;
+        n = getNext(n)
+        if(map[n]) return false
+    }
+    return true
+};
+复制代码
+</code></pre></div><p>后面会写中级算法的题，请大家务必把这些基础算法题掌握好，基础不牢地动山摇，后面中级题很多都是在这些基础题的基础上的。</p> <p>源自：https://juejin.cn/post/6989031479753834504</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">5/8/2024, 3:01:19 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/algorithm/leetcode最常见的150道前端面试题.html" class="prev">
+        leetcode最常见的150道前端面试题（简单题上）
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.07981acf.js" defer></script><script src="/assets/js/2.57da4f88.js" defer></script><script src="/assets/js/1.a76cc220.js" defer></script><script src="/assets/js/26.0dcf1d19.js" defer></script>
+  </body>
+</html>

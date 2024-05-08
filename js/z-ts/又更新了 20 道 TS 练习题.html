@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>又更新了 20 道 TS 练习题，你能答对几道？ | duangdong的qa</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?0088ce24040b03f2947322ab31d23414";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+    <script>
+  var _hmt = _hmt || [];
+  _hmt.push(['_requirePlugin', 'UrlChangeTracker', {
+    shouldTrackUrlChange: function (newPath, oldPath) {
+      newPath = newPath.split('#')[0];
+      oldPath = oldPath.split('#')[0];
+      return newPath != oldPath;
+    }}
+  ]);
+  </script>
+    <meta name="description" content="前端QA集锦">
+    <meta name="keywords" content="qd-blog,js,vuepress,leetcode,react,react进阶,css,js进阶,react性能优化,js设计模式">
+    
+    <link rel="preload" href="/assets/css/0.styles.b4a844ec.css" as="style"><link rel="preload" href="/assets/js/app.07981acf.js" as="script"><link rel="preload" href="/assets/js/2.57da4f88.js" as="script"><link rel="preload" href="/assets/js/1.a76cc220.js" as="script"><link rel="preload" href="/assets/js/77.d134968d.js" as="script"><link rel="prefetch" href="/assets/js/10.50f73657.js"><link rel="prefetch" href="/assets/js/100.ed998eb0.js"><link rel="prefetch" href="/assets/js/101.c8472505.js"><link rel="prefetch" href="/assets/js/102.d600a66c.js"><link rel="prefetch" href="/assets/js/103.c2d41a43.js"><link rel="prefetch" href="/assets/js/104.dc119219.js"><link rel="prefetch" href="/assets/js/105.8707757e.js"><link rel="prefetch" href="/assets/js/106.33c299b9.js"><link rel="prefetch" href="/assets/js/107.8eafcc06.js"><link rel="prefetch" href="/assets/js/108.eeb8c861.js"><link rel="prefetch" href="/assets/js/109.d7579372.js"><link rel="prefetch" href="/assets/js/11.0390ceee.js"><link rel="prefetch" href="/assets/js/110.4cdb688a.js"><link rel="prefetch" href="/assets/js/111.95d0f748.js"><link rel="prefetch" href="/assets/js/112.fae5a13a.js"><link rel="prefetch" href="/assets/js/113.7cefcf49.js"><link rel="prefetch" href="/assets/js/114.49f03fa7.js"><link rel="prefetch" href="/assets/js/115.73eebb69.js"><link rel="prefetch" href="/assets/js/116.3b9205f3.js"><link rel="prefetch" href="/assets/js/117.dc4fcb53.js"><link rel="prefetch" href="/assets/js/118.1191553b.js"><link rel="prefetch" href="/assets/js/119.705d33d0.js"><link rel="prefetch" href="/assets/js/12.f88bec36.js"><link rel="prefetch" href="/assets/js/120.d3227497.js"><link rel="prefetch" href="/assets/js/121.32bcc7c2.js"><link rel="prefetch" href="/assets/js/122.55a7d973.js"><link rel="prefetch" href="/assets/js/123.07b3f53a.js"><link rel="prefetch" href="/assets/js/124.851c0100.js"><link rel="prefetch" href="/assets/js/125.c1de1f95.js"><link rel="prefetch" href="/assets/js/126.ea96a075.js"><link rel="prefetch" href="/assets/js/127.bcf311b8.js"><link rel="prefetch" href="/assets/js/128.e1c4d95e.js"><link rel="prefetch" href="/assets/js/129.09afee9c.js"><link rel="prefetch" href="/assets/js/13.963ad03b.js"><link rel="prefetch" href="/assets/js/130.22372a24.js"><link rel="prefetch" href="/assets/js/131.4db39cda.js"><link rel="prefetch" href="/assets/js/132.afcfdf65.js"><link rel="prefetch" href="/assets/js/133.35b0df52.js"><link rel="prefetch" href="/assets/js/134.9ad9188e.js"><link rel="prefetch" href="/assets/js/135.d7ca4b93.js"><link rel="prefetch" href="/assets/js/136.403dc2de.js"><link rel="prefetch" href="/assets/js/137.f972aed9.js"><link rel="prefetch" href="/assets/js/138.7536ef7d.js"><link rel="prefetch" href="/assets/js/139.05186195.js"><link rel="prefetch" href="/assets/js/14.512f15b9.js"><link rel="prefetch" href="/assets/js/140.f7b5e550.js"><link rel="prefetch" href="/assets/js/141.16938126.js"><link rel="prefetch" href="/assets/js/142.0d18982a.js"><link rel="prefetch" href="/assets/js/143.f82390e5.js"><link rel="prefetch" href="/assets/js/144.bac62f6d.js"><link rel="prefetch" href="/assets/js/145.255f2397.js"><link rel="prefetch" href="/assets/js/146.226da4b5.js"><link rel="prefetch" href="/assets/js/147.236f8a9f.js"><link rel="prefetch" href="/assets/js/148.8d472c06.js"><link rel="prefetch" href="/assets/js/149.4170f8c0.js"><link rel="prefetch" href="/assets/js/15.a674496c.js"><link rel="prefetch" href="/assets/js/150.ff7b0269.js"><link rel="prefetch" href="/assets/js/151.0a1c7058.js"><link rel="prefetch" href="/assets/js/152.584c412a.js"><link rel="prefetch" href="/assets/js/153.220d027b.js"><link rel="prefetch" href="/assets/js/154.09a9219e.js"><link rel="prefetch" href="/assets/js/155.6c8dbf71.js"><link rel="prefetch" href="/assets/js/156.a9d81dce.js"><link rel="prefetch" href="/assets/js/157.e53c1adb.js"><link rel="prefetch" href="/assets/js/158.11f55456.js"><link rel="prefetch" href="/assets/js/159.2c05d7f2.js"><link rel="prefetch" href="/assets/js/16.ed7e507f.js"><link rel="prefetch" href="/assets/js/160.27616923.js"><link rel="prefetch" href="/assets/js/17.de667ca5.js"><link rel="prefetch" href="/assets/js/18.b44e84af.js"><link rel="prefetch" href="/assets/js/19.5b5ad6a1.js"><link rel="prefetch" href="/assets/js/20.6800493a.js"><link rel="prefetch" href="/assets/js/21.6589052c.js"><link rel="prefetch" href="/assets/js/22.f648d829.js"><link rel="prefetch" href="/assets/js/23.21fe11d7.js"><link rel="prefetch" href="/assets/js/24.7a3e65b2.js"><link rel="prefetch" href="/assets/js/25.9e2d6c46.js"><link rel="prefetch" href="/assets/js/26.0dcf1d19.js"><link rel="prefetch" href="/assets/js/27.bd79a51b.js"><link rel="prefetch" href="/assets/js/28.ad9cdafd.js"><link rel="prefetch" href="/assets/js/29.738a8c4a.js"><link rel="prefetch" href="/assets/js/3.13e892f5.js"><link rel="prefetch" href="/assets/js/30.5d2ae7ae.js"><link rel="prefetch" href="/assets/js/31.2a59449c.js"><link rel="prefetch" href="/assets/js/32.322ed58f.js"><link rel="prefetch" href="/assets/js/33.e18917c7.js"><link rel="prefetch" href="/assets/js/34.edfe8355.js"><link rel="prefetch" href="/assets/js/35.2c0b1e3e.js"><link rel="prefetch" href="/assets/js/36.b1fdf51f.js"><link rel="prefetch" href="/assets/js/37.11ee0b0c.js"><link rel="prefetch" href="/assets/js/38.0b050ca5.js"><link rel="prefetch" href="/assets/js/39.2bd20762.js"><link rel="prefetch" href="/assets/js/4.5bdb9365.js"><link rel="prefetch" href="/assets/js/40.eb0c66c8.js"><link rel="prefetch" href="/assets/js/41.933044bc.js"><link rel="prefetch" href="/assets/js/42.eac4ba39.js"><link rel="prefetch" href="/assets/js/43.8c61e37d.js"><link rel="prefetch" href="/assets/js/44.30f132bb.js"><link rel="prefetch" href="/assets/js/45.2477f9bb.js"><link rel="prefetch" href="/assets/js/46.e97df854.js"><link rel="prefetch" href="/assets/js/47.60f16a00.js"><link rel="prefetch" href="/assets/js/48.d01b463f.js"><link rel="prefetch" href="/assets/js/49.e3a15fc7.js"><link rel="prefetch" href="/assets/js/5.7c68fdb5.js"><link rel="prefetch" href="/assets/js/50.31265493.js"><link rel="prefetch" href="/assets/js/51.ed2cc5dc.js"><link rel="prefetch" href="/assets/js/52.3ae02665.js"><link rel="prefetch" href="/assets/js/53.69d15c58.js"><link rel="prefetch" href="/assets/js/54.bbab20a0.js"><link rel="prefetch" href="/assets/js/55.9617cf7e.js"><link rel="prefetch" href="/assets/js/56.13f9aef2.js"><link rel="prefetch" href="/assets/js/57.ba08cc35.js"><link rel="prefetch" href="/assets/js/58.63028d02.js"><link rel="prefetch" href="/assets/js/59.566c0b50.js"><link rel="prefetch" href="/assets/js/6.c8da7ca7.js"><link rel="prefetch" href="/assets/js/60.0801f3b3.js"><link rel="prefetch" href="/assets/js/61.ceae0570.js"><link rel="prefetch" href="/assets/js/62.9f28e1a4.js"><link rel="prefetch" href="/assets/js/63.15282044.js"><link rel="prefetch" href="/assets/js/64.7c666983.js"><link rel="prefetch" href="/assets/js/65.320c4670.js"><link rel="prefetch" href="/assets/js/66.253bab14.js"><link rel="prefetch" href="/assets/js/67.49c1e967.js"><link rel="prefetch" href="/assets/js/68.ae82def1.js"><link rel="prefetch" href="/assets/js/69.0877ad54.js"><link rel="prefetch" href="/assets/js/7.e4c88d0e.js"><link rel="prefetch" href="/assets/js/70.5e8208ea.js"><link rel="prefetch" href="/assets/js/71.52cb4845.js"><link rel="prefetch" href="/assets/js/72.8c575d51.js"><link rel="prefetch" href="/assets/js/73.b9ba874e.js"><link rel="prefetch" href="/assets/js/74.6b4693bb.js"><link rel="prefetch" href="/assets/js/75.e9378ce1.js"><link rel="prefetch" href="/assets/js/76.a80b13fc.js"><link rel="prefetch" href="/assets/js/78.40d99cd8.js"><link rel="prefetch" href="/assets/js/79.2b663044.js"><link rel="prefetch" href="/assets/js/80.0b63f3ac.js"><link rel="prefetch" href="/assets/js/81.bc4031db.js"><link rel="prefetch" href="/assets/js/82.3152c02c.js"><link rel="prefetch" href="/assets/js/83.3fa2dc4b.js"><link rel="prefetch" href="/assets/js/84.e778c959.js"><link rel="prefetch" href="/assets/js/85.060ddc49.js"><link rel="prefetch" href="/assets/js/86.bb8138bb.js"><link rel="prefetch" href="/assets/js/87.72c01e68.js"><link rel="prefetch" href="/assets/js/88.e3e56223.js"><link rel="prefetch" href="/assets/js/89.198ff8d1.js"><link rel="prefetch" href="/assets/js/90.6437abb2.js"><link rel="prefetch" href="/assets/js/91.dbe1df52.js"><link rel="prefetch" href="/assets/js/92.6e732f3a.js"><link rel="prefetch" href="/assets/js/93.e98beea7.js"><link rel="prefetch" href="/assets/js/94.c62e88cb.js"><link rel="prefetch" href="/assets/js/95.f6aad986.js"><link rel="prefetch" href="/assets/js/96.e0630547.js"><link rel="prefetch" href="/assets/js/97.3cd76aa5.js"><link rel="prefetch" href="/assets/js/98.3bc2adce.js"><link rel="prefetch" href="/assets/js/99.88c20858.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.5143d2e0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b4a844ec.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">duangdong的qa</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/js/" class="nav-link router-link-active">
+  JS方面
+</a></div><div class="nav-item"><a href="/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/summary/" class="nav-link">
+  汇总
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  常见算法
+</a></div><div class="nav-item"><a href="/performance/" class="nav-link">
+  性能优化
+</a></div><div class="nav-item"><a href="/http/" class="nav-link">
+  网络协议
+</a></div><div class="nav-item"><a href="/css/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/face-sutra/" class="nav-link">
+  QA
+</a></div><div class="nav-item"><a href="https://link.aduang.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Home
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/js/" class="nav-link router-link-active">
+  JS方面
+</a></div><div class="nav-item"><a href="/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/summary/" class="nav-link">
+  汇总
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  常见算法
+</a></div><div class="nav-item"><a href="/performance/" class="nav-link">
+  性能优化
+</a></div><div class="nav-item"><a href="/http/" class="nav-link">
+  网络协议
+</a></div><div class="nav-item"><a href="/css/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/face-sutra/" class="nav-link">
+  QA
+</a></div><div class="nav-item"><a href="https://link.aduang.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Home
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/js/" aria-current="page" class="sidebar-link">相关问题总结</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>axios</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>d-js手动实现</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>i-节流防抖</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>j-深拷贝</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>k-数组</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>n-es6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>z-ts</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/js/z-ts/又更新了 20 道 TS 练习题.html" class="active sidebar-link">又更新了 20 道 TS 练习题，你能答对几道？</a></li></ul></section></li><li><a href="/js/宏任务和微任务.html" class="sidebar-link">十分钟把宏任务和微任务讲清楚</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>异步</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/js/观察者模式.html" class="sidebar-link">观察者模式</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="又更新了-20-道-ts-练习题-你能答对几道"><a href="#又更新了-20-道-ts-练习题-你能答对几道" class="header-anchor">#</a> 又更新了 20 道 TS 练习题，你能答对几道？</h1> <blockquote><p><a href="https://mp.weixin.qq.com/s/6JHXW9sAT6-pg0ckRjVliQ" target="_blank" rel="noopener noreferrer">https://mp.weixin.qq.com/s/6JHXW9sAT6-pg0ckRjVliQ<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <blockquote><p>https://github.com/semlinker/awesome-typescript/issues</p></blockquote> <p>前十题的参考答案 <a href="https://mp.weixin.qq.com/s?__biz=MzI2MjcxNTQ0Nw==&amp;mid=2247495307&amp;idx=2&amp;sn=49a8522477434acd6c49b6aa42c72b86&amp;scene=21#wechat_redirect" target="_blank" rel="noopener noreferrer">那 10 道 TS 练习题的参考答案来咯！<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，详细解析的 <strong>PPT</strong> 还在制作中，目前还在学习一款功能强大的 Markdown 创建 Web PPT 的工具，请小伙伴耐心等待。</p> <p>Tser 一起练起来，答题时可以考虑直接使用在线 TS Playground，选用最新的编译器版本：<strong>v4.4.2</strong>。</p> <h3 id="第一题"><a href="#第一题" class="header-anchor">#</a> 第一题</h3> <div class="language-tsx extra-class"><pre class="language-tsx"><code><span class="token keyword">type</span> <span class="token class-name">User</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  id<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+  kind<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token generic-function"><span class="token function">makeCustomer</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token constant">T</span> <span class="token keyword">extends</span> User<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>u<span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token constant">T</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Error（TS 编译器版本：v4.4.2）</span>
+  <span class="token comment">// Type '{ id: number; kind: string; }' is not assignable to type 'T'.</span>
+  <span class="token comment">// '{ id: number; kind: string; }' is assignable to the constraint of type 'T', </span>
+  <span class="token comment">// but 'T' could be instantiated with a different subtype of constraint 'User'.</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    id<span class="token operator">:</span> u<span class="token punctuation">.</span>id<span class="token punctuation">,</span>
+    kind<span class="token operator">:</span> <span class="token string">'customer'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>以上代码为什么会提示错误，应该如何解决上述问题？</p> <h3 id="第二题"><a href="#第二题" class="header-anchor">#</a> 第二题</h3> <p>本道题我们希望参数 <code>a</code> 和 <code>b</code> 的类型都是一致的，即 <code>a</code> 和 <code>b</code> 同时为 <code>number</code> 或 <code>string</code> 类型。当它们的类型不一致的值，TS 类型检查器能自动提示对应的错误信息。</p> <div class="language-tsx extra-class"><pre class="language-tsx"><code><span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> a <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> a <span class="token operator">+</span> <span class="token string">':'</span> <span class="token operator">+</span> b<span class="token punctuation">;</span> <span class="token comment">// no error but b can be number!</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span> <span class="token comment">// error as b can be number | string</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">f</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Ok</span>
+<span class="token function">f</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Error</span>
+<span class="token function">f</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Error</span>
+<span class="token function">f</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">)</span> <span class="token comment">// Ok</span>
+</code></pre></div><h3 id="第三题"><a href="#第三题" class="header-anchor">#</a> 第三题</h3> <p>在 <a href="https://mp.weixin.qq.com/s?__biz=MzI2MjcxNTQ0Nw==&amp;mid=2247484142&amp;idx=1&amp;sn=946ba90d10e2625513f09e60a462b3a7&amp;chksm=ea47a3b6dd302aa05af716d0bd70d8d7c682c9f4527a9a0c03cd107635711c394ab155127f9e&amp;scene=21#wechat_redirect" target="_blank" rel="noopener noreferrer">掌握 TS 这些工具类型，让你开发事半功倍<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 这篇文章中，阿宝哥介绍了 TS 内置的工具类型：<code>Partial&lt;T&gt;</code>，它的作用是将某个类型里的属性全部变为可选项 <code>?</code>。</p> <div class="language-tsx extra-class"><pre class="language-tsx"><code><span class="token keyword">interface</span> <span class="token class-name">Todo</span> <span class="token punctuation">{</span>
+  title<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  description<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">updateTodo</span><span class="token punctuation">(</span>todo<span class="token operator">:</span> Todo<span class="token punctuation">,</span> fieldsToUpdate<span class="token operator">:</span> Partial<span class="token operator">&lt;</span>Todo<span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token operator">...</span>todo<span class="token punctuation">,</span> <span class="token operator">...</span>fieldsToUpdate <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// lib.es5.d.ts</span>
+<span class="token keyword">type</span> <span class="token class-name">Partial<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span><span class="token constant">P</span> <span class="token keyword">in</span> <span class="token keyword">keyof</span> <span class="token constant">T</span><span class="token punctuation">]</span><span class="token operator">?</span><span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">[</span><span class="token constant">P</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>那么如何定义一个 <code>SetOptional</code> 工具类型，支持把给定的 keys 对应的属性变成可选的？对应的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type Foo = {
+ a: number;
+ b?: string;
+ c: boolean;
+}
+
+// 测试用例
+type SomeOptional = SetOptional&lt;Foo, 'a' | 'b'&gt;;
+
+// type SomeOptional = {
+//  a?: number; // 该属性已变成可选的
+//  b?: string; // 保持不变
+//  c: boolean; 
+// }
+</code></pre></div><p>在实现 <code>SetOptional</code> 工具类型之后，如果你感兴趣，可以继续实现 <code>SetRequired</code> 工具类型，利用它可以把指定的 keys 对应的属性变成必填的。对应的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type Foo = {
+ a?: number;
+ b: string;
+ c?: boolean;
+}
+
+// 测试用例
+type SomeRequired = SetRequired&lt;Foo, 'b' | 'c'&gt;;
+// type SomeRequired = {
+//  a?: number;
+//  b: string; // 保持不变
+//  c: boolean; // 该属性已变成必填
+// }
+</code></pre></div><h3 id="第四题"><a href="#第四题" class="header-anchor">#</a> 第四题</h3> <p><code>Pick&lt;T, K extends keyof T&gt;</code> 的作用是将某个类型中的子属性挑出来，变成包含这个类型部分属性的子类型。</p> <div class="language- extra-class"><pre class="language-text"><code>interface Todo {
+  title: string;
+  description: string;
+  completed: boolean;
+}
+
+type TodoPreview = Pick&lt;Todo, &quot;title&quot; | &quot;completed&quot;&gt;;
+
+const todo: TodoPreview = {
+  title: &quot;Clean room&quot;,
+  completed: false
+};
+</code></pre></div><p>那么如何定义一个 <code>ConditionalPick</code> 工具类型，支持根据指定的 <code>Condition</code> 条件来生成新的类型，对应的使用示例如下：</p> <div class="language- extra-class"><pre class="language-text"><code>interface Example {
+ a: string;
+ b: string | number;
+ c: () =&gt; void;
+ d: {};
+}
+
+// 测试用例：
+type StringKeysOnly = ConditionalPick&lt;Example, string&gt;;
+//=&gt; {a: string}
+</code></pre></div><h3 id="第五题"><a href="#第五题" class="header-anchor">#</a> 第五题</h3> <p>定义一个工具类型 <code>AppendArgument</code>，为已有的函数类型增加指定类型的参数，新增的参数名是 <code>x</code>，将作为新函数类型的第一个参数。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type Fn = (a: number, b: string) =&gt; number
+type AppendArgument&lt;F, A&gt; = // 你的实现代码
+
+type FinalFn = AppendArgument&lt;Fn, boolean&gt; 
+// (x: boolean, a: number, b: string) =&gt; number
+</code></pre></div><h3 id="第六题"><a href="#第六题" class="header-anchor">#</a> 第六题</h3> <p>定义一个 NativeFlat 工具类型，支持把数组类型拍平（扁平化）。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type NaiveFlat&lt;T extends any[]&gt; = // 你的实现代码
+
+// 测试用例：
+type NaiveResult = NaiveFlat&lt;[['a'], ['b', 'c'], ['d']]&gt;
+// NaiveResult的结果： &quot;a&quot; | &quot;b&quot; | &quot;c&quot; | &quot;d&quot;
+</code></pre></div><p>在完成 <code>NaiveFlat</code> 工具类型之后，在继续实现 <code>DeepFlat</code> 工具类型，以支持多维数组类型：</p> <div class="language- extra-class"><pre class="language-text"><code>type DeepFlat&lt;T extends any[]&gt; = unknown // 你的实现代码
+
+// 测试用例
+type Deep = [['a'], ['b', 'c'], [['d']], [[[['e']]]]];
+type DeepTestResult = DeepFlat&lt;Deep&gt;  
+// DeepTestResult: &quot;a&quot; | &quot;b&quot; | &quot;c&quot; | &quot;d&quot; | &quot;e&quot;
+</code></pre></div><h3 id="第七题"><a href="#第七题" class="header-anchor">#</a> 第七题</h3> <p>使用类型别名定义一个 <code>EmptyObject</code> 类型，使得该类型只允许空对象赋值：</p> <div class="language- extra-class"><pre class="language-text"><code>type EmptyObject = {} 
+
+// 测试用例
+const shouldPass: EmptyObject = {}; // 可以正常赋值
+const shouldFail: EmptyObject = { // 将出现编译错误
+  prop: &quot;TS&quot;
+}
+</code></pre></div><p>在通过 <code>EmptyObject</code> 类型的测试用例检测后，我们来更改以下 <code>takeSomeTypeOnly</code> 函数的类型定义，让它的参数只允许严格SomeType类型的值。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type SomeType =  {
+  prop: string
+}
+
+// 更改以下函数的类型定义，让它的参数只允许严格SomeType类型的值
+function takeSomeTypeOnly(x: SomeType) { return x }
+
+// 测试用例：
+const x = { prop: 'a' };
+takeSomeTypeOnly(x) // 可以正常调用
+
+const y = { prop: 'a', addditionalProp: 'x' };
+takeSomeTypeOnly(y) // 将出现编译错误
+</code></pre></div><h3 id="第八题"><a href="#第八题" class="header-anchor">#</a> 第八题</h3> <p>定义 <code>NonEmptyArray</code> 工具类型，用于确保数据非空数组。</p> <div class="language- extra-class"><pre class="language-text"><code>type NonEmptyArray&lt;T&gt; = // 你的实现代码
+
+const a: NonEmptyArray&lt;string&gt; = [] // 将出现编译错误
+const b: NonEmptyArray&lt;string&gt; = ['Hello TS'] // 非空数据，正常使用
+</code></pre></div><blockquote><p>提示：该题目有多种解法，感兴趣小伙伴可以自行尝试一下。</p></blockquote> <h3 id="第九题"><a href="#第九题" class="header-anchor">#</a> 第九题</h3> <p>定义一个 <code>JoinStrArray</code> 工具类型，用于根据指定的 <code>Separator</code> 分隔符，对字符串数组类型进行拼接。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type JoinStrArray&lt;Arr extends string[], Separator extends string, Result extends string = &quot;&quot;&gt; = // 你的实现代码
+
+// 测试用例
+type Names = [&quot;Sem&quot;, &quot;Lolo&quot;, &quot;Kaquko&quot;]
+type NamesComma = JoinStrArray&lt;Names, &quot;,&quot;&gt; // &quot;Sem,Lolo,Kaquko&quot;
+type NamesSpace = JoinStrArray&lt;Names, &quot; &quot;&gt; // &quot;Sem Lolo Kaquko&quot;
+type NamesStars = JoinStrArray&lt;Names, &quot;⭐️&quot;&gt; // &quot;Sem⭐️Lolo⭐️Kaquko&quot;
+</code></pre></div><h3 id="第十题"><a href="#第十题" class="header-anchor">#</a> 第十题</h3> <p>实现一个 <code>Trim</code> 工具类型，用于对字符串字面量类型进行去空格处理。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type Trim&lt;V extends string&gt; = // 你的实现代码
+
+// 测试用例
+Trim&lt;' semlinker '&gt;
+//=&gt; 'semlinker'
+</code></pre></div><blockquote><p>提示：可以考虑先定义 TrimLeft 和 TrimRight 工具类型，再组合成 Trim 工具类型。</p></blockquote> <h3 id="第十一题"><a href="#第十一题" class="header-anchor">#</a> 第十一题</h3> <p>实现一个 <code>IsEqual</code> 工具类型，用于比较两个类型是否相等。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type IsEqual&lt;A, B&gt; = // 你的实现代码
+
+// 测试用例
+type E0 = IsEqual&lt;1, 2&gt;; // false
+type E1 = IsEqual&lt;{ a: 1 }, { a: 1 }&gt; // true
+type E2 = IsEqual&lt;[1], []&gt;; // false
+</code></pre></div><h3 id="第十二题"><a href="#第十二题" class="header-anchor">#</a> 第十二题</h3> <p>实现一个 <code>Head</code> 工具类型，用于获取数组类型的第一个类型。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type Head&lt;T extends Array&lt;any&gt;&gt; = // 你的实现代码
+
+// 测试用例
+type H0 = Head&lt;[]&gt; // never
+type H1 = Head&lt;[1]&gt; // 1
+type H2 = Head&lt;[3, 2]&gt; // 3
+</code></pre></div><blockquote><p>提示：该题目有多种解法，感兴趣小伙伴可以自行尝试一下。</p></blockquote> <h3 id="第十三题"><a href="#第十三题" class="header-anchor">#</a> 第十三题</h3> <p>实现一个 <code>Tail</code> 工具类型，用于获取数组类型除了第一个类型外，剩余的类型。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type Tail&lt;T extends Array&lt;any&gt;&gt; =  // 你的实现代码
+
+// 测试用例
+type T0 = Tail&lt;[]&gt; // []
+type T1 = Tail&lt;[1, 2]&gt; // [2]
+type T2 = Tail&lt;[1, 2, 3, 4, 5]&gt; // [2, 3, 4, 5]
+</code></pre></div><blockquote><p>提示：该题目有多种解法，感兴趣小伙伴可以自行尝试一下。</p></blockquote> <h3 id="第十四题"><a href="#第十四题" class="header-anchor">#</a> 第十四题</h3> <p>实现一个 <code>Unshift</code> 工具类型，用于把指定类型 <code>E</code> 作为第一个元素添加到 <code>T</code> 数组类型中。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type Unshift&lt;T extends any[], E&gt; =  // 你的实现代码
+
+// 测试用例
+type Arr0 = Unshift&lt;[], 1&gt;; // [1]
+type Arr1 = Unshift&lt;[1, 2, 3], 0&gt;; // [0, 1, 2, 3]
+</code></pre></div><blockquote><p>提示：该题目有多种解法，感兴趣小伙伴可以自行尝试一下。</p></blockquote> <h3 id="第十五题"><a href="#第十五题" class="header-anchor">#</a> 第十五题</h3> <p>实现一个 <code>Shift</code> 工具类型，用于移除 <code>T</code> 数组类型中的第一个类型。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type Shift&lt;T extends any[]&gt; = // 你的实现代码
+
+// 测试用例
+type S0 = Shift&lt;[1, 2, 3]&gt; // [2, 3]
+type S1 = Shift&lt;[string,number,boolean]&gt; // [number,boolean]
+</code></pre></div><h3 id="第十六题"><a href="#第十六题" class="header-anchor">#</a> 第十六题</h3> <p>实现一个 <code>Push</code> 工具类型，用于把指定类型 <code>E</code> 作为最后一个元素添加到 <code>T</code> 数组类型中。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type Push&lt;T extends any[], V&gt; = // 你的实现代码
+
+// 测试用例
+type Arr0 = Push&lt;[], 1&gt; // [1]
+type Arr1 = Push&lt;[1, 2, 3], 4&gt; // [1, 2, 3, 4]
+</code></pre></div><h3 id="第十七题"><a href="#第十七题" class="header-anchor">#</a> 第十七题</h3> <p>实现一个 <code>Includes</code> 工具类型，用于判断指定的类型 <code>E</code> 是否包含在 <code>T</code> 数组类型中。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type Includes&lt;T extends Array&lt;any&gt;, E&gt; = // 你的实现代码
+
+type I0 = Includes&lt;[], 1&gt; // false
+type I1 = Includes&lt;[2, 2, 3, 1], 2&gt; // true
+type I2 = Includes&lt;[2, 3, 3, 1], 1&gt; // true
+</code></pre></div><blockquote><p>提示：该题目有多种解法，感兴趣小伙伴可以自行尝试一下。</p></blockquote> <h3 id="第十八题"><a href="#第十八题" class="header-anchor">#</a> 第十八题</h3> <p>实现一个 <code>UnionToIntersection</code> 工具类型，用于把联合类型转换为交叉类型。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type UnionToIntersection&lt;U&gt; = // 你的实现代码
+
+// 测试用例
+type U0 = UnionToIntersection&lt;string | number&gt; // never
+type U1 = UnionToIntersection&lt;{ name: string } | { age: number }&gt; // { name: string; } &amp; { age: number; }
+</code></pre></div><h3 id="第十九题"><a href="#第十九题" class="header-anchor">#</a> 第十九题</h3> <p>实现一个 <code>OptionalKeys</code> 工具类型，用来获取对象类型中声明的可选属性。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type Person = {
+  id: string;
+  name: string;
+  age: number;
+  from?: string;
+  speak?: string;
+};
+
+type OptionalKeys&lt;T&gt; = // 你的实现代码
+type PersonOptionalKeys = OptionalKeys&lt;Person&gt; // &quot;from&quot; | &quot;speak&quot;
+</code></pre></div><blockquote><p>提示：该题目有多种解法，感兴趣小伙伴可以自行尝试一下。</p></blockquote> <h3 id="第二十题"><a href="#第二十题" class="header-anchor">#</a> 第二十题</h3> <p>实现一个 <code>Curry</code> 工具类型，用来实现函数类型的柯里化处理。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type Curry&lt;
+  F extends (...args: any[]) =&gt; any,
+  P extends any[] = Parameters&lt;F&gt;, 
+  R = ReturnType&lt;F&gt; 
+&gt; = // 你的实现代码
+
+type F0 = Curry&lt;() =&gt; Date&gt;; // () =&gt; Date
+type F1 = Curry&lt;(a: number) =&gt; Date&gt;; // (arg: number) =&gt; Date
+type F2 = Curry&lt;(a: number, b: string) =&gt; Date&gt;; //  (arg_0: number) =&gt; (b: string) =&gt; Date
+</code></pre></div><h3 id="第二十一题"><a href="#第二十一题" class="header-anchor">#</a> 第二十一题</h3> <p>实现一个 <code>Merge</code> 工具类型，用于把两个类型合并成一个新的类型。第二种类型（SecondType）的 <code>Keys</code> 将会覆盖第一种类型（FirstType）的 <code>Keys</code>。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type Foo = {
+ a: number;
+ b: string;
+};
+
+type Bar = {
+ b: number;
+};
+
+type Merge&lt;FirstType, SecondType&gt; = // 你的实现代码
+
+const ab: Merge&lt;Foo, Bar&gt; = { a: 1, b: 2 };
+</code></pre></div><h3 id="第二十二题"><a href="#第二十二题" class="header-anchor">#</a> 第二十二题</h3> <p>实现一个 <code>RequireAtLeastOne</code> 工具类型，它将创建至少含有一个给定 <code>Keys</code> 的类型，其余的 <code>Keys</code> 保持原样。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type Responder = {
+ text?: () =&gt; string;
+ json?: () =&gt; string;
+ secure?: boolean;
+};
+
+type RequireAtLeastOne&lt;
+ ObjectType,
+ KeysType extends keyof ObjectType = keyof ObjectType,
+&gt; = // 你的实现代码
+
+// 表示当前类型至少包含 'text' 或 'json' 键
+const responder: RequireAtLeastOne&lt;Responder, 'text' | 'json'&gt; = {
+ json: () =&gt; '{&quot;message&quot;: &quot;ok&quot;}',
+ secure: true
+};
+</code></pre></div><h3 id="第二十三题"><a href="#第二十三题" class="header-anchor">#</a> 第二十三题</h3> <p>实现一个 <code>RemoveIndexSignature</code> 工具类型，用于移除已有类型中的索引签名。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>interface Foo {
+  [key: string]: any;
+  [key: number]: any;
+  bar(): void;
+}
+
+type RemoveIndexSignature&lt;T&gt; = // 你的实现代码
+
+type FooWithOnlyBar = RemoveIndexSignature&lt;Foo&gt;; //{ bar: () =&gt; void; }
+</code></pre></div><h3 id="第二十四题"><a href="#第二十四题" class="header-anchor">#</a> 第二十四题</h3> <p>实现一个 <code>Mutable</code> 工具类型，用于移除对象类型上所有属性或部分属性的 <code>readonly</code>修饰符。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type Foo = {
+  readonly a: number;
+  readonly b: string;
+  readonly c: boolean;
+};
+
+type Mutable&lt;T, Keys extends keyof T = keyof T&gt; = // 你的实现代码
+
+const mutableFoo: Mutable&lt;Foo, 'a'&gt; = { a: 1, b: '2', c: true };
+
+mutableFoo.a = 3; // OK
+mutableFoo.b = '6'; // Cannot assign to 'b' because it is a read-only property.
+</code></pre></div><h3 id="第二十五题"><a href="#第二十五题" class="header-anchor">#</a> 第二十五题</h3> <p>实现一个 <code>IsUnion</code> 工具类型，判断指定的类型是否为联合类型。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type IsUnion&lt;T, U = T&gt; = // 你的实现代码
+
+type I0 = IsUnion&lt;string|number&gt; // true
+type I1 = IsUnion&lt;string|never&gt; // false
+type I2 =IsUnion&lt;string|unknown&gt; // false
+</code></pre></div><h3 id="第二十六题"><a href="#第二十六题" class="header-anchor">#</a> 第二十六题</h3> <p>实现一个 <code>IsNever</code> 工具类型，判断指定的类型是否为 <code>never</code> 类型。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type I0 = IsNever&lt;never&gt; // true
+type I1 = IsNever&lt;never | string&gt; // false
+type I2 = IsNever&lt;null&gt; // false
+</code></pre></div><h3 id="第二十七题"><a href="#第二十七题" class="header-anchor">#</a> 第二十七题</h3> <p>实现一个 <code>Reverse</code> 工具类型，用于对元组类型中元素的位置颠倒，并返回该数组。元组的第一个元素会变成最后一个，最后一个元素变成第一个。</p> <div class="language- extra-class"><pre class="language-text"><code>type Reverse&lt;
+  T extends Array&lt;any&gt;,
+  R extends Array&lt;any&gt; = []
+&gt; = // 你的实现代码
+
+type R0 = Reverse&lt;[]&gt; // []
+type R1 = Reverse&lt;[1, 2, 3]&gt; // [3, 2, 1]
+</code></pre></div><h3 id="第二十八题"><a href="#第二十八题" class="header-anchor">#</a> 第二十八题</h3> <p>实现一个 <code>Split</code> 工具类型，根据给定的分隔符（Delimiter）对包含分隔符的字符串进行切割。可用于定义 <code>String.prototype.split</code> 方法的返回值类型。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type Item = 'semlinker,lolo,kakuqo';
+
+type Split&lt;
+ S extends string, 
+ Delimiter extends string,
+&gt; = // 你的实现代码
+
+type ElementType = Split&lt;Item, ','&gt;; // [&quot;semlinker&quot;, &quot;lolo&quot;, &quot;kakuqo&quot;]
+</code></pre></div><h3 id="第二十九题"><a href="#第二十九题" class="header-anchor">#</a> 第二十九题</h3> <p>实现一个 <code>ToPath</code> 工具类型，用于把属性访问（<code>.</code> 或 <code>[]</code>）路径转换为元组的形式。具体的使用示例如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>type ToPath&lt;S extends string&gt; = // 你的实现代码
+
+ToPath&lt;'foo.bar.baz'&gt; //=&gt; ['foo', 'bar', 'baz']
+ToPath&lt;'foo[0].bar.baz'&gt; //=&gt; ['foo', '0', 'bar', 'baz']
+</code></pre></div><h3 id="第三十题"><a href="#第三十题" class="header-anchor">#</a> 第三十题</h3> <p>完善 <code>Chainable</code> 类型的定义，使得 TS 能成功推断出 <code>result</code> 变量的类型。调用 <code>option</code> 方法之后会不断扩展当前对象的类型，使得调用 <code>get</code> 方法后能获取正确的类型。</p> <div class="language- extra-class"><pre class="language-text"><code>declare const config: Chainable
+
+type Chainable = {
+  option(key: string, value: any): any
+  get(): any
+}
+
+const result = config
+  .option('age', 7)
+  .option('name', 'lolo')
+  .option('address', { value: 'XiaMen' })
+  .get()
+
+type ResultType = typeof result  
+// 期望 ResultType 的类型是：
+// {
+//   age: number
+//   name: string
+//   address: {
+//     value: string
+//   }
+// }
+</code></pre></div><blockquote><p>关注「全栈修仙之路」阅读阿宝哥原创的 4 本免费电子书（累计下载 5万+）及 11 篇 Vue 3 进阶系列教程。</p></blockquote></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">5/8/2024, 3:01:19 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/js/n-es6/扩展运算符技巧.html" class="prev">
+        扩展运算符的技巧
+      </a></span> <span class="next"><a href="/js/宏任务和微任务.html">
+        十分钟把宏任务和微任务讲清楚
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.07981acf.js" defer></script><script src="/assets/js/2.57da4f88.js" defer></script><script src="/assets/js/1.a76cc220.js" defer></script><script src="/assets/js/77.d134968d.js" defer></script>
+  </body>
+</html>

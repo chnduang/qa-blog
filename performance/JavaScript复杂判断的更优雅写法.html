@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaScript 复杂判断的更优雅写法 | duangdong的qa</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?0088ce24040b03f2947322ab31d23414";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+    <script>
+  var _hmt = _hmt || [];
+  _hmt.push(['_requirePlugin', 'UrlChangeTracker', {
+    shouldTrackUrlChange: function (newPath, oldPath) {
+      newPath = newPath.split('#')[0];
+      oldPath = oldPath.split('#')[0];
+      return newPath != oldPath;
+    }}
+  ]);
+  </script>
+    <meta name="description" content="前端QA集锦">
+    <meta name="keywords" content="qd-blog,js,vuepress,leetcode,react,react进阶,css,js进阶,react性能优化,js设计模式">
+    
+    <link rel="preload" href="/assets/css/0.styles.b4a844ec.css" as="style"><link rel="preload" href="/assets/js/app.07981acf.js" as="script"><link rel="preload" href="/assets/js/2.57da4f88.js" as="script"><link rel="preload" href="/assets/js/1.a76cc220.js" as="script"><link rel="preload" href="/assets/js/83.3fa2dc4b.js" as="script"><link rel="prefetch" href="/assets/js/10.50f73657.js"><link rel="prefetch" href="/assets/js/100.ed998eb0.js"><link rel="prefetch" href="/assets/js/101.c8472505.js"><link rel="prefetch" href="/assets/js/102.d600a66c.js"><link rel="prefetch" href="/assets/js/103.c2d41a43.js"><link rel="prefetch" href="/assets/js/104.dc119219.js"><link rel="prefetch" href="/assets/js/105.8707757e.js"><link rel="prefetch" href="/assets/js/106.33c299b9.js"><link rel="prefetch" href="/assets/js/107.8eafcc06.js"><link rel="prefetch" href="/assets/js/108.eeb8c861.js"><link rel="prefetch" href="/assets/js/109.d7579372.js"><link rel="prefetch" href="/assets/js/11.0390ceee.js"><link rel="prefetch" href="/assets/js/110.4cdb688a.js"><link rel="prefetch" href="/assets/js/111.95d0f748.js"><link rel="prefetch" href="/assets/js/112.fae5a13a.js"><link rel="prefetch" href="/assets/js/113.7cefcf49.js"><link rel="prefetch" href="/assets/js/114.49f03fa7.js"><link rel="prefetch" href="/assets/js/115.73eebb69.js"><link rel="prefetch" href="/assets/js/116.3b9205f3.js"><link rel="prefetch" href="/assets/js/117.dc4fcb53.js"><link rel="prefetch" href="/assets/js/118.1191553b.js"><link rel="prefetch" href="/assets/js/119.705d33d0.js"><link rel="prefetch" href="/assets/js/12.f88bec36.js"><link rel="prefetch" href="/assets/js/120.d3227497.js"><link rel="prefetch" href="/assets/js/121.32bcc7c2.js"><link rel="prefetch" href="/assets/js/122.55a7d973.js"><link rel="prefetch" href="/assets/js/123.07b3f53a.js"><link rel="prefetch" href="/assets/js/124.851c0100.js"><link rel="prefetch" href="/assets/js/125.c1de1f95.js"><link rel="prefetch" href="/assets/js/126.ea96a075.js"><link rel="prefetch" href="/assets/js/127.bcf311b8.js"><link rel="prefetch" href="/assets/js/128.e1c4d95e.js"><link rel="prefetch" href="/assets/js/129.09afee9c.js"><link rel="prefetch" href="/assets/js/13.963ad03b.js"><link rel="prefetch" href="/assets/js/130.22372a24.js"><link rel="prefetch" href="/assets/js/131.4db39cda.js"><link rel="prefetch" href="/assets/js/132.afcfdf65.js"><link rel="prefetch" href="/assets/js/133.35b0df52.js"><link rel="prefetch" href="/assets/js/134.9ad9188e.js"><link rel="prefetch" href="/assets/js/135.d7ca4b93.js"><link rel="prefetch" href="/assets/js/136.403dc2de.js"><link rel="prefetch" href="/assets/js/137.f972aed9.js"><link rel="prefetch" href="/assets/js/138.7536ef7d.js"><link rel="prefetch" href="/assets/js/139.05186195.js"><link rel="prefetch" href="/assets/js/14.512f15b9.js"><link rel="prefetch" href="/assets/js/140.f7b5e550.js"><link rel="prefetch" href="/assets/js/141.16938126.js"><link rel="prefetch" href="/assets/js/142.0d18982a.js"><link rel="prefetch" href="/assets/js/143.f82390e5.js"><link rel="prefetch" href="/assets/js/144.bac62f6d.js"><link rel="prefetch" href="/assets/js/145.255f2397.js"><link rel="prefetch" href="/assets/js/146.226da4b5.js"><link rel="prefetch" href="/assets/js/147.236f8a9f.js"><link rel="prefetch" href="/assets/js/148.8d472c06.js"><link rel="prefetch" href="/assets/js/149.4170f8c0.js"><link rel="prefetch" href="/assets/js/15.a674496c.js"><link rel="prefetch" href="/assets/js/150.ff7b0269.js"><link rel="prefetch" href="/assets/js/151.0a1c7058.js"><link rel="prefetch" href="/assets/js/152.584c412a.js"><link rel="prefetch" href="/assets/js/153.220d027b.js"><link rel="prefetch" href="/assets/js/154.09a9219e.js"><link rel="prefetch" href="/assets/js/155.6c8dbf71.js"><link rel="prefetch" href="/assets/js/156.a9d81dce.js"><link rel="prefetch" href="/assets/js/157.e53c1adb.js"><link rel="prefetch" href="/assets/js/158.11f55456.js"><link rel="prefetch" href="/assets/js/159.2c05d7f2.js"><link rel="prefetch" href="/assets/js/16.ed7e507f.js"><link rel="prefetch" href="/assets/js/160.27616923.js"><link rel="prefetch" href="/assets/js/17.de667ca5.js"><link rel="prefetch" href="/assets/js/18.b44e84af.js"><link rel="prefetch" href="/assets/js/19.5b5ad6a1.js"><link rel="prefetch" href="/assets/js/20.6800493a.js"><link rel="prefetch" href="/assets/js/21.6589052c.js"><link rel="prefetch" href="/assets/js/22.f648d829.js"><link rel="prefetch" href="/assets/js/23.21fe11d7.js"><link rel="prefetch" href="/assets/js/24.7a3e65b2.js"><link rel="prefetch" href="/assets/js/25.9e2d6c46.js"><link rel="prefetch" href="/assets/js/26.0dcf1d19.js"><link rel="prefetch" href="/assets/js/27.bd79a51b.js"><link rel="prefetch" href="/assets/js/28.ad9cdafd.js"><link rel="prefetch" href="/assets/js/29.738a8c4a.js"><link rel="prefetch" href="/assets/js/3.13e892f5.js"><link rel="prefetch" href="/assets/js/30.5d2ae7ae.js"><link rel="prefetch" href="/assets/js/31.2a59449c.js"><link rel="prefetch" href="/assets/js/32.322ed58f.js"><link rel="prefetch" href="/assets/js/33.e18917c7.js"><link rel="prefetch" href="/assets/js/34.edfe8355.js"><link rel="prefetch" href="/assets/js/35.2c0b1e3e.js"><link rel="prefetch" href="/assets/js/36.b1fdf51f.js"><link rel="prefetch" href="/assets/js/37.11ee0b0c.js"><link rel="prefetch" href="/assets/js/38.0b050ca5.js"><link rel="prefetch" href="/assets/js/39.2bd20762.js"><link rel="prefetch" href="/assets/js/4.5bdb9365.js"><link rel="prefetch" href="/assets/js/40.eb0c66c8.js"><link rel="prefetch" href="/assets/js/41.933044bc.js"><link rel="prefetch" href="/assets/js/42.eac4ba39.js"><link rel="prefetch" href="/assets/js/43.8c61e37d.js"><link rel="prefetch" href="/assets/js/44.30f132bb.js"><link rel="prefetch" href="/assets/js/45.2477f9bb.js"><link rel="prefetch" href="/assets/js/46.e97df854.js"><link rel="prefetch" href="/assets/js/47.60f16a00.js"><link rel="prefetch" href="/assets/js/48.d01b463f.js"><link rel="prefetch" href="/assets/js/49.e3a15fc7.js"><link rel="prefetch" href="/assets/js/5.7c68fdb5.js"><link rel="prefetch" href="/assets/js/50.31265493.js"><link rel="prefetch" href="/assets/js/51.ed2cc5dc.js"><link rel="prefetch" href="/assets/js/52.3ae02665.js"><link rel="prefetch" href="/assets/js/53.69d15c58.js"><link rel="prefetch" href="/assets/js/54.bbab20a0.js"><link rel="prefetch" href="/assets/js/55.9617cf7e.js"><link rel="prefetch" href="/assets/js/56.13f9aef2.js"><link rel="prefetch" href="/assets/js/57.ba08cc35.js"><link rel="prefetch" href="/assets/js/58.63028d02.js"><link rel="prefetch" href="/assets/js/59.566c0b50.js"><link rel="prefetch" href="/assets/js/6.c8da7ca7.js"><link rel="prefetch" href="/assets/js/60.0801f3b3.js"><link rel="prefetch" href="/assets/js/61.ceae0570.js"><link rel="prefetch" href="/assets/js/62.9f28e1a4.js"><link rel="prefetch" href="/assets/js/63.15282044.js"><link rel="prefetch" href="/assets/js/64.7c666983.js"><link rel="prefetch" href="/assets/js/65.320c4670.js"><link rel="prefetch" href="/assets/js/66.253bab14.js"><link rel="prefetch" href="/assets/js/67.49c1e967.js"><link rel="prefetch" href="/assets/js/68.ae82def1.js"><link rel="prefetch" href="/assets/js/69.0877ad54.js"><link rel="prefetch" href="/assets/js/7.e4c88d0e.js"><link rel="prefetch" href="/assets/js/70.5e8208ea.js"><link rel="prefetch" href="/assets/js/71.52cb4845.js"><link rel="prefetch" href="/assets/js/72.8c575d51.js"><link rel="prefetch" href="/assets/js/73.b9ba874e.js"><link rel="prefetch" href="/assets/js/74.6b4693bb.js"><link rel="prefetch" href="/assets/js/75.e9378ce1.js"><link rel="prefetch" href="/assets/js/76.a80b13fc.js"><link rel="prefetch" href="/assets/js/77.d134968d.js"><link rel="prefetch" href="/assets/js/78.40d99cd8.js"><link rel="prefetch" href="/assets/js/79.2b663044.js"><link rel="prefetch" href="/assets/js/80.0b63f3ac.js"><link rel="prefetch" href="/assets/js/81.bc4031db.js"><link rel="prefetch" href="/assets/js/82.3152c02c.js"><link rel="prefetch" href="/assets/js/84.e778c959.js"><link rel="prefetch" href="/assets/js/85.060ddc49.js"><link rel="prefetch" href="/assets/js/86.bb8138bb.js"><link rel="prefetch" href="/assets/js/87.72c01e68.js"><link rel="prefetch" href="/assets/js/88.e3e56223.js"><link rel="prefetch" href="/assets/js/89.198ff8d1.js"><link rel="prefetch" href="/assets/js/90.6437abb2.js"><link rel="prefetch" href="/assets/js/91.dbe1df52.js"><link rel="prefetch" href="/assets/js/92.6e732f3a.js"><link rel="prefetch" href="/assets/js/93.e98beea7.js"><link rel="prefetch" href="/assets/js/94.c62e88cb.js"><link rel="prefetch" href="/assets/js/95.f6aad986.js"><link rel="prefetch" href="/assets/js/96.e0630547.js"><link rel="prefetch" href="/assets/js/97.3cd76aa5.js"><link rel="prefetch" href="/assets/js/98.3bc2adce.js"><link rel="prefetch" href="/assets/js/99.88c20858.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.5143d2e0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b4a844ec.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">duangdong的qa</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/js/" class="nav-link">
+  JS方面
+</a></div><div class="nav-item"><a href="/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/summary/" class="nav-link">
+  汇总
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  常见算法
+</a></div><div class="nav-item"><a href="/performance/" class="nav-link router-link-active">
+  性能优化
+</a></div><div class="nav-item"><a href="/http/" class="nav-link">
+  网络协议
+</a></div><div class="nav-item"><a href="/css/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/face-sutra/" class="nav-link">
+  QA
+</a></div><div class="nav-item"><a href="https://link.aduang.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Home
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/js/" class="nav-link">
+  JS方面
+</a></div><div class="nav-item"><a href="/webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/summary/" class="nav-link">
+  汇总
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  常见算法
+</a></div><div class="nav-item"><a href="/performance/" class="nav-link router-link-active">
+  性能优化
+</a></div><div class="nav-item"><a href="/http/" class="nav-link">
+  网络协议
+</a></div><div class="nav-item"><a href="/css/" class="nav-link">
+  CSS
+</a></div><div class="nav-item"><a href="/face-sutra/" class="nav-link">
+  QA
+</a></div><div class="nav-item"><a href="https://link.aduang.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Home
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/performance/" aria-current="page" class="sidebar-link">八股文</a></li><li><a href="/performance/21 道关于性能优化的面试题.html" class="sidebar-link">21 道关于性能优化的面试题（附答案）</a></li><li><a href="/performance/JavaScript复杂判断的更优雅写法.html" class="active sidebar-link">JavaScript 复杂判断的更优雅写法</a></li><li><a href="/performance/为什你应该使用picture标签而不是Img标签.html" class="sidebar-link">为什你应该使用picture标签而不是Img标签</a></li><li><a href="/performance/从前端性能优化引申出来的5道经典面试题.html" class="sidebar-link">从前端性能优化引申出来的 5 道经典面试题</a></li><li><a href="/performance/前端错误监控系统.html" class="sidebar-link">这三年沉淀的前端错误监控系统，一篇文章讲透给你</a></li><li><a href="/performance/性能优化.html" class="sidebar-link">写给中高级前端关于性能优化的9大策略和6大指标</a></li><li><a href="/performance/节流防抖.html" class="sidebar-link">函数防抖与节流</a></li><li><a href="/performance/进度条优化.html" class="sidebar-link">进度条优化</a></li><li><a href="/performance/逻辑判断.html" class="sidebar-link">编写高质量可维护的代码之优化逻辑判断</a></li><li><a href="/performance/降级处理.html" class="sidebar-link">浅析前端异常及降级处理</a></li><li><a href="/performance/项目中做过哪些安全防范措施.html" class="sidebar-link">你在项目中做过哪些安全防范措施？</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="javascript-复杂判断的更优雅写法"><a href="#javascript-复杂判断的更优雅写法" class="header-anchor">#</a> JavaScript 复杂判断的更优雅写法</h1> <blockquote><p><a href="https://mp.weixin.qq.com/s/-ZG-3i5y7TsTdwUAXvL6bw" target="_blank" rel="noopener noreferrer">https://mp.weixin.qq.com/s/-ZG-3i5y7TsTdwUAXvL6bw<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <h2 id="举个例子"><a href="#举个例子" class="header-anchor">#</a> 举个例子</h2> <p>先看一段代码：</p> <div class="language- extra-class"><pre class="language-text"><code>/**
+ * 按钮点击事件
+ * @param {number} status 活动状态：1 开团进行中 2 开团失败 3 商品售罄 4 开团成功 5 系统取消
+ */
+const onButtonClick = (status)=&gt;{
+  if(status == 1){
+    sendLog('processing')
+    jumpTo('IndexPage')
+  }else if(status == 2){
+    sendLog('fail')
+    jumpTo('FailPage')
+  }else if(status == 3){
+    sendLog('fail')
+    jumpTo('FailPage')
+  }else if(status == 4){
+    sendLog('success')
+    jumpTo('SuccessPage')
+  }else if(status == 5){
+    sendLog('cancel')
+    jumpTo('CancelPage')
+  }else {
+    sendLog('other')
+    jumpTo('Index')
+  }
+}
+</code></pre></div><p>通过代码可以看到这个按钮的点击逻辑：根据不同活动状态做两件事情，发送日志埋点和跳转到对应页面，大家可以很轻易的提出这段代码的改写方案，<code>switch</code>出场：</p> <div class="language- extra-class"><pre class="language-text"><code>/**
+ * 按钮点击事件
+ * @param {number} status 活动状态：1 开团进行中 2 开团失败 3 商品售罄 4 开团成功 5 系统取消
+ */
+const onButtonClick = (status)=&gt;{
+  switch (status){
+    case 1:
+      sendLog('processing')
+      jumpTo('IndexPage')
+      break
+    case 2:
+    case 3:
+      sendLog('fail')
+      jumpTo('FailPage')
+      break  
+    case 4:
+      sendLog('success')
+      jumpTo('SuccessPage')
+      break
+    case 5:
+      sendLog('cancel')
+      jumpTo('CancelPage')
+      break
+    default:
+      sendLog('other')
+      jumpTo('Index')
+      break
+  }
+}
+</code></pre></div><p>嗯，这样看起来比<code>if/else</code>清晰多了，细心的同学也发现了小技巧，<code>case 2</code>和<code>case 3</code>逻辑一样的时候，可以省去执行语句和<code>break</code>，则<code>case 2</code>的情况自动执行<code>case 3</code>的逻辑。</p> <p>这时有同学会说，还有更简单的写法：</p> <div class="language- extra-class"><pre class="language-text"><code>const actions = {
+  '1': ['processing','IndexPage'],
+  '2': ['fail','FailPage'],
+  '3': ['fail','FailPage'],
+  '4': ['success','SuccessPage'],
+  '5': ['cancel','CancelPage'],
+  'default': ['other','Index'],
+}
+/**
+ * 按钮点击事件
+ * @param {number} status 活动状态：1开团进行中 2开团失败 3 商品售罄 4 开团成功 5 系统取消
+ */
+const onButtonClick = (status)=&gt;{
+  let action = actions[status] || actions['default'],
+      logName = action[0],
+      pageName = action[1]
+  sendLog(logName)
+  jumpTo(pageName)
+}
+</code></pre></div><p>上面代码确实看起来更清爽了，这种方法的聪明之处在于：将判断条件作为对象的属性名，将处理逻辑作为对象的属性值，在按钮点击的时候，通过对象属性查找的方式来进行逻辑判断，这种写法特别适合一元条件判断的情况。</p> <p>是不是还有其他写法呢？有的：</p> <div class="language- extra-class"><pre class="language-text"><code>const actions = new Map([
+  [1, ['processing','IndexPage']],
+  [2, ['fail','FailPage']],
+  [3, ['fail','FailPage']],
+  [4, ['success','SuccessPage']],
+  [5, ['cancel','CancelPage']],
+  ['default', ['other','Index']]
+])
+/**
+ * 按钮点击事件
+ * @param {number} status 活动状态：1 开团进行中 2 开团失败 3 商品售罄 4 开团成功 5 系统取消
+ */
+const onButtonClick = (status)=&gt;{
+  let action = actions.get(status) || actions.get('default')
+  sendLog(action[0])
+  jumpTo(action[1])
+}
+</code></pre></div><p>这样写用到了es6里的<code>Map</code>对象，是不是更爽了？<code>Map</code>对象和<code>Object</code>对象有什么区别呢？</p> <ul><li>一个对象通常都有自己的原型，所以一个对象总有一个&quot;<code>prototype</code>&quot;键。</li> <li>一个对象的键只能是字符串或者<code>Symbols</code>，但一个<code>Map</code>的键可以是任意值。</li> <li>你可以通过<code>size</code>属性很容易地得到一个<code>Map</code>的键值对个数，而对象的键值对个数只能手动确认。</li></ul> <p>我们需要把问题升级一下，以前按钮点击时候只需要判断<code>status</code>，现在还需要判断用户的身份：</p> <div class="language- extra-class"><pre class="language-text"><code>/**
+ * 按钮点击事件
+ * @param {number} status 活动状态：1开团进行中 2开团失败 3 开团成功 4 商品售罄 5 有库存未开团
+ * @param {string} identity 身份标识：guest客态 master主态
+ */
+const onButtonClick = (status,identity)=&gt;{
+  if(identity == 'guest'){
+    if(status == 1){
+      //do sth
+    }else if(status == 2){
+      //do sth
+    }else if(status == 3){
+      //do sth
+    }else if(status == 4){
+      //do sth
+    }else if(status == 5){
+      //do sth
+    }else {
+      //do sth
+    }
+  }else if(identity == 'master') {
+    if(status == 1){
+      //do sth
+    }else if(status == 2){
+      //do sth
+    }else if(status == 3){
+      //do sth
+    }else if(status == 4){
+      //do sth
+    }else if(status == 5){
+      //do sth
+    }else {
+      //do sth
+    }
+  }
+}
+</code></pre></div><p>原谅我不写每个判断里的具体逻辑了，因为代码太冗长了。</p> <p>原谅我又用了<code>if/else</code>，因为我看到很多人依然在用<code>if/else</code>写这种大段的逻辑判断。</p> <p>从上面的例子我们可以看到，当你的逻辑升级为二元判断时，你的判断量会加倍，你的代码量也会加倍，这时怎么写更清爽呢？</p> <div class="language- extra-class"><pre class="language-text"><code>const actions = new Map([
+  ['guest_1', ()=&gt;{/*do sth*/}],
+  ['guest_2', ()=&gt;{/*do sth*/}],
+  ['guest_3', ()=&gt;{/*do sth*/}],
+  ['guest_4', ()=&gt;{/*do sth*/}],
+  ['guest_5', ()=&gt;{/*do sth*/}],
+  ['master_1', ()=&gt;{/*do sth*/}],
+  ['master_2', ()=&gt;{/*do sth*/}],
+  ['master_3', ()=&gt;{/*do sth*/}],
+  ['master_4', ()=&gt;{/*do sth*/}],
+  ['master_5', ()=&gt;{/*do sth*/}],
+  ['default', ()=&gt;{/*do sth*/}],
+])
+
+/**
+ * 按钮点击事件
+ * @param {string} identity 身份标识：guest客态 master主态
+ * @param {number} status 活动状态：1 开团进行中 2 开团失败 3 开团成功 4 商品售罄 5 有库存未开团
+ */
+const onButtonClick = (identity,status)=&gt;{
+  let action = actions.get(`${identity}_${status}`) || actions.get('default')
+  action.call(this)
+}
+</code></pre></div><p>上述代码核心逻辑是：把两个条件拼接成字符串，并通过以条件拼接字符串作为键，以处理函数作为值的<code>Map</code>对象进行查找并执行，这种写法在多元条件判断时候尤其好用。</p> <p>当然上述代码如果用<code>Object</code>对象来实现也是类似的：</p> <div class="language- extra-class"><pre class="language-text"><code>const actions = {
+  'guest_1':()=&gt;{/*do sth*/},
+  'guest_2':()=&gt;{/*do sth*/},
+  //....
+}
+
+const onButtonClick = (identity,status)=&gt;{
+  let action = actions[`${identity}_${status}`] || actions['default']
+  action.call(this)
+}
+</code></pre></div><p>如果有些同学觉得把查询条件拼成字符串有点别扭，那还有一种方案，就是用<code>Map</code>对象，以<code>Object</code>对象作为key：</p> <div class="language- extra-class"><pre class="language-text"><code>const actions = new Map([
+  [{identity:'guest',status:1},()=&gt;{/*do sth*/}],
+  [{identity:'guest',status:2},()=&gt;{/*do sth*/}],
+  //...
+])
+
+const onButtonClick = (identity,status)=&gt;{
+  let action = [...actions].filter(([key,value])=&gt;(key.identity == identity &amp;&amp; key.status == status))
+  action.forEach(([key,value])=&gt;value.call(this))
+}
+</code></pre></div><p>是不是又高级了一点点？</p> <p>这里也看出来<code>Map</code>与<code>Object</code>的区别，<code>Map</code>可以用任何类型的数据作为key。</p> <p>我们现在再将难度升级一点点，假如<code>guest</code>情况下，<code>status1-4</code>的处理逻辑都一样怎么办，最差的情况是这样：</p> <div class="language- extra-class"><pre class="language-text"><code>const actions = new Map([
+  [{identity:'guest',status:1},()=&gt;{/* functionA */}],
+  [{identity:'guest',status:2},()=&gt;{/* functionA */}],
+  [{identity:'guest',status:3},()=&gt;{/* functionA */}],
+  [{identity:'guest',status:4},()=&gt;{/* functionA */}],
+  [{identity:'guest',status:5},()=&gt;{/* functionB */}],
+  //...
+])
+</code></pre></div><p>好一点的写法是将处理逻辑函数进行缓存：</p> <div class="language- extra-class"><pre class="language-text"><code>const actions = ()=&gt;{
+  const functionA = ()=&gt;{/*do sth*/}
+  const functionB = ()=&gt;{/*do sth*/}
+  return new Map([
+    [{identity:'guest',status:1},functionA],
+    [{identity:'guest',status:2},functionA],
+    [{identity:'guest',status:3},functionA],
+    [{identity:'guest',status:4},functionA],
+    [{identity:'guest',status:5},functionB],
+    //...
+  ])
+}
+
+const onButtonClick = (identity,status)=&gt;{
+  let action = [...actions()].filter(([key,value])=&gt;(key.identity == identity &amp;&amp; key.status == status))
+  action.forEach(([key,value])=&gt;value.call(this))
+}
+</code></pre></div><p>这样写已经能满足日常需求了，但认真一点讲，上面重写了4次<code>functionA</code>还是有点不爽，假如判断条件变得特别复杂，比如<code>identity</code>有3种状态，<code>status</code>有10种状态，那你需要定义30条处理逻辑，而往往这些逻辑里面很多都是相同的，这似乎也是笔者不想接受的，那可以这样实现:</p> <div class="language- extra-class"><pre class="language-text"><code>const actions = ()=&gt;{
+  const functionA = ()=&gt;{/*do sth*/}
+  const functionB = ()=&gt;{/*do sth*/}
+  return new Map([
+    [/^guest_[1-4]$/,functionA],
+    [/^guest_5$/,functionB],
+    //...
+  ])
+}
+
+const onButtonClick = (identity,status)=&gt;{
+  let action = [...actions()].filter(([key,value])=&gt;(key.test(`${identity}_${status}`)))
+  action.forEach(([key,value])=&gt;value.call(this))
+}
+</code></pre></div><p>这里<code>Map</code>的优势更加凸显，可以用正则类型作为key了，这样就有了无限可能，假如需求变成，凡是<code>guest</code>情况都要发送一个日志埋点，不同<code>status</code>情况也需要单独的逻辑处理，那我们可以这样写:</p> <div class="language- extra-class"><pre class="language-text"><code>const actions = ()=&gt;{
+  const functionA = ()=&gt;{/*do sth*/}
+  const functionB = ()=&gt;{/*do sth*/}
+  const functionC = ()=&gt;{/*send log*/}
+  return new Map([
+    [/^guest_[1-4]$/,functionA],
+    [/^guest_5$/,functionB],
+    [/^guest_.*$/,functionC],
+    //...
+  ])
+}
+
+const onButtonClick = (identity,status)=&gt;{
+  let action = [...actions()].filter(([key,value])=&gt;(key.test(`${identity}_${status}`)))
+  action.forEach(([key,value])=&gt;value.call(this))
+}
+</code></pre></div><p>也就是说利用数组循环的特性，符合正则条件的逻辑都会被执行，那就可以同时执行公共逻辑和单独逻辑，因为正则的存在，你可以打开想象力解锁更多的玩法，本文就不赘述了。</p> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>本文已经教你了8种逻辑判断写法，包括：</p> <ul><li><code>if/else</code></li> <li><code>switch</code></li> <li>一元判断时：存到<code>Object</code>里</li> <li>一元判断时：存到<code>Map</code>里</li> <li>多元判断时：将condition拼接成字符串存到<code>Object</code>里</li> <li>多元判断时：将condition拼接成字符串存到<code>Map</code>里</li> <li>多元判断时：将condition存为<code>Object</code>存到<code>Map</code>里</li> <li>多元判断时：将condition写作正则存到<code>Map</code>里</li></ul> <p>至此，本文也将告一段落，愿你未来的人生里，不只是有<code>if/else/switch</code>。</p> <p>作者：Think
+来源：大转转FE https://juejin.cn/post/6844903705058213896</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">5/8/2024, 3:01:19 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/performance/21 道关于性能优化的面试题.html" class="prev">
+        21 道关于性能优化的面试题（附答案）
+      </a></span> <span class="next"><a href="/performance/为什你应该使用picture标签而不是Img标签.html">
+        为什你应该使用picture标签而不是Img标签
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.07981acf.js" defer></script><script src="/assets/js/2.57da4f88.js" defer></script><script src="/assets/js/1.a76cc220.js" defer></script><script src="/assets/js/83.3fa2dc4b.js" defer></script>
+  </body>
+</html>
